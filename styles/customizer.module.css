@@ -1,0 +1,18 @@
+.body {
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: aqua;
+}
+
+.siteContent {
+  display: inline-block;
+  text-align: left;
+  background-color: black;
+}
+
+.input {
+  border-radius: 15px;
+}

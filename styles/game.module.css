@@ -38,7 +38,6 @@
   margin-top: 15px;
 }
 
-
 /*.cardChoices:hover {
   cursor: pointer;
   transform: scale(1.1);
@@ -48,7 +47,6 @@
 }
 
 @keyframes blink {
-
   0%,
   100% {
     opacity: 100%;
