@@ -1,50 +1,49 @@
-import React from "react";
-import styles from "../styles/game.module.css";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import styles from "../styles/initialPage.module.css";
+import Header from "../components/header";
 
-export default function Game() {
-  const stats = {
-    altura: { value: 1.68, maxValue: 100 },
-    Beleza: { value: 9, maxValue: 100 },
-    peso: { value: 57, maxValue: 100 },
-    piru: { value: 19, maxValue: 100 },
+export default function InitialPage() {
+  const [playerName, updatePlayerName] = useState("");
+  const router = useRouter();
+
+  const handlePlayerNameChange = (event) => {
+    updatePlayerName(event.target.value);
   };
 
-  const statKeys = Object.keys(stats);
+  const handleNavigateTo = (path) => {
+    router.push(path);
+  };
 
   return (
     <div className={styles.body}>
-      <header className={styles.header}>
-        <div className={styles.playerInfo}>
-          <div className={styles.playerAvatar}></div>
-          <h2 className={styles.playerName}>Ramell Seaman</h2>
-          <span className={styles.playerStatus}>Infant</span>
+      <Header />
+      <main className={styles.main}>
+        <div className={styles.buttonsContainer}>
+          <button onClick={() => handleNavigateTo("/customizer")}>
+            Customizar personagem
+          </button>
+          <button onClick={() => handleNavigateTo("/randomizer")}>
+            Criar personagem aleatório
+          </button>
         </div>
-
-        <div className={styles.playerBalance}>
-          <span className={styles.money}>$0</span>
+        <div className={styles.characterNameInputContainer}>
+          <label className={styles.playerNameLabel} htmlFor="playerName">
+            Nome do personagem
+          </label>
+          <input
+            id="playerName"
+            type="text"
+            className={styles.playerNameInput}
+            value={playerName}
+            onChange={handlePlayerNameChange}
+          />
         </div>
-      </header>
+      </main>
 
-      <section className={styles.messagesContainer}>
-        <h3 className={styles.ageMessage}>Age: 0 years</h3>
-        <p className={styles.textMessage}>bioText-test</p>
-      </section>
-
-      <section className={styles.actionsContainer}>
-        <button className={styles.actionButton}>Activities</button>
-        <button className={styles.actionButton}>Assets</button>
-        <button className={styles.actionButton}>Age Up</button>
-        <button className={styles.actionButton}>Relationships</button>
-      </section>
-
-      <section className={styles.statsContainer}>
-        {statKeys.map((key) => (
-          <div className={styles.singleStat} key={key}>
-            {key[0].toUpperCase() + key.slice(1)}:{" "}
-            <span className={styles.singleStatSpan}>{stats[key].value}</span>
-          </div>
-        ))}
-      </section>
+      <footer className={styles.footer}>
+        <span className={styles.version}>v0.1 alpha</span>
+      </footer>
     </div>
   );
 }
