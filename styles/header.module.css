@@ -1,0 +1,16 @@
+.header h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 25px;
+}
+
+.header h1:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  text-shadow: 0 0 1px white;
+}
+
+.header h1:active {
+  transform: scale(0.97);
+  text-shadow: 0 0 10px white;
+}
