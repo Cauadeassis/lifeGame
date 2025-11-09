@@ -27,22 +27,10 @@ export default function InitialPage() {
             Criar personagem aleatório
           </button>
         </div>
-        <div className={styles.characterNameInputContainer}>
-          <label className={styles.playerNameLabel} htmlFor="playerName">
-            Nome do personagem
-          </label>
-          <input
-            id="playerName"
-            type="text"
-            className={styles.playerNameInput}
-            value={playerName}
-            onChange={handlePlayerNameChange}
-          />
-        </div>
       </main>
 
       <footer className={styles.footer}>
-        <span className={styles.version}>v0.1 alpha</span>
+        <span className={styles.version}>v0.0.1 alpha</span>
       </footer>
     </div>
   );

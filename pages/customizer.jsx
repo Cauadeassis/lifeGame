@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import styles from "../styles/customizer.module.css";
-import Header from "../components/header";
+import styles from "../styles/customizer.module.css"
+import Header from "../components/header"
+import SkinSelector from "../components/skinSelector";
 
 export default function Customizer() {
   const [playerName, updatePlayerName] = useState("");
   const [country, setCountry] = useState("");
-  const [height, setHeight] = useState(1.2);
+  const [height, setHeight] = useState(1.20);
   const [gender, setGender] = useState("");
 
   function handleStart() {
@@ -14,28 +15,29 @@ export default function Customizer() {
       name: playerName,
       country,
       height,
-      gender,
+      gender
     });
   }
 
   return (
     <div className={styles.body}>
-      <div>
+      <div className={styles.siteContent}>
         <Header />
         <section className={styles.nameInputContainer}>
-          <label className={styles.nameLabel}>Character Name</label>
+          <label className={styles.label}>Character Name</label>
           <input
             type="text"
-            className={styles.nameInput}
+            className={styles.input}
             placeholder="Digite seu nome"
             value={playerName}
             onChange={(typing) => updatePlayerName(typing.target.value)}
           />
         </section>
+        <SkinSelector />
         <section className={styles.countrySelectorContainer}>
-          <label className={styles.nameLabel}>País de Origem</label>
+          <label className={styles.label}>País de Origem</label>
           <select
-            className={styles.nameInput}
+            className={styles.input}
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           >
@@ -48,13 +50,12 @@ export default function Customizer() {
           </select>
         </section>
         <section className={styles.heightSelectorContainer}>
-          <label className={styles.nameLabel}>
-            Altura do Personagem aos 20 anos:{" "}
-            {height.toFixed(2).replace(".", ",")} m
+          <label className={styles.label}>
+            Altura do Personagem aos 20 anos: {height.toFixed(2).replace(".", ",")} m
           </label>
           <input
             type="range"
-            className={styles.nameInput}
+            className={styles.rangeInput}
             min="1.20"
             max="2.00"
             step="0.01"
@@ -63,12 +64,11 @@ export default function Customizer() {
           />
         </section>
         <section className={styles.genderSelectorContainer}>
-          <label className={styles.nameLabel}>Gênero</label>
+          <label className={styles.label}>Gênero</label>
           <select
-            className={styles.nameInput}
+            className={styles.input}
             value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          >
+            onChange={(e) => setGender(e.target.value)}>
             <option value="">Selecione...</option>
             <option value="male">Masculino</option>
             <option value="female">Feminino</option>
@@ -77,5 +77,5 @@ export default function Customizer() {
         </section>
       </div>
     </div>
-  );
+  )
 }

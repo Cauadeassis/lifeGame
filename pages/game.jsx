@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/game.module.css";
 
+
 export default function Game() {
   const stats = {
     altura: { value: 1.68, maxValue: 100 },
@@ -19,6 +20,7 @@ export default function Game() {
           <h2 className={styles.playerName}>Ramell Seaman</h2>
           <span className={styles.playerStatus}>Infant</span>
         </div>
+
 
         <div className={styles.playerBalance}>
           <span className={styles.money}>$0</span>
