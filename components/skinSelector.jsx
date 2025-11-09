@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/skinSelector.module.css";
+import styles from "../styles/components/skinSelector.module.css";
 
 export default function SkinSelector() {
   const [skinTone, setSkinTone] = useState(1);

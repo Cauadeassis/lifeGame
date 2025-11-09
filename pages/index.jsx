@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/initialPage.module.css";
+import styles from "../styles/pages/initialPage.module.css";
 import Header from "../components/header";
 
 export default function InitialPage() {

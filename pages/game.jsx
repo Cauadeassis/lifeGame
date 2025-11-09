@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/game.module.css";
+import styles from "../styles/pages/game.module.css";
 
 
 export default function Game() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/customizer.module.css"
+import styles from "../styles/pages/customizer.module.css"
 import Header from "../components/header"
 import SkinSelector from "../components/skinSelector";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/randomizer.module.css";
+import styles from "../styles/pages/randomizer.module.css";
 import Header from "../components/header"
 export default function Randomizer() {
   const [character, setCharacter] = useState(null);
