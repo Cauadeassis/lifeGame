@@ -1,96 +1,80 @@
-.container {
+.body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+
   min-height: 100vh;
-  background: #0a0e23;
-  color: white;
-  padding: 20px;
-}
-
-.header {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+  font-family: "Poppins", sans-serif;
   text-align: center;
+  padding: 1.5rem;
 }
 
-.gameTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.subtitle {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-.mainContent {
+.main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  width: 100%;
+  max-width: 400px;
+  flex-grow: 1;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.avatarPreview {
+.buttonsContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-.avatarPlaceholder {
-  width: 100px;
-  height: 100px;
-  background: #3b3f5b;
-  border-radius: 50%;
-}
-
-.avatarLabel {
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-
-.nameInputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nameLabel {
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
-
-.nameInput {
-  padding: 10px;
-  width: 220px;
-  border-radius: 6px;
+.buttonsContainer button {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   border: none;
-  outline: none;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.startButton {
-  margin-top: 10px;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 6px;
-  background: #35c05c;
+  border-radius: 12px;
   color: white;
+  font-weight: 600;
   font-size: 1rem;
+  padding: 0.9rem 1.2rem;
+  width: 100%;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.5s ease;
 }
 
-.startButton:disabled {
-  background: #4f4f4f;
-  cursor: not-allowed;
+.buttonsContainer button:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 1px white;
 }
 
-.startButton:not(:disabled):hover {
-  background: #2ea452;
+.buttonsContainer button:active {
+  transform: scale(0.97);
+  text-shadow: 0 0 10px white;
 }
 
 .footer {
-  opacity: 0.5;
+  color: #64748b;
   font-size: 0.8rem;
+}
+
+.version {
+  background-color: rgba(148, 163, 184, 0.2);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+@media (min-width: 600px) {
+  .main {
+    max-width: 500px;
+  }
+
+  .buttonsContainer button {
+    font-size: 1.1rem;
+  }
+
+  .playerNameInput {
+    max-width: 320px;
+  }
 }
