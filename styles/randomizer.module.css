@@ -1,0 +1,97 @@
+.body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.characterInfo {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 16px;
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.characterInfo h3 {
+  color: #38bdf8;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.characterInfo p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.h1 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.buttonsContainer button {
+  width: 100%;
+  max-width: 280px;
+  margin: 0.5rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.buttonsContainer button:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 1px white;
+}
+
+.buttonsContainer button:active {
+  transform: scale(0.97);
+  text-shadow: 0 0 10px white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .body {
+    padding: 1rem;
+  }
+
+  .characterInfo {
+    padding: 1rem;
+  }
+
+  .h1 {
+    font-size: 1.1rem;
+  }
+
+  .buttonsContainer button {
+    font-size: 0.9rem;
+  }
+}
