@@ -13,7 +13,6 @@
   color: #cbd5e1;
 }
 
-/* Pré-visualização circular da cor de pele */
 .colorPreview {
   width: 60px;
   height: 60px;
@@ -23,8 +22,8 @@
   transition: background-color 0.3s ease;
 }
 
-/* Slider */
 .slider {
+  appearance: none;
   -webkit-appearance: none;
   width: 200px;
   height: 8px;
@@ -38,7 +37,6 @@
   margin-top: 0.4rem;
 }
 
-/* Botão do range */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 24px;
@@ -62,7 +60,6 @@
   border: 2px solid #475569;
 }
 
-/* Labels */
 .labels {
   display: flex;
   justify-content: space-between;
