@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/pages/randomizer.module.css";
 import Header from "../components/header"
+import namesByCountry from "../data/namesByCountry";
 export default function Randomizer() {
   const [character, setCharacter] = useState(null);
 
   function generateRandomCharacter() {
-    const names = ["Alex", "Sofia", "Lucas", "Emma", "Yuki", "Gabriel", "Aiko", "Marie", "Ethan", "Carla"];
-    const countries = ["Brasil", "Estados Unidos", "Japão", "Alemanha", "França"];
-    const genders = ["Masculino", "Feminino"];
-    const skinTones = ["Branco", "Moreno", "Negro"];
+    const countries = Object.keys(namesByCountry);
     const getRandomItem = (array) => array[Math.floor(Math.random() * array.length)];
-
+    const country = getRandomItem(countries);
+    const genders = ["Masculino", "Feminino"]
+    const gender = getRandomItem(genders);
+    const skinTonesByGender = {
+      "Masculino": ["Branco", "Moreno", "Negro"],
+      "Feminino": ["Branca", "Morena", "Negra"],
+    };
+    const firstName = getRandomItem(namesByCountry[country][gender]);
+    const lastName = getRandomItem(namesByCountry[country]["Sobrenome"]);
+    const skinTone = getRandomItem(skinTonesByGender[gender]);
     return {
-      name: getRandomItem(names),
-      country: getRandomItem(countries),
-      gender: getRandomItem(genders),
-      skinTone: getRandomItem(skinTones),
+      firstName,
+      lastName,
+      country,
+      gender,
+      skinTone,
     };
   }
 
@@ -25,13 +33,12 @@ export default function Randomizer() {
   useEffect(() => {
     handleRandomize();
   }, []);
-
   return (
     <div className={styles.body}>
       <Header />
       {character && (
         <div className={styles.characterInfo}>
-          <h3>{character.name}</h3>
+          <h1>{character.firstName} {character.lastName}</h1>
           <p>País: {character.country}</p>
           <p>Gênero: {character.gender}</p>
           <p>Cor de pele: {character.skinTone}</p>
