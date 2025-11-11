@@ -1,0 +1,36 @@
+.incomeContainer {
+  margin-top: 20px;
+}
+
+.incomeOptions {
+  display: flex;
+  gap: 12px;
+}
+
+.incomeButton {
+  flex: 1;
+  padding: 10px 0;
+  background-color: #1f2937;
+  border: 1.5px solid #374151;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.incomeButton:hover {
+  background-color: #374151;
+  border-color: #f97316;
+  color: #f97316;
+}
+
+.selected {
+  background-color: #f97316;
+  border-color: #ea580c;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 0 8px #f97316aa;
+}

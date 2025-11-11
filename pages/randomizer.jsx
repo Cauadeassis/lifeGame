@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "../styles/pages/randomizer.module.css";
 import Header from "../components/header"
 import namesByCountry from "../data/namesByCountry";
@@ -33,6 +34,11 @@ export default function Randomizer() {
   useEffect(() => {
     handleRandomize();
   }, []);
+  const router = useRouter();
+  const handleStartGame = () => {
+    localStorage.setItem("character", JSON.stringify(character));
+    router.push("/game");
+  };
   return (
     <div className={styles.body}>
       <Header />
@@ -47,7 +53,7 @@ export default function Randomizer() {
       <h1 className={styles.h1}>Gerar novo personagem?</h1>
       <div className={styles.buttonsContainer}>
         <button onClick={handleRandomize}>Sim</button>
-        <button onClick={handleRandomize}>Não, vamos jogar</button>
+        <button onClick={() => handleStartGame()}>Não, vamos jogar</button>
       </div>
     </div>
   );

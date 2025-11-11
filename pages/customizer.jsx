@@ -6,16 +6,17 @@ import SkinSelector from "../components/skinSelector";
 export default function Customizer() {
   const [playerName, updatePlayerName] = useState("");
   const [country, setCountry] = useState("");
-  const [height, setHeight] = useState(1.20);
+  const [income, setIncome] = useState("");
   const [gender, setGender] = useState("");
 
-  function handleStart() {
+  function handleStartGame() {
     if (!playerName.trim()) return;
     onStartGame({
       name: playerName,
       country,
-      height,
-      gender
+      gender,
+      income,
+      skinTone,
     });
   }
 
@@ -23,7 +24,7 @@ export default function Customizer() {
     <div className={styles.body}>
       <div className={styles.siteContent}>
         <Header />
-        <section className={styles.nameInputContainer}>
+        <section className={styles.nameContainer}>
           <label className={styles.label}>Character Name</label>
           <input
             type="text"
@@ -34,6 +35,22 @@ export default function Customizer() {
           />
         </section>
         <SkinSelector />
+        <section className={styles.incomeContainer}>
+          <label className={styles.label}>Renda Inicial</label>
+          <div className={styles.incomeOptions}>
+            {['poor', 'middleClass', 'rich'].map((option) => (
+              <button
+                key={option}
+                className={`${styles.incomeButton} ${income === option ? styles.selected : ''}`}
+                onClick={() => setIncome(option)}
+              >
+                {option === 'poor' && 'Pobre'}
+                {option === 'middleClass' && 'Classe Média'}
+                {option === 'rich' && 'Rico'}
+              </button>
+            ))}
+          </div>
+        </section>
         <section className={styles.countrySelectorContainer}>
           <label className={styles.label}>País de Origem</label>
           <select
@@ -49,30 +66,15 @@ export default function Customizer() {
             <option value="FR">França</option>
           </select>
         </section>
-        <section className={styles.heightSelectorContainer}>
-          <label className={styles.label}>
-            Altura do Personagem aos 20 anos: {height.toFixed(2).replace(".", ",")} m
-          </label>
-          <input
-            type="range"
-            className={styles.rangeInput}
-            min="1.20"
-            max="2.00"
-            step="0.01"
-            value={height}
-            onChange={(e) => setHeight(parseFloat(e.target.value))}
-          />
-        </section>
         <section className={styles.genderSelectorContainer}>
           <label className={styles.label}>Gênero</label>
           <select
             className={styles.input}
             value={gender}
-            onChange={(e) => setGender(e.target.value)}>
+            onChange={(event) => setGender(event.target.value)}>
             <option value="">Selecione...</option>
             <option value="male">Masculino</option>
             <option value="female">Feminino</option>
-            <option value="other">Outro</option>
           </select>
         </section>
       </div>
