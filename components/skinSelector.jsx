@@ -1,45 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/components/skinSelector.module.css";
 
-export default function SkinSelector() {
-  const [skinTone, setSkinTone] = useState(1);
+const tones = [
+  { id: "white", label: "Branco", color: "#F1D6B8" },
+  { id: "middleTone", label: "Moreno", color: "#C68642" },
+  { id: "black", label: "Negro", color: "#5C4033" },
+];
 
-  const tones = [
-    { id: 0, label: "Fácil", color: "#F1D6B8" },
-    { id: 1, label: "Médio", color: "#C68642" },
-    { id: 2, label: "Difícil", color: "#5C4033" },
-  ];
-
+export default function SkinSelector({ skinTone, setSkinTone }) {
   const handleChange = (event) => {
-    setSkinTone(Number(event.target.value));
+    const index = Number(event.target.value);
+    setSkinTone(tones[index].id);
   };
-
+  const currentIndex = tones.findIndex(tone => tone.id === skinTone);
   return (
     <div className={styles.skinSelector}>
-      <label htmlFor="skinTone">Dificuldade do jogo</label>
-
+      <label htmlFor="skinTone">Cor da Pele</label>
       <div
         className={styles.colorPreview}
-        style={{ backgroundColor: tones[skinTone].color }}
+        style={{ backgroundColor: tones[currentIndex]?.color || tones[0].color }}
       />
-
       <input
         id="skinTone"
         type="range"
-        min="0"
-        max="2"
-        step="1"
-        value={skinTone}
+        min={0}
+        max={tones.length - 1}
+        step={1}
+        value={currentIndex}
         onChange={handleChange}
         className={styles.slider}
       />
-
       <div className={styles.labels}>
-        {tones.map((tone) => (
+        {tones.map((tone, index) => (
           <span
             key={tone.id}
-            className={`${styles.label} ${tone.id === skinTone ? styles.activeLabel : ""
-              }`}
+            className={`${styles.label} ${index === currentIndex ? styles.activeLabel : ""}`}
           >
             {tone.label}
           </span>

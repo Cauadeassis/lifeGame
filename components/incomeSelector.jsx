@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/components/incomeSelector.module.css";
+
 export default function IncomeSelector({ income, setIncome }) {
   return (
     <section className={styles.incomeContainer}>
