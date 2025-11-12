@@ -13,7 +13,6 @@ export default function Game() {
 
   const statKeys = Object.keys(stats);
   useEffect(() => {
-    // Recupera os dados do personagem salvos no localStorage
     const savedCharacter = localStorage.getItem("character");
     if (savedCharacter) {
       setCharacter(JSON.parse(savedCharacter));

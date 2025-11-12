@@ -17,14 +17,14 @@
   align-items: center;
   background-color: rgba(30, 41, 59, 0.6);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 }
 
-.siteContent section {
+.section {
   width: 100%;
-  margin-bottom: 1.2rem;
+  margin: 10px;
 }
 
 .label {
@@ -35,8 +35,8 @@
   text-align: left;
 }
 
-.input,
-.rangeInput {
+.input {
+  appearance: none;
   width: 100%;
   padding: 0.6rem 0.8rem;
   border: none;
@@ -46,6 +46,11 @@
   background-color: rgba(71, 85, 105, 0.3);
   outline: none;
   transition: all 0.2s ease;
+}
+
+.section:first-of-type .input {
+  width: 94%;
+  align-self: center;
 }
 
 .input::placeholder {
@@ -59,88 +64,37 @@
 
 select.input {
   appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.8rem center;
-  background-size: 1rem;
-  cursor: pointer;
-}
-
-.rangeInput {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
-  height: 6px;
-  border-radius: 4px;
-  background: linear-gradient(to right, #38bdf8, #818cf8);
-  cursor: pointer;
-}
-
-.rangeInput::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  background-color: #f1f5f9;
-  border-radius: 50%;
-  border: 2px solid #38bdf8;
-  transition: transform 0.15s ease;
-}
-
-.rangeInput::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-}
-
-.incomeContainer {
-  margin-top: 20px;
-}
-
-.label {
-  display: block;
-  color: #d1d5db;
-  /* cinza claro, parecido com os outros labels */
-  font-weight: 600;
-  margin-bottom: 8px;
+  background-color: rgba(71, 85, 105, 0.3);
+  color: #f1f5f9;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
   font-size: 1rem;
-}
-
-.incomeOptions {
-  display: flex;
-  gap: 12px;
-}
-
-.incomeButton {
-  flex: 1;
-  /* para os botões terem tamanho parecido e ocupar todo espaço */
-  padding: 10px 0;
-  background-color: #1f2937;
-  /* azul escuro meio cinza */
-  border: 1.5px solid #374151;
-  /* borda cinza escura */
-  border-radius: 8px;
-  color: #e5e7eb;
-  /* texto cinza claro */
-  font-weight: 700;
+  outline: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-  text-align: center;
-  user-select: none;
+  transition: all 0.2s ease;
 }
 
-.incomeButton:hover {
-  background-color: #374151;
-  /* azul mais claro no hover */
-  border-color: #f97316;
-  /* laranja vivo, igual ao slider */
-  color: #f97316;
-}
-
-.selected {
-  background-color: #f97316;
-  /* laranja vibrante para indicar seleção */
-  border-color: #ea580c;
+.startGameButton {
+  width: 100%;
+  margin: 0.8rem 0;
+  padding: 1rem;
+  display: block;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   color: white;
-  font-weight: 800;
-  box-shadow: 0 0 8px #f97316aa;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.startGameButton:hover {
+  text-shadow: 0 0 2px white;
+  transform: scale(1.05);
+  transition: 0.5s;
 }
 
 @media (max-width: 480px) {
@@ -152,42 +106,7 @@ select.input {
     font-size: 0.85rem;
   }
 
-  .input,
-  .rangeInput {
+  .input {
     font-size: 0.9rem;
   }
 }
-
-/*
-.characterNameInputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.playerNameLabel {
-  font-size: 1.5rem;
-  color: #cbd5e1;
-}
-
-.playerNameInput {
-  margin: 1.5rem;
-  width: 100%;
-  max-width: 280px;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: 1px solid #334155;
-  background-color: #1e293b;
-  color: #f1f5f9;
-  font-size: 1rem;
-  text-align: center;
-  outline: none;
-  transition: all 0.2s ease;
-}
-
-.playerNameInput:focus {
-  border-color: #3b82f6;
-  background-color: #0f172a;
-  box-shadow: 0 0 8px #06b6d4
-}*/

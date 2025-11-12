@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/pages/customizer.module.css";
 import Header from "../components/header";
 import SkinSelector from "../components/skinSelector";
 import IncomeSelector from "../components/incomeSelector";
+import GameDifficulty from "../components/gameDifficulty";
 
 export default function Customizer() {
   const [playerName, updatePlayerName] = useState("");
@@ -12,6 +13,10 @@ export default function Customizer() {
   const [difficulty, setDifficulty] = useState(3);
   const [gender, setGender] = useState("");
 
+  function onStartGame(character) {
+    localStorage.setItem("character", JSON.stringify(character));
+    window.location.href = "/game";
+  }
   function handleStartGame() {
     if (!playerName.trim()) return;
     onStartGame({
@@ -22,27 +27,13 @@ export default function Customizer() {
       skinTone,
     });
   }
-  const calculateDifficulty = (income, skin) => {
-    let baseDifficulty = 3;
-    if (income === "poor") baseDifficulty += 1;
-    else if (income === "rich") baseDifficulty -= 1;
-    if (skin === "black") baseDifficulty += 1;
-    else if (skin === "white") baseDifficulty -= 1;
-    if (baseDifficulty < 1) baseDifficulty = 1;
-    if (baseDifficulty > 5) baseDifficulty = 5;
-    return baseDifficulty;
-  };
-  useEffect(() => {
-    const newDifficulty = calculateDifficulty(income, skinTone);
-    setDifficulty(newDifficulty);
-  }, [income, skinTone]);
 
   return (
     <div className={styles.body}>
       <div className={styles.siteContent}>
         <Header />
-        <section className={styles.nameContainer}>
-          <label className={styles.label}>Character Name</label>
+        <section className={styles.section}>
+          <label className={styles.label}>Nome</label>
           <input
             type="text"
             className={styles.input}
@@ -51,14 +42,12 @@ export default function Customizer() {
             onChange={(typing) => updatePlayerName(typing.target.value)}
           />
         </section>
-        <SkinSelector skinTone={skinTone} setSkinTone={setSkinTone} />
-        <IncomeSelector income={income} setIncome={setIncome} />
-        <section className={styles.countrySelectorContainer}>
+        <section className={styles.section}>
           <label className={styles.label}>País de Origem</label>
           <select
             className={styles.input}
             value={country}
-            onChange={(e) => setCountry(e.target.value)}
+            onChange={(event) => setCountry(event.target.value)}
           >
             <option value="">Selecione...</option>
             <option value="BR">Brasil</option>
@@ -68,36 +57,37 @@ export default function Customizer() {
             <option value="FR">França</option>
           </select>
         </section>
-        <section className={styles.genderSelectorContainer}>
+        <section className={styles.section}>
           <label className={styles.label}>Gênero</label>
           <select
             className={styles.input}
             value={gender}
-            onChange={(event) => setGender(event.target.value)}>
+            onChange={(event) => setGender(event.target.value)}
+          >
             <option value="">Selecione...</option>
             <option value="male">Masculino</option>
             <option value="female">Feminino</option>
           </select>
         </section>
-        <section>
-          <label>Dificuldade do Jogo</label>
-          <input
-            type="range"
-            min="1"
-            max="5"
-            value={difficulty}
-            disabled
-            step="1"
-          />
-          <div>
-            {difficulty === 1 && "Modo Tutorial"}
-            {difficulty === 2 && "Fácil"}
-            {difficulty === 3 && "Médio"}
-            {difficulty === 4 && "Difícil"}
-            {difficulty === 5 && "Hardcore"}
-          </div>
+        <SkinSelector
+          skinTone={skinTone}
+          setSkinTone={setSkinTone}
+          className={styles.section} />
+        <IncomeSelector
+          income={income}
+          setIncome={setIncome}
+          className={styles.section} />
+        <GameDifficulty
+          income={income}
+          skinTone={skinTone}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+          className={styles.section}
+        />
+        <section className={styles.section}>
+          <button className={styles.startGameButton} onClick={() => handleStartGame()}>Vamos jogar</button>
         </section>
       </div>
     </div>
-  )
+  );
 }
