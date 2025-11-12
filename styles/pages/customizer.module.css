@@ -17,7 +17,7 @@
   align-items: center;
   background-color: rgba(30, 41, 59, 0.6);
   border-radius: 16px;
-  padding: 1.5rem 1.5rem 0 1.5rem;
+  padding: 1.5rem 1.5rem 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 }
@@ -46,11 +46,7 @@
   background-color: rgba(71, 85, 105, 0.3);
   outline: none;
   transition: all 0.2s ease;
-}
-
-.section:first-of-type .input {
-  width: 94%;
-  align-self: center;
+  cursor: pointer;
 }
 
 .input::placeholder {
@@ -62,39 +58,29 @@
   box-shadow: 0 0 0 2px #38bdf8;
 }
 
-select.input {
-  appearance: none;
-  background-color: rgba(71, 85, 105, 0.3);
-  color: #f1f5f9;
-  padding: 0.6rem 0.8rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.section:first-of-type .input {
+  width: 94%;
+  align-self: center;
 }
 
 .startGameButton {
   width: 100%;
   margin: 0.8rem 0;
   padding: 1rem;
-  display: block;
   border: none;
   border-radius: 12px;
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  color: white;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
   box-sizing: border-box;
 }
 
 .startGameButton:hover {
-  text-shadow: 0 0 2px white;
+  text-shadow: 0 0 2px #fff;
   transform: scale(1.05);
-  transition: 0.5s;
 }
 
 @media (max-width: 480px) {
