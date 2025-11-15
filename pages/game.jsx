@@ -5,12 +5,13 @@ import { generateRandomStatus } from "../models/randomizer";
 
 export default function Game() {
   const [character, setCharacter] = useState(null);
-  const [randomHealth, randomIntellect, randomBeauty, randomMentalHealth] = generateRandomStatus();
+  const [randomHealth, randomIntellect, randomBeauty, randomMentalHealth] =
+    generateRandomStatus();
   const stats = {
-    "Saúde": randomHealth,
-    "Beleza": randomBeauty,
-    "Intelecto": randomIntellect,
-    "Saúde Mental": randomMentalHealth
+    Saúde: randomHealth,
+    Beleza: randomBeauty,
+    Intelecto: randomIntellect,
+    "Saúde Mental": randomMentalHealth,
   };
 
   const statKeys = Object.keys(stats);
@@ -34,7 +35,9 @@ export default function Game() {
     <div className={styles.body}>
       <Header />
       <div className={styles.characterDisplay}>
-        <h1>{character.firstName} {character.lastName}</h1>
+        <h1>
+          {character.firstName} {character.lastName}
+        </h1>
         <p>País: {character.country}</p>
         <p>Gênero: {character.gender}</p>
         <p>Cor de pele: {character.skinTone}</p>

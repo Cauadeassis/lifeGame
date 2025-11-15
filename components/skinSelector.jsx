@@ -12,13 +12,15 @@ export default function SkinSelector({ skinTone, setSkinTone }) {
     const index = Number(event.target.value);
     setSkinTone(tones[index].id);
   };
-  const currentIndex = tones.findIndex(tone => tone.id === skinTone);
+  const currentIndex = tones.findIndex((tone) => tone.id === skinTone);
   return (
     <div className={styles.skinSelector}>
       <label htmlFor="skinTone">Cor da Pele</label>
       <div
         className={styles.colorPreview}
-        style={{ backgroundColor: tones[currentIndex]?.color || tones[0].color }}
+        style={{
+          backgroundColor: tones[currentIndex]?.color || tones[0].color,
+        }}
       />
       <input
         id="skinTone"

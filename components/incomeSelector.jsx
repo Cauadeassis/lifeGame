@@ -2,22 +2,27 @@ import React from "react";
 import styles from "../styles/components/incomeSelector.module.css";
 
 export default function IncomeSelector({ income, setIncome }) {
+  const incomeOptions = [
+    { id: "poor", label: "Pobre" },
+    { id: "middle", label: "Classe Média" },
+    { id: "rich", label: "Rico" },
+  ];
   return (
     <section className={styles.incomeContainer}>
       <label className={styles.label}>Renda Inicial</label>
       <div className={styles.incomeOptions}>
-        {['poor', 'middleClass', 'rich'].map((option) => (
+        {incomeOptions.map((option) => (
           <button
-            key={option}
-            className={`${styles.incomeButton} ${income === option ? styles.selected : ''}`}
-            onClick={() => setIncome(option)}
+            key={option.id}
+            className={`${styles.incomeButton} ${
+              income === option.id ? styles.selected : ""
+            }`}
+            onClick={() => setIncome(option.id)}
           >
-            {option === 'poor' && 'Pobre'}
-            {option === 'middleClass' && 'Classe Média'}
-            {option === 'rich' && 'Rico'}
+            {option.label}
           </button>
         ))}
       </div>
     </section>
-  )
+  );
 }

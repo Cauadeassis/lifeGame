@@ -72,11 +72,13 @@ export default function Customizer() {
         <SkinSelector
           skinTone={skinTone}
           setSkinTone={setSkinTone}
-          className={styles.section} />
+          className={styles.section}
+        />
         <IncomeSelector
           income={income}
           setIncome={setIncome}
-          className={styles.section} />
+          className={styles.section}
+        />
         <GameDifficulty
           income={income}
           skinTone={skinTone}
@@ -85,7 +87,12 @@ export default function Customizer() {
           className={styles.section}
         />
         <section className={styles.section}>
-          <button className={styles.startGameButton} onClick={() => handleStartGame()}>Vamos jogar</button>
+          <button
+            className={styles.startGameButton}
+            onClick={() => handleStartGame()}
+          >
+            Vamos jogar
+          </button>
         </section>
       </div>
     </div>
