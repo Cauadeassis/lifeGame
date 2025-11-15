@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { genders } from "../data/genders";
+import { skinTones } from "../data/skinTones";
+import { incomes } from "../data/incomes";
 import namesByCountry from "../data/namesByCountry";
 
 export function generateRandomStatus() {
@@ -24,37 +27,9 @@ export function generateRandomStatus() {
   return allStatus;
 }
 export function generateRandomCharacter() {
+  const getRandomItem = (array) =>
+    array[Math.floor(Math.random() * array.length)];
   const countries = Object.keys(namesByCountry);
-  const getRandomItem = (array) => array[Math.floor(Math.random() * array.length)];
-  const genders = [
-    { id: "male", label: "Masculino" },
-    { id: "female", label: "Feminino" }
-  ];
-  const skinTones = {
-    male: [
-      { id: "white", label: "Branco" },
-      { id: "brown", label: "Moreno" },
-      { id: "black", label: "Negro" },
-    ],
-    female: [
-      { id: "white", label: "Branca" },
-      { id: "brown", label: "Morena" },
-      { id: "black", label: "Negra" },
-    ],
-  };
-
-  const incomes = {
-    male: [
-      { id: "poor", label: "Pobre" },
-      { id: "middle", label: "Classe Média" },
-      { id: "rich", label: "Rico" }
-    ],
-    female: [
-      { id: "poor", label: "Pobre" },
-      { id: "middle", label: "Classe Média" },
-      { id: "rich", label: "Rica" }
-    ]
-  };
   const gender = getRandomItem(genders);
   const country = getRandomItem(countries);
   const firstName = getRandomItem(namesByCountry[country][gender.id]);
@@ -67,7 +42,6 @@ export function generateRandomCharacter() {
     country,
     gender,
     skinTone,
-    income
+    income,
   };
 }
-

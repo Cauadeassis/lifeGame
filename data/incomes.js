@@ -1,0 +1,12 @@
+export const incomes = {
+  male: [
+    { id: "poor", label: "Pobre" },
+    { id: "middle", label: "Classe Média" },
+    { id: "rich", label: "Rico" }
+  ],
+  female: [
+    { id: "poor", label: "Pobre" },
+    { id: "middle", label: "Classe Média" },
+    { id: "rich", label: "Rica" }
+  ]
+};

@@ -1,25 +1,21 @@
 import React from "react";
 import styles from "../styles/components/skinSelector.module.css";
+import { skinTones } from "../data/skinTones";
 
-const tones = [
-  { id: "white", label: "Branco", color: "#F1D6B8" },
-  { id: "middleTone", label: "Moreno", color: "#C68642" },
-  { id: "black", label: "Negro", color: "#5C4033" },
-];
-
-export default function SkinSelector({ skinTone, setSkinTone }) {
+export default function SkinSelector({ gender, skinTone, setSkinTone }) {
+  const tones = skinTones[gender] || [];
+  const currentIndex = tones.findIndex(tone => tone.id === skinTone);
   const handleChange = (event) => {
     const index = Number(event.target.value);
     setSkinTone(tones[index].id);
   };
-  const currentIndex = tones.findIndex((tone) => tone.id === skinTone);
   return (
     <div className={styles.skinSelector}>
       <label htmlFor="skinTone">Cor da Pele</label>
       <div
         className={styles.colorPreview}
         style={{
-          backgroundColor: tones[currentIndex]?.color || tones[0].color,
+          backgroundColor: tones[currentIndex]?.color || tones[0]?.color || "#ccc"
         }}
       />
       <input
@@ -28,7 +24,7 @@ export default function SkinSelector({ skinTone, setSkinTone }) {
         min={0}
         max={tones.length - 1}
         step={1}
-        value={currentIndex}
+        value={currentIndex >= 0 ? currentIndex : 0}
         onChange={handleChange}
         className={styles.slider}
       />
@@ -36,7 +32,8 @@ export default function SkinSelector({ skinTone, setSkinTone }) {
         {tones.map((tone, index) => (
           <span
             key={tone.id}
-            className={`${styles.label} ${index === currentIndex ? styles.activeLabel : ""}`}
+            className={`${styles.label} ${index === currentIndex ? styles.activeLabel : ""
+              }`}
           >
             {tone.label}
           </span>

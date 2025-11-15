@@ -71,11 +71,13 @@ export default function Customizer() {
         </section>
         <SkinSelector
           skinTone={skinTone}
+          gender={gender}
           setSkinTone={setSkinTone}
           className={styles.section}
         />
         <IncomeSelector
           income={income}
+          gender={gender}
           setIncome={setIncome}
           className={styles.section}
         />
