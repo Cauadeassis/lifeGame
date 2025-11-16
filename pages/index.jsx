@@ -35,7 +35,7 @@ export default function InitialPage() {
         </main>
 
         <footer className={styles.footer}>
-          <span className={styles.version}>v0.0.1 alpha</span>
+          <span className={styles.version}>v0.5.8-alpha</span>
         </footer>
       </div>
     </>
