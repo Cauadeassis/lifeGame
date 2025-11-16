@@ -12,7 +12,7 @@ const jestConfig = createJestConfig({
   testEnvironment: "jest-environment-jsdom",
 });
 const customJestConfig = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // 👈 aqui
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testEnvironment: "jsdom",
 };
 module.exports = { ...jestConfig, ...customJestConfig };
