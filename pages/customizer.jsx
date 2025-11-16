@@ -9,8 +9,8 @@ import GameDifficulty from "../components/gameDifficulty";
 export default function Customizer() {
   const [playerName, updatePlayerName] = useState("");
   const [country, setCountry] = useState("");
-  const [skinTone, setSkinTone] = useState("middleTone");
-  const [income, setIncome] = useState("middle");
+  const [skinTone, setSkinTone] = useState({ id: "middleTone", label: "Moreno" });
+  const [income, setIncome] = useState({ id: "middle", label: "Classe Média" });
   const [difficulty, setDifficulty] = useState(3);
   const [gender, setGender] = useState("");
 

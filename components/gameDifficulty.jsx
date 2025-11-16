@@ -8,8 +8,8 @@ export default function GameDifficulty({ income, skinTone, difficulty, setDiffic
     setDifficulty(newDifficulty);
   }, [income, skinTone]);
   return (
-    console.log(`The current difficulty is ${difficulty}!`),
     (
+      console.log(`Current difficulty is ${difficulty}`),
       <section className={styles.difficultyContainer}>
         <label className={styles.label}>Dificuldade do Jogo</label>
         <input

@@ -23,7 +23,6 @@ export function generateRandomStatus() {
     const randomPosition = Math.floor(Math.random() * (currentPosition + 1));
     [allStatus[currentPosition], allStatus[randomPosition]] = [allStatus[randomPosition], allStatus[currentPosition]];
   }
-  console.log(allStatus);
   return allStatus;
 }
 export function generateRandomCharacter() {

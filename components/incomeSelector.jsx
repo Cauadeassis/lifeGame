@@ -10,9 +10,11 @@ export default function IncomeSelector({ gender, income, setIncome }) {
         {options.map((option) => (
           <button
             key={option.id}
-            className={`${styles.incomeButton} ${income === option.id ? styles.selected : ""
+            className={`${styles.incomeButton} ${income.id === option.id ? styles.selected : ""
               }`}
-            onClick={() => setIncome(option.id)}
+            onClick={() =>
+              setIncome({ id: option.id, label: option.label })
+            }
           >
             {option.label}
           </button>
@@ -21,3 +23,4 @@ export default function IncomeSelector({ gender, income, setIncome }) {
     </section>
   );
 }
+
