@@ -59,8 +59,18 @@
 }
 
 .section:first-of-type .input {
+  cursor: default;
   width: 94%;
   align-self: center;
+}
+
+.section:first-of-type .input:hover {
+  background-color: rgba(71, 85, 105, 0.6);
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.section:first-of-type .input:focus {
+  cursor: text;
 }
 
 .startGameButton {
