@@ -1,5 +1,5 @@
 export default function calculateDifficulty(income, skinTone) {
-  let baseDifficulty = 2;
+  let baseDifficulty = 3;
   if (income?.id === "poor") baseDifficulty = 4;
   else if (income?.id === "rich") baseDifficulty = 2;
   else if (income?.id === "middle") baseDifficulty = 3;

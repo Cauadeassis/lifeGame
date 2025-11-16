@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 import styles from "../styles/components/gameDifficulty.module.css";
-export default function GameDifficulty({ difficulty }) {
+import calculateDifficulty from "../models/difficulty";
+export default function GameDifficulty({ income, skinTone, difficulty, setDifficulty }) {
+  useEffect(() => {
+    if (!income) income = "middle"
+    const newDifficulty = calculateDifficulty(income, skinTone);
+    setDifficulty(newDifficulty);
+  }, [income, skinTone]);
   return (
-    console.log(difficulty),
+    console.log(`The current difficulty is ${difficulty}!`),
     (
       <section className={styles.difficultyContainer}>
         <label className={styles.label}>Dificuldade do Jogo</label>
