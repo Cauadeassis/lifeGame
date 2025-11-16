@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { generateRandomStatus } from "../models/randomizer.js";
 import { generateRandomCharacter } from "../models/randomizer.js";
 import { incomes } from "../data/incomes.js";
 import { skinTones } from "../data/skinTones.js";
@@ -11,7 +12,34 @@ jest.mock("next/router", () => ({
     push: pushMock,
   }),
 }));
-describe("Randomizer component", () => {
+describe("generating random status", () => {
+  test("Should return 4 attributes", () => {
+    for (let i = 0; i < 10; i++) {
+      const stats = generateRandomStatus();
+      expect(stats.length).toBe(4);
+    }
+  });
+  test("Should be > 0 and < 100", () => {
+    for (let i = 0; i < 10; i++) {
+      const stats = generateRandomStatus();
+      stats.forEach((value) => {
+        expect(value).toBeLessThanOrEqual(100);
+        expect(value).toBeGreaterThanOrEqual(0);
+      });
+    }
+  });
+  test("Sum of all attributes should be exactly 240", () => {
+    for (let i = 0; i < 10; i++) {
+      const stats = generateRandomStatus();
+      const sum = stats.reduce((accumulator, stat) => accumulator + stat, 0);
+      expect(sum).toBe(240);
+    }
+  });
+});
+describe("Generating random character", () => {
+  beforeEach(() => {
+    pushMock.mockClear();
+  });
   test("Should render character and difficulty sections", () => {
     render(<Randomizer />);
     expect(screen.getByText(/País:/i)).toBeInTheDocument();
@@ -53,3 +81,17 @@ describe("Randomizer component", () => {
     });
   });
 });
+describe("Buttons test battery", () => {
+  beforeEach(() => {
+    pushMock.mockClear();
+  });
+  test("should navigate to /game when clicking the button", () => {
+    render(<Randomizer />);
+    const startGameButton = screen.getByText("Não, vamos jogar");
+    fireEvent.click(startGameButton);
+    expect(pushMock).toHaveBeenCalledTimes(1);
+    expect(pushMock).toHaveBeenCalledWith("/game");
+    expect(JSON.parse(localStorage.getItem("character"))).toBeTruthy();
+  });
+});
+
