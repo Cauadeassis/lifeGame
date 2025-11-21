@@ -8,9 +8,9 @@ export default function Game() {
   const [randomHealth, randomIntellect, randomBeauty, randomMentalHealth] =
     generateRandomStatus();
   const stats = {
-    Saúde: randomHealth,
-    Beleza: randomBeauty,
-    Intelecto: randomIntellect,
+    "Saúde": randomHealth,
+    "Beleza": randomBeauty,
+    "Intelecto": randomIntellect,
     "Saúde Mental": randomMentalHealth,
   };
 
@@ -39,9 +39,9 @@ export default function Game() {
           {character.firstName} {character.lastName}
         </h1>
         <p>País: {character.country}</p>
-        <p>Gênero: {character.gender}</p>
-        <p>Cor de pele: {character.skinTone}</p>
-        <p>Renda: {character.income}</p>
+        <p>Gênero: {character.gender.label}</p>
+        <p>Cor de pele: {character.skinTone.label}</p>
+        <p>Renda: {character.income.label}</p>
       </div>
       <div className={styles.actions}>
         <button>Começar jogo</button>

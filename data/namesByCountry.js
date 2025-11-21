@@ -9,7 +9,6 @@ const namesByCountry = {
       "Carlos",
       "João",
       "Neymar",
-      "Joaquim",
       "Paulo",
       "Pedro",
       "Ricardo",
@@ -75,7 +74,7 @@ const namesByCountry = {
       "Elizabeth",
     ],
     last: [
-      "Smith",
+      "Issac",
       "Johnson",
       "Williams",
       "Brown",
