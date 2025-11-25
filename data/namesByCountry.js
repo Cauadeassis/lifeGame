@@ -1,5 +1,5 @@
 const namesByCountry = {
-  Brasil: {
+  "Brasil": {
     male: [
       "Zeca",
       "Jeremias",
@@ -84,12 +84,12 @@ const namesByCountry = {
       "Davis",
     ],
   },
-  Japão: {
+  "Japão": {
     male: ["Naruto", "Sasuke", "Sanjiro", "Itachi", "Tekomonamata"],
     female: ["Hinata", "Hino", "Sakura", "Momoka", "Yui", "Kaguya"],
     last: ["Uzumaki", "Uchiha", "Ryuga", "Sarutobi", "Komecu", "Senju"],
   },
-  Alemanha: {
+  "Alemanha": {
     male: ["Adolf", "Karl", "Fritz", "Hans", "Max", "Maximilian", "Theo"],
     female: ["Marie", "Greta", "Lena", "Emma", "Helena", "Sofia", "Evelyn"],
     last: [
@@ -103,7 +103,7 @@ const namesByCountry = {
       "Schmidt",
     ],
   },
-  França: {
+  "França": {
     male: ["Pierre", "Júlio", "Jean", "Ludwig", "Ludwig", "Max", "Theo"],
     female: ["Marie", "Camille", "Emma", "Helena", "Sofia", "Evelyn"],
     last: ["Mbappe", "Verne", "Dubois", "Vitón", "Ellen"],

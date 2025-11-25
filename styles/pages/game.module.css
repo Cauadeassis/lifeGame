@@ -1,58 +1,89 @@
 .body {
-  background-color: rgba(19, 39, 39, 10%);
-  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0f1f, #091525);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e6eef8;
+  font-family: "Inter", sans-serif;
 }
 
-.header {
-  padding: 25px;
-  background-color: aqua;
-  color: black;
+.characterDisplay {
+  width: 90%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  text-align: center;
+  backdrop-filter: blur(6px);
 }
 
-.playerName {
+.characterDisplay h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.characterDisplay p {
+  font-size: 1.05rem;
+  margin: 6px 0;
+  color: #cbd5e1;
+}
+
+.actions {
+  width: 90%;
+  max-width: 550px;
   text-align: center;
-  font-size: 40px;
-  font-family: sans-serif;
-  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #2389ff, #00d2ff);
+  color: white;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.actions button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .statsContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  width: 90%;
+  max-width: 550px;
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
 }
 
 .singleStat {
-  display: inline-block;
-  margin: 15px;
-  text-align: left;
-  font-size: 25px;
-  font-family: sans-serif;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: #e6eef8;
 }
 
-.textMessage {
-  font-size: 30px;
-  max-width: 750px;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  margin-top: 15px;
+.singleStat:last-child {
+  border-bottom: none;
 }
 
-/*.cardChoices:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}*/
 .singleStatSpan {
-  display: inline-block;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 100%;
-  }
-
-  50% {
-    opacity: 0%;
-  }
+  font-weight: 700;
+  color: #38bdf8;
 }

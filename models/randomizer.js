@@ -25,9 +25,9 @@ export function generateRandomStatus() {
   }
   return allStatus;
 }
+export const getRandomItem = (array) =>
+  array[Math.floor(Math.random() * array.length)];
 export function generateRandomCharacter() {
-  const getRandomItem = (array) =>
-    array[Math.floor(Math.random() * array.length)];
   const countries = Object.keys(namesByCountry);
   const gender = getRandomItem(genders);
   const country = getRandomItem(countries);
