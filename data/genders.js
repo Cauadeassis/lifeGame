@@ -1,4 +1,4 @@
 export const genders = [
-  { id: "male", label: "Masculino" },
-  { id: "female", label: "Feminino" },
+  { id: "male", label: "Masculino", identity: "Homem" },
+  { id: "female", label: "Feminino", identity: "Mulher" },
 ];

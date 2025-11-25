@@ -2,27 +2,38 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/game.module.css";
 import Header from "../components/header";
 import { generateRandomStatus } from "../models/randomizer";
-
+import namesByCountry from "../data/namesByCountry";
+const STORAGE_KEY = "character";
 export default function Game() {
   const [character, setCharacter] = useState(null);
-  const [randomHealth, randomIntellect, randomBeauty, randomMentalHealth] =
-    generateRandomStatus();
-  const stats = {
-    "Saúde": randomHealth,
-    "Beleza": randomBeauty,
-    "Intelecto": randomIntellect,
-    "Saúde Mental": randomMentalHealth,
-  };
-
-  const statKeys = Object.keys(stats);
+  const [stats, setStats] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const savedCharacter = localStorage.getItem("character");
-    if (savedCharacter) {
-      setCharacter(JSON.parse(savedCharacter));
-    }
+    const loadGameData = () => {
+      try {
+        const savedCharacter = localStorage.getItem(STORAGE_KEY);
+        if (savedCharacter) {
+          setCharacter(JSON.parse(savedCharacter));
+        }
+        const [health, intellect, beauty, mentalHealth] = generateRandomStatus();
+        setStats({
+          "Saúde": health,
+          "Beleza": beauty,
+          "Intelecto": intellect,
+          "Saúde Mental": mentalHealth,
+        });
+      } catch (error) {
+        console.error("Failed to load character:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadGameData();
   }, []);
-
-  if (!character) {
+  const handleStartGame = () => {
+    console.log("Starting game with:", { character, stats });
+  };
+  if (isLoading || !character || !stats) {
     return (
       <div className={styles.body}>
         <Header />
@@ -30,7 +41,10 @@ export default function Game() {
       </div>
     );
   }
-
+  const getDemonym = () => {
+    return namesByCountry[character.country]?.demonym[character.gender.id] || "";
+  };
+  const lower = (text) => text?.toLowerCase() || "";
   return (
     <div className={styles.body}>
       <Header />
@@ -38,19 +52,17 @@ export default function Game() {
         <h1>
           {character.firstName} {character.lastName}
         </h1>
-        <p>País: {character.country}</p>
-        <p>Gênero: {character.gender.label}</p>
-        <p>Cor de pele: {character.skinTone.label}</p>
-        <p>Renda: {character.income.label}</p>
+        <p>
+          Olá! Sou {lower(character.skinTone.label)}, {getDemonym()} e venho de uma família {lower(character.income.label)}.
+        </p>
       </div>
       <div className={styles.actions}>
-        <button>Começar jogo</button>
+        <button onClick={handleStartGame}>Começar jogo</button>
       </div>
       <section className={styles.statsContainer}>
-        {statKeys.map((key) => (
-          <div className={styles.singleStat} key={key}>
-            {key[0].toUpperCase() + key.slice(1)}:{" "}
-            <span className={styles.singleStatSpan}>{stats[key]}</span>
+        {Object.entries(stats).map(([statName, statValue]) => (
+          <div className={styles.singleStat} key={statName}>
+            {statName}: <span className={styles.singleStatSpan}>{statValue}</span>
           </div>
         ))}
       </section>
