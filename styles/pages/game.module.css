@@ -1,89 +1,145 @@
+/* ===== ESTILO GERAL ===== */
+
 .body {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0f1f, #091525);
-  padding: 30px 0;
+  background: radial-gradient(circle at top, #111827, #0a0f1f 60%, #05070d 100%);
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #e6eef8;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
+
+/* ===== ANIMAÇÃO SUAVE PARA ELEMENTOS ===== */
+
+.fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARD PRINCIPAL DO PERSONAGEM ===== */
 
 .characterDisplay {
   width: 90%;
-  max-width: 550px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow:
+    0 0 25px rgba(0, 195, 255, 0.15),
+    0 8px 25px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
   text-align: center;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: 0.25s ease;
+}
+
+.characterDisplay:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 35px rgba(0, 225, 255, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .characterDisplay h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 18px;
   color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
 }
 
 .characterDisplay p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin: 6px 0;
-  color: #cbd5e1;
+  color: #d5e1ef;
 }
+
+/* ===== BOTÃO ===== */
 
 .actions {
   width: 90%;
   max-width: 550px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .actions button {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
+  border-radius: 14px;
+  font-size: 1.2rem;
   cursor: pointer;
-  background: linear-gradient(90deg, #2389ff, #00d2ff);
-  color: white;
-  transition: 0.2s ease;
-  font-weight: 600;
+  background: linear-gradient(90deg, #00aaff, #7b5eff, #ff00c8);
+  background-size: 200%;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 195, 255, 0.4);
 }
 
 .actions button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  background-position: 100%;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 20px rgba(106, 217, 255, 0.7);
 }
+
+/* ===== STATS ===== */
 
 .statsContainer {
   width: 90%;
   max-width: 550px;
-  margin-top: 25px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  box-shadow:
+    0 0 20px rgba(0, 195, 255, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Linhas individuais de atributo */
 .singleStat {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: #e6eef8;
+  transition: 0.2s ease;
+}
+
+.singleStat:hover {
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 10px;
 }
 
 .singleStat:last-child {
   border-bottom: none;
 }
 
+/* Valor dos atributos */
 .singleStatSpan {
-  font-weight: 700;
+  font-weight: 800;
   color: #38bdf8;
+  text-shadow: 0 0 6px rgba(0, 195, 255, 0.5);
 }
