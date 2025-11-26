@@ -6,7 +6,7 @@
 
 .incomeContainer label {
   font-size: 1.2rem;
-  color: #cbd5e1;
+  color: var(--white);
 }
 
 .incomeOptions {
@@ -21,10 +21,10 @@
   flex: 1;
   min-width: 0;
   padding: 12px 0;
-  background-color: #1f2937;
-  border: 1.5px solid #374151;
+  background-color: var(--lightBlack);
+  border: 1.5px solid color-mix(in srgb, var(--gray) 40%, transparent);
   border-radius: 8px;
-  color: #e5e7eb;
+  color: var(--white);
   font-weight: 700;
   cursor: pointer;
   transition:
@@ -36,13 +36,13 @@
 }
 
 .incomeButton:hover {
-  border-color: #06b6d4;
+  border-color: var(--aqua);
 }
 
 .selected {
-  background-color: #38bdf8;
-  border-color: #06b6d4;
-  color: white;
+  background-color: var(--aqua);
+  border-color: var(--aqua);
+  color: var(--allWhite);
   font-weight: 800;
-  box-shadow: 0 0 2px #06b6d4;
+  box-shadow: 0 0 2px var(--aqua);
 }

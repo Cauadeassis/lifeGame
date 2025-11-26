@@ -1,7 +1,7 @@
 .body {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(180deg, var(--black) 0%, var(--lightBlack) 100%);
   min-height: 100vh;
-  color: #f1f5f9;
+  color: var(--white);
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
@@ -15,10 +15,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(30, 41, 59, 0.6);
+  background-color: var(--lightBlack);
   border-radius: 16px;
   padding: 1.5rem 1.5rem 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--darkGray) 40%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -30,7 +30,7 @@
 .label {
   display: block;
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: var(--white);
   margin-bottom: 0.4rem;
   text-align: left;
 }
@@ -42,20 +42,21 @@
   border: none;
   border-radius: 10px;
   font-size: 1rem;
-  color: #f1f5f9;
-  background-color: rgba(71, 85, 105, 0.3);
+  color: var(--gray);
+  background-color: color-mix(in srgb, var(--darkGray) 30%, transparent);
   outline: none;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .input::placeholder {
-  color: #94a3b8;
+  color: var(--gray);
 }
 
-.input:focus {
-  background-color: rgba(71, 85, 105, 0.6);
-  box-shadow: 0 0 0 2px #38bdf8;
+.input:focus,
+.section:first-of-type .input:hover {
+  background-color: color-mix(in srgb, var(--darkGray) 40%, transparent);
+  box-shadow: 0 0 0 2px var(--aqua);
 }
 
 .section:first-of-type .input {
@@ -64,18 +65,13 @@
   align-self: center;
 }
 
-.section:first-of-type .input:hover {
-  background-color: rgba(71, 85, 105, 0.6);
-  box-shadow: 0 0 0 2px #38bdf8;
-}
-
 .section:first-of-type .input:focus {
   cursor: text;
 }
 
 .errorMessage {
   font-size: 1rem;
-  color: #ff4d4f;
+  color: var(--red);
   font-weight: bold;
   margin-top: 10px;
   opacity: 1;
@@ -92,8 +88,8 @@
   padding: 1rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  color: #fff;
+  background: linear-gradient(90deg, var(--aqua), var(--aqua));
+  color: var(--white);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -104,7 +100,7 @@
 }
 
 .startGameButton:hover {
-  text-shadow: 0 0 2px #fff;
+  text-shadow: 0 0 2px var(--white);
   transform: scale(1.05);
 }
 

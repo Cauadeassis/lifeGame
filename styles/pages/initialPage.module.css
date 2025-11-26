@@ -3,10 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   min-height: 100vh;
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-  color: #f1f5f9;
+  background: linear-gradient(180deg, var(--black) 0%, var(--lightBlack) 100%);
+  color: var(--white);
   font-family: "Poppins", sans-serif;
   text-align: center;
   padding: 1.5rem;
@@ -32,10 +31,10 @@
 }
 
 .buttonsContainer button {
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: linear-gradient(90deg, var(--blue), var(--aqua));
   border: none;
   border-radius: 12px;
-  color: white;
+  color: var(--white);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.9rem 1.2rem;
@@ -46,21 +45,21 @@
 
 .buttonsContainer button:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 1px white;
+  text-shadow: 0 0 1px var(--white);
 }
 
 .buttonsContainer button:active {
   transform: scale(0.97);
-  text-shadow: 0 0 10px white;
+  text-shadow: 0 0 10px var(--white);
 }
 
 .footer {
-  color: #64748b;
+  color: var(--gray);
   font-size: 0.8rem;
 }
 
 .version {
-  background-color: rgba(148, 163, 184, 0.2);
+  background-color: var(--darkGray);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
 }

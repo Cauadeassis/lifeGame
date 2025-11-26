@@ -5,7 +5,7 @@
 
 .difficultyContainer label {
   font-size: 1.2rem;
-  color: #cbd5e1;
+  color: var(--white);
 }
 
 .rangeInput {
@@ -14,7 +14,7 @@
   width: 100%;
   height: 8px;
   border-radius: 5px;
-  background: linear-gradient(to right, #f1f5f9, #0f172a);
+  background: linear-gradient(to right, var(--white), var(--black));
   outline: none;
   cursor: not-allowed;
 }
@@ -23,12 +23,13 @@
   appearance: none;
   width: 20px;
   height: 20px;
-  background-color: #38bdf8;
+  background-color: var(--aqua);
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid var(--allWhite);
 }
 
 .gamemodeText {
   font-weight: 500;
-  color: white;
+  color: var(--allWhite);
+  text-shadow: 0 0 2px color-mix(in srgb, var(--allWhite) 60%, transparent)
 }

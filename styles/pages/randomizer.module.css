@@ -1,7 +1,7 @@
 .body {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-  color: #f1f5f9;
+  background: linear-gradient(180deg, var(--black) 0%, var(--lightBlack) 100%);
+  color: var(--white);
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,34 +11,28 @@
 }
 
 .characterInfo {
-  background: rgba(30, 41, 59, 0.7);
+  background: var(--lightBlack);
   border-radius: 16px;
   padding: 1.2rem;
   width: 100%;
   max-width: 360px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--darkGray) 40%, transparent);
   backdrop-filter: blur(6px);
   margin-bottom: 2rem;
   animation: fadeIn 0.5s ease;
 }
 
-.characterInfo h3 {
-  color: #38bdf8;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
 .characterInfo p {
   margin: 0.3rem 0;
   font-size: 0.95rem;
-  color: #e2e8f0;
+  color: var(--white);
 }
 
 .h1 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #f8fafc;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  text-shadow: 0 1px 4px color-mix(in srgb, var(--fullBlack) 40%, transparent);
 }
 
 .buttonsContainer button {
@@ -48,8 +42,8 @@
   padding: 0.8rem 1.2rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  color: white;
+  background: linear-gradient(90deg, var(--blue), var(--aqua));
+  color: var(--white);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -58,12 +52,12 @@
 
 .buttonsContainer button:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 1px white;
+  text-shadow: 0 0 1px var(--white);
 }
 
 .buttonsContainer button:active {
   transform: scale(0.97);
-  text-shadow: 0 0 10px white;
+  text-shadow: 0 0 10px var(--white);
 }
 
 @keyframes fadeIn {
