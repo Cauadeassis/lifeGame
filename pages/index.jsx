@@ -3,19 +3,16 @@ import { useRouter } from "next/router";
 import styles from "../styles/pages/initialPage.module.css";
 import Header from "../components/header";
 import Head from "next/head";
-
+import ThemeToggle from "../components/themeToggle";
 export default function InitialPage() {
   const [playerName, updatePlayerName] = useState("");
   const router = useRouter();
-
   const handlePlayerNameChange = (event) => {
     updatePlayerName(event.target.value);
   };
-
   const handleNavigateTo = (path) => {
     router.push(path);
   };
-
   return (
     <>
       <Head>
@@ -24,6 +21,7 @@ export default function InitialPage() {
       <div className={styles.body}>
         <Header />
         <main className={styles.main}>
+          <ThemeToggle />
           <div className={styles.buttonsContainer}>
             <button onClick={() => handleNavigateTo("/customizer")}>
               Customizar personagem
@@ -33,7 +31,6 @@ export default function InitialPage() {
             </button>
           </div>
         </main>
-
         <footer className={styles.footer}>
           <span className={styles.version}>v0.5.8-alpha</span>
         </footer>

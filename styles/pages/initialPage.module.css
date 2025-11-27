@@ -4,8 +4,11 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--black) 0%, var(--lightBlack) 100%);
-  color: var(--white);
+  background: linear-gradient(180deg,
+      var(--bg-gradient-start) 0%,
+      var(--bg-gradient-end) 100%);
+
+  color: var(--text-primary);
   font-family: "Poppins", sans-serif;
   text-align: center;
   padding: 1.5rem;
@@ -31,35 +34,40 @@
 }
 
 .buttonsContainer button {
-  background: linear-gradient(90deg, var(--blue), var(--aqua));
+  background: linear-gradient(90deg,
+      var(--color-primary),
+      var(--color-secondary));
+
   border: none;
   border-radius: 12px;
-  color: var(--white);
+
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.9rem 1.2rem;
   width: 100%;
   cursor: pointer;
-  transition: transform 0.5s ease;
+
+  transition: transform 0.5s ease, text-shadow 0.3s ease;
 }
 
 .buttonsContainer button:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 1px var(--white);
+  text-shadow: 0 0 2px var(--text-light);
 }
 
 .buttonsContainer button:active {
   transform: scale(0.97);
-  text-shadow: 0 0 10px var(--white);
+  text-shadow: 0 0 10px var(--text-primary);
 }
 
 .footer {
-  color: var(--gray);
+  color: var(--text-secondary);
   font-size: 0.8rem;
 }
 
 .version {
-  background-color: var(--darkGray);
+  background-color: var(--bg-card);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
 }
