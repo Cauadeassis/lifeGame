@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "../styles/pages/customizer.module.css";
-import Header from "../components/header";
+import styles from "./customizer.module.css";
+import Header from "../../components/header/header.jsx";
 import Head from "next/head";
-import SkinSelector from "../components/skinSelector";
-import IncomeSelector from "../components/incomeSelector";
-import GameDifficulty from "../components/gameDifficulty";
+import SkinSelector from "../../components/skinSelector/skinSelector.jsx";
+import IncomeSelector from "../../components/incomeSelector/incomeSelector.jsx";
+import GameDifficulty from "../../components/gameDifficulty/gameDifficulty.jsx";
 import { useRouter } from "next/router";
 export default function Customizer() {
   const router = useRouter();
@@ -21,7 +21,7 @@ export default function Customizer() {
   const [showError, setShowError] = useState(false);
   function onStartGame(character) {
     localStorage.setItem("character", JSON.stringify(character));
-    router.push("/game");
+    router.push("../game/game");
   }
   function handleStartGame() {
     if (!playerName || !country || !gender || !income || !skinTone) {

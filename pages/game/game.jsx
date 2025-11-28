@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/pages/game.module.css";
-import Header from "../components/header";
-import { generateRandomStatus } from "../models/randomizer";
-import namesByCountry from "../data/namesByCountry";
+import styles from "./game.module.css";
+import Header from "../../components/header/header.jsx";
+import { generateRandomStatus } from "../../models/randomizer";
+import namesByCountry from "../../data/namesByCountry";
 const STORAGE_KEY = "character";
 export default function Game() {
   const [character, setCharacter] = useState(null);

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Customizer from "../pages/customizer";
+import Customizer from "./customizer.jsx";
 import "@testing-library/jest-dom";
 const pushMock = jest.fn();
 jest.mock("next/router", () => ({

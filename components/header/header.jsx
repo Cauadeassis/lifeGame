@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/components/header.module.css";
+import styles from "./header.module.css";
 
 export default function Header() {
   const router = useRouter();

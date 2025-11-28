@@ -1,11 +1,11 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { generateRandomStatus } from "../models/randomizer.js";
-import { generateRandomCharacter } from "../models/randomizer.js";
-import { incomes } from "../data/incomes.js";
-import { skinTones } from "../data/skinTones.js";
-import calculateDifficulty from "../models/difficulty.js";
-import Randomizer from "../pages/randomizer.jsx";
+import { generateRandomStatus } from "../../models/randomizer.js";
+import { generateRandomCharacter } from "../../models/randomizer.js";
+import { incomes } from "../../data/incomes.js";
+import { skinTones } from "../../data/skinTones.js";
+import calculateDifficulty from "../../models/difficulty.js";
+import Randomizer from "./randomizer.jsx";
 const pushMock = jest.fn();
 jest.mock("next/router", () => ({
   useRouter: () => ({

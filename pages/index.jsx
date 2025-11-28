@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/pages/initialPage.module.css";
-import Header from "../components/header";
+import Header from "../components/header/header.jsx";
 import Head from "next/head";
-import ThemeToggle from "../components/themeToggle";
+import ThemeToggle from "../components/themeToggle/themeToggle.jsx";
 export default function InitialPage() {
   const [playerName, updatePlayerName] = useState("");
   const router = useRouter();
@@ -23,10 +23,10 @@ export default function InitialPage() {
         <main className={styles.main}>
           <ThemeToggle />
           <div className={styles.buttonsContainer}>
-            <button onClick={() => handleNavigateTo("/customizer")}>
+            <button onClick={() => handleNavigateTo("/customizer/customizer")}>
               Customizar personagem
             </button>
-            <button onClick={() => handleNavigateTo("/randomizer")}>
+            <button onClick={() => handleNavigateTo("/randomizer/randomizer")}>
               Criar personagem aleatório
             </button>
           </div>

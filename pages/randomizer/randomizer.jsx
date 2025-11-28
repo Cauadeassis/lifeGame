@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/pages/randomizer.module.css";
-import Header from "../components/header";
+import styles from "./randomizer.module.css";
+import Header from "../../components/header/header.jsx";
 import Head from "next/head";
-import { generateRandomCharacter } from "../models/randomizer.js";
-import GameDifficulty from "../components/gameDifficulty";
-import calculateDifficulty from "../models/difficulty.js";
+import { generateRandomCharacter } from "../../models/randomizer.js";
+import GameDifficulty from "../../components/gameDifficulty/gameDifficulty.jsx";
+import calculateDifficulty from "../../models/difficulty.js";
 export default function Randomizer() {
   const router = useRouter();
   const [character, setCharacter] = useState(null);
@@ -24,7 +24,7 @@ export default function Randomizer() {
   }, []);
   const handleStartGame = () => {
     localStorage.setItem("character", JSON.stringify(character));
-    router.push("/game");
+    router.push("../game/game");
   };
   return (
     <>

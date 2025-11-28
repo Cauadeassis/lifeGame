@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import styles from "../styles/components/gameDifficulty.module.css";
-import calculateDifficulty from "../models/difficulty";
+import styles from "./gameDifficulty.module.css";
+import calculateDifficulty from "../../models/difficulty.js";
 export default function GameDifficulty({ income, skinTone, difficulty, setDifficulty }) {
   useEffect(() => {
     if (!income) income = "middle"

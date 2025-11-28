@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/components/skinSelector.module.css";
-import { skinTones } from "../data/skinTones";
+import styles from "./skinSelector.module.css";
+import { skinTones } from "../../data/skinTones";
 export default function SkinSelector({ gender, skinTone, setSkinTone }) {
   const tones = skinTones[gender] || [];
   const currentIndex = tones.findIndex((tone) => tone.id === skinTone.id);
