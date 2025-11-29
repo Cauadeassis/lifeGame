@@ -48,7 +48,7 @@ describe("Generating random character", () => {
   test("Income should match allowed gender income list", () => {
     const character = generateRandomCharacter();
     const isIncomeValid = incomes[character.gender.id].some(
-      (item) => item.id === character.income.id
+      (item) => item.id === character.income.id,
     );
     expect(isIncomeValid).toBe(true);
   });
@@ -56,7 +56,7 @@ describe("Generating random character", () => {
   test("Skin tone should match allowed gender skin tone list", () => {
     const character = generateRandomCharacter();
     const isSkinToneValid = skinTones[character.gender.id].some(
-      (item) => item.id === character.skinTone.id
+      (item) => item.id === character.skinTone.id,
     );
     expect(isSkinToneValid).toBe(true);
   });
@@ -72,10 +72,7 @@ describe("Generating random character", () => {
     incomesList.forEach((incomeId) => {
       tonesList.forEach((skinId) => {
         const expected = difficultyTable[incomeId][skinId];
-        const result = calculateDifficulty(
-          { id: incomeId },
-          { id: skinId }
-        );
+        const result = calculateDifficulty({ id: incomeId }, { id: skinId });
         expect(result).toBe(expected);
       });
     });
@@ -94,4 +91,3 @@ describe("Buttons test battery", () => {
     expect(JSON.parse(localStorage.getItem("character"))).toBeTruthy();
   });
 });
-

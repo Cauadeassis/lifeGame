@@ -7,7 +7,7 @@ export function resolveAttack(attackType) {
   return {
     damage,
     message: attack.messages[damage],
-    attackName: attack.name
+    attackName: attack.name,
   };
 }
 export const attackMessages = {
@@ -24,8 +24,8 @@ export const attackMessages = {
       7: "O chute doeu visivelmente! Ele cambaleou",
       8: "Um chute poderoso! Ele caiu de joelhos",
       9: "Quase desmaiou com o impacto!",
-      10: "CRÍICO! Ele foi castrado com o chute"
-    }
+      10: "CRÍICO! Ele foi castrado com o chute",
+    },
   },
 
   chinPunch: {
@@ -41,8 +41,8 @@ export const attackMessages = {
       7: "O soco foi forte! Ele ficou tonto.",
       8: "Um soco excelente! Ele caiu no chão",
       9: "O golpe abriu o queixo dele!",
-      10: "CRÍTICO! Seu soco o mandou pro hospital"
-    }
+      10: "CRÍTICO! Seu soco o mandou pro hospital",
+    },
   },
 
   hairPull: {
@@ -58,8 +58,8 @@ export const attackMessages = {
       7: "Você puxou com força! Ela reclamou alto.",
       8: "Um puxão fortíssimo! Ela quase caiu pra frente.",
       9: "O puxão arrancou alguns fios, ela está desesperada!",
-      10: "CRÍTICO! Você deixou ela careca!"
-    }
+      10: "CRÍTICO! Você deixou ela careca!",
+    },
   },
 
   push: {
@@ -75,7 +75,7 @@ export const attackMessages = {
       7: "Um empurrão poderoso! Ela teve que se segurar.",
       8: "Você empurrou com tudo! Ela caiu sentada.",
       9: "Empurrão brutal! Ela deslizou pelo chão.",
-      10: "CRÍTICO! Você a lançou longe como se fosse uma boneca."
-    }
-  }
+      10: "CRÍTICO! Você a lançou longe como se fosse uma boneca.",
+    },
+  },
 };

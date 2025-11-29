@@ -36,8 +36,9 @@ export default function SkinSelector({ gender, skinTone, setSkinTone }) {
         {tones.map((tone, index) => (
           <span
             key={tone.id}
-            className={`${styles.label} ${index === currentIndex ? styles.activeLabel : ""
-              }`}
+            className={`${styles.label} ${
+              index === currentIndex ? styles.activeLabel : ""
+            }`}
           >
             {tone.label}
           </span>

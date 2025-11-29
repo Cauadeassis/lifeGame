@@ -19,9 +19,16 @@ export function generateRandomStatus() {
   }
   const ultimoValor = 240 - sumOffAll;
   allStatus[3] = ultimoValor;
-  for (let currentPosition = allStatus.length - 1; currentPosition > 0; currentPosition--) {
+  for (
+    let currentPosition = allStatus.length - 1;
+    currentPosition > 0;
+    currentPosition--
+  ) {
     const randomPosition = Math.floor(Math.random() * (currentPosition + 1));
-    [allStatus[currentPosition], allStatus[randomPosition]] = [allStatus[randomPosition], allStatus[currentPosition]];
+    [allStatus[currentPosition], allStatus[randomPosition]] = [
+      allStatus[randomPosition],
+      allStatus[currentPosition],
+    ];
   }
   return allStatus;
 }

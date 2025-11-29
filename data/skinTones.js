@@ -8,5 +8,5 @@ export const skinTones = {
     { id: "white", label: "Branca", color: "#F1D6B8" },
     { id: "middleTone", label: "Morena", color: "#C68642" },
     { id: "black", label: "Negra", color: "#5C4033" },
-  ]
+  ],
 };

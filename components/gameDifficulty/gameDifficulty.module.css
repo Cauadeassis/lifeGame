@@ -28,9 +28,8 @@
   }
 }
 
-
 .gamemodeText {
   font-weight: 500;
   color: var(--allWhite);
-  text-shadow: 0 0 2px color-mix(in srgb, var(--allWhite) 60%, transparent)
+  text-shadow: 0 0 2px color-mix(in srgb, var(--allWhite) 60%, transparent);
 }

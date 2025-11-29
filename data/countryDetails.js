@@ -1,23 +1,23 @@
 const countryDetails = {
-  "Brasil": {
+  Brasil: {
     cities: ["Rio de Janeiro", "São Paulo", "Brasília"],
     landmarks: ["Cristo Redentor"],
     demonym: "brasileiro",
   },
-  "França": {
+  França: {
     cities: ["Paris", "Lyon"],
     landmarks: ["Torre Eiffel", "Arco do Triunfo"],
     demonym: "francês",
   },
-  "Alemanha": {
+  Alemanha: {
     cities: ["Berlim"],
     landmarks: [""],
     demonym: "alemão",
   },
-  "Japão": {
+  Japão: {
     cities: ["Tóquio"],
     landmarks: ["Monte Fuji"],
     demonym: "japonês",
-  }
+  },
 };
-export default countryDetails
+export default countryDetails;

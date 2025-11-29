@@ -1,9 +1,9 @@
 const namesByCountry = {
-  "Brasil": {
+  Brasil: {
     preposition: "do",
     demonym: {
       male: "brasileiro",
-      female: "brasileira"
+      female: "brasileira",
     },
     male: [
       "Zeca",
@@ -57,7 +57,7 @@ const namesByCountry = {
     preposition: "dos",
     demonym: {
       male: "estadunidense",
-      female: "estadunidense"
+      female: "estadunidense",
     },
     male: [
       "Alex",
@@ -94,21 +94,21 @@ const namesByCountry = {
       "Davis",
     ],
   },
-  "Japão": {
+  Japão: {
     preposition: "do",
     demonym: {
       male: "japonês",
-      female: "japonesa"
+      female: "japonesa",
     },
     male: ["Naruto", "Sasuke", "Sanjiro", "Itachi", "Tekomonamata"],
     female: ["Hinata", "Hino", "Sakura", "Momoka", "Yui", "Kaguya"],
     last: ["Uzumaki", "Uchiha", "Ryuga", "Sarutobi", "Komecu", "Senju"],
   },
-  "Alemanha": {
+  Alemanha: {
     preposition: "da",
     demonym: {
       male: "alemão",
-      female: "alemã"
+      female: "alemã",
     },
     male: ["Adolf", "Karl", "Fritz", "Hans", "Max", "Maximilian", "Theo"],
     female: ["Marie", "Greta", "Lena", "Emma", "Helena", "Sofia", "Evelyn"],
@@ -123,11 +123,11 @@ const namesByCountry = {
       "Schmidt",
     ],
   },
-  "França": {
+  França: {
     preposition: "da",
     demonym: {
       male: "francês",
-      female: "francesa"
+      female: "francesa",
     },
     male: ["Pierre", "Júlio", "Jean", "Ludwig", "Ludwig", "Max", "Theo"],
     female: ["Marie", "Camille", "Emma", "Helena", "Sofia", "Evelyn"],

@@ -13,8 +13,8 @@ export const elementarSchoolCards = [
       secondOption: {
         text: "Assistir de longe.",
         /*effect: { happiness: +1 }*/
-      }
-    }
+      },
+    },
   },
   {
     type: "multipleOptions",
@@ -35,10 +35,10 @@ export const elementarSchoolCards = [
       {
         text: "Não fazer nada",
         /*effect: { happiness: +1 }*/
-      }
-    ]
+      },
+    ],
   },
-]
+];
 export const highSchoolCards = [
   {
     type: "twoOptions",
@@ -51,8 +51,8 @@ export const highSchoolCards = [
       secondOption: {
         text: "Continuar usando escondido",
         /*effect: { happiness: +1 }*/
-      }
-    }
+      },
+    },
   },
   {
     type: "multipleOptions",
@@ -77,10 +77,10 @@ export const highSchoolCards = [
       {
         text: "Não fazer nada",
         /*effect: { happiness: +1 }*/
-      }
-    ]
+      },
+    ],
   },
-]
+];
 function createBullyingCard({ id, maleText, femaleText }) {
   return {
     id,
@@ -90,47 +90,47 @@ function createBullyingCard({ id, maleText, femaleText }) {
     female: { text: femaleText },
     options: {
       firstOption: {
-        text: "Não fazer nada"
+        text: "Não fazer nada",
       },
       secondOption: {
         mode: "select",
         text: {
           male: "Bater nele",
-          female: "Bater nela"
+          female: "Bater nela",
         },
         choices: {
           male: [
             { label: "Chute na virilha", value: "groinKick" },
-            { label: "Soco no queixo", value: "chinPunch" }
+            { label: "Soco no queixo", value: "chinPunch" },
           ],
           female: [
             { label: "Puxar o cabelo", value: "hairPull" },
-            { label: "Empurrar para longe", value: "push" }
-          ]
-        }
+            { label: "Empurrar para longe", value: "push" },
+          ],
+        },
         /*onSelectAttack(attackType) {
           return resolveAttack(attackType);
         }*/
-      }
-    }
+      },
+    },
   };
 }
 export const bullyingCards = [
   createBullyingCard({
     id: "happinessBullying",
     maleText: "Um garoto disse que você é triste e sem graça.",
-    femaleText: "Uma garota disse que você é triste e sem graça."
+    femaleText: "Uma garota disse que você é triste e sem graça.",
   }),
 
   createBullyingCard({
     id: "appearanceBullying",
     maleText: "Um garoto zoou sua aparência na frente da turma.",
-    femaleText: "Uma garota zoou sua aparência na frente da turma."
+    femaleText: "Uma garota zoou sua aparência na frente da turma.",
   }),
 
   createBullyingCard({
     id: "intelligenceBullying",
     maleText: "Um garoto disse que você é burro.",
-    femaleText: "Uma garota disse que você é burro."
-  })
+    femaleText: "Uma garota disse que você é burro.",
+  }),
 ];

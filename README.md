@@ -6,18 +6,20 @@ How can you run the project:
 
 Cloning the repository:
 
-  1. git clone https://github.com/<your-username>/lifeGame.git
+1. git clone https://github.com/<your-username>/lifeGame.git
 
-  2. cd lifeGame
+2. cd lifeGame
 
 Installing dependencies
 
 1. npm install
 
 Start the development server
+
 1. npm run dev
 
 Open the app in your browser:
+
 1. http://localhost:3000
 
 Running Tests

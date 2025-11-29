@@ -118,8 +118,9 @@ export default function Customizer() {
           />
           {errorMessage && (
             <p
-              className={`${styles.errorMessage} ${!showError ? styles.fadeOut : ""
-                }`}
+              className={`${styles.errorMessage} ${
+                !showError ? styles.fadeOut : ""
+              }`}
             >
               {errorMessage}
             </p>

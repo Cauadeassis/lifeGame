@@ -15,11 +15,12 @@ export default function Game() {
         if (savedCharacter) {
           setCharacter(JSON.parse(savedCharacter));
         }
-        const [health, intellect, beauty, mentalHealth] = generateRandomStatus();
+        const [health, intellect, beauty, mentalHealth] =
+          generateRandomStatus();
         setStats({
-          "Saúde": health,
-          "Beleza": beauty,
-          "Intelecto": intellect,
+          Saúde: health,
+          Beleza: beauty,
+          Intelecto: intellect,
           "Saúde Mental": mentalHealth,
         });
       } catch (error) {
@@ -42,7 +43,9 @@ export default function Game() {
     );
   }
   const getDemonym = () => {
-    return namesByCountry[character.country]?.demonym[character.gender.id] || "";
+    return (
+      namesByCountry[character.country]?.demonym[character.gender.id] || ""
+    );
   };
   const lower = (text) => text?.toLowerCase() || "";
   return (
@@ -53,7 +56,8 @@ export default function Game() {
           {character.firstName} {character.lastName}
         </h1>
         <p>
-          Olá! Sou {lower(character.skinTone.label)}, {getDemonym()} e venho de uma família {lower(character.income.label)}.
+          Olá! Sou {lower(character.skinTone.label)}, {getDemonym()} e venho de
+          uma família {lower(character.income.label)}.
         </p>
       </div>
       <div className={styles.actions}>
@@ -62,7 +66,8 @@ export default function Game() {
       <section className={styles.statsContainer}>
         {Object.entries(stats).map(([statName, statValue]) => (
           <div className={styles.singleStat} key={statName}>
-            {statName}: <span className={styles.singleStatSpan}>{statValue}</span>
+            {statName}:{" "}
+            <span className={styles.singleStatSpan}>{statValue}</span>
           </div>
         ))}
       </section>
