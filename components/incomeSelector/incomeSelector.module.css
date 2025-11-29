@@ -33,10 +33,11 @@
     color 0.3s ease;
   text-align: center;
   user-select: none;
-}
 
-.incomeButton:hover {
-  border-color: var(--aqua);
+  &:hover {
+    border-color: var(--aqua);
+  }
+
 }
 
 .selected {

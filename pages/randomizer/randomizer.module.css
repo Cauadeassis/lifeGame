@@ -8,6 +8,10 @@
   align-items: center;
   padding: 1.5rem;
   text-align: center;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 .characterInfo {
@@ -20,12 +24,16 @@
   backdrop-filter: blur(6px);
   margin-bottom: 2rem;
   animation: fadeIn 0.5s ease;
-}
 
-.characterInfo p {
-  margin: 0.3rem 0;
-  font-size: 0.95rem;
-  color: var(--white);
+  & p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 .h1 {
@@ -33,31 +41,41 @@
   margin-bottom: 1rem;
   color: var(--white);
   text-shadow: 0 1px 4px color-mix(in srgb, var(--fullBlack) 40%, transparent);
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 }
 
-.buttonsContainer button {
-  width: 100%;
-  max-width: 280px;
-  margin: 0.5rem 0;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(90deg, var(--blue), var(--aqua));
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.5s ease;
-}
+.buttonsContainer {
+  & button {
+    width: 100%;
+    max-width: 280px;
+    margin: 0.5rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--blue), var(--aqua));
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.5s ease;
 
-.buttonsContainer button:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 1px var(--white);
-}
+    &:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 1px var(--white);
+    }
 
-.buttonsContainer button:active {
-  transform: scale(0.97);
-  text-shadow: 0 0 10px var(--white);
+    &:active {
+      transform: scale(0.97);
+      text-shadow: 0 0 10px var(--white);
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
 }
 
 @keyframes fadeIn {
@@ -69,23 +87,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  .body {
-    padding: 1rem;
-  }
-
-  .characterInfo {
-    padding: 1rem;
-  }
-
-  .h1 {
-    font-size: 1.1rem;
-  }
-
-  .buttonsContainer button {
-    font-size: 0.9rem;
   }
 }

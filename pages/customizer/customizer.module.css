@@ -25,6 +25,21 @@
 .section {
   width: 100%;
   margin: 10px;
+
+  &:first-of-type .input {
+    cursor: default;
+    width: 94%;
+    align-self: center;
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--darkGray) 40%, transparent);
+      box-shadow: 0 0 0 2px var(--aqua);
+    }
+
+    &:focus {
+      cursor: text;
+    }
+  }
 }
 
 .label {
@@ -47,26 +62,15 @@
   outline: none;
   transition: all 0.2s ease;
   cursor: pointer;
-}
 
-.input::placeholder {
-  color: var(--gray);
-}
+  &::placeholder {
+    color: var(--gray);
+  }
 
-.input:focus,
-.section:first-of-type .input:hover {
-  background-color: color-mix(in srgb, var(--darkGray) 40%, transparent);
-  box-shadow: 0 0 0 2px var(--aqua);
-}
-
-.section:first-of-type .input {
-  cursor: default;
-  width: 94%;
-  align-self: center;
-}
-
-.section:first-of-type .input:focus {
-  cursor: text;
+  &:focus {
+    background-color: color-mix(in srgb, var(--darkGray) 40%, transparent);
+    box-shadow: 0 0 0 2px var(--aqua);
+  }
 }
 
 .errorMessage {
@@ -97,11 +101,11 @@
     transform 0.3s ease,
     text-shadow 0.3s ease;
   box-sizing: border-box;
-}
 
-.startGameButton:hover {
-  text-shadow: 0 0 2px var(--white);
-  transform: scale(1.05);
+  &:hover {
+    text-shadow: 0 0 2px var(--white);
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 480px) {

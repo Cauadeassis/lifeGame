@@ -17,16 +17,17 @@
   background: linear-gradient(to right, var(--white), var(--black));
   outline: none;
   cursor: not-allowed;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--aqua);
+    border-radius: 50%;
+    border: 2px solid var(--allWhite);
+  }
 }
 
-.rangeInput::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background-color: var(--aqua);
-  border-radius: 50%;
-  border: 2px solid var(--allWhite);
-}
 
 .gamemodeText {
   font-weight: 500;

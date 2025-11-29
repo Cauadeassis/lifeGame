@@ -15,21 +15,21 @@
   box-shadow: 0 4px 12px var(--shadow-color);
   transition: all 0.3s ease;
   z-index: 1000;
-}
 
-.themeToggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 6px 16px var(--shadow-hover);
-}
+  &:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 16px var(--shadow-hover);
+  }
 
-.themeToggle:active {
-  transform: scale(0.95);
-}
+  &:active {
+    transform: scale(0.95);
+  }
 
-.themeToggle svg {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
+  & svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
 }
 
 @media (max-width: 480px) {
