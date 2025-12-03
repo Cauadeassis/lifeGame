@@ -48,9 +48,9 @@ export default function Customizer() {
     <>
       <Head>
         <title>Customização</title>
-        <ThemeToggle />
       </Head>
       <div className={styles.body}>
+        <ThemeToggle />
         <div className={styles.siteContent}>
           <Header />
           <section className={styles.section}>

@@ -6,20 +6,20 @@
   align-items: center;
   gap: 0.8rem;
   font-family: "Poppins", sans-serif;
-  color: var(--white);
+  color: var(--allWhite);
   text-align: center;
 }
 
 .skinSelector label {
   font-size: 1.2rem;
-  color: var(--white);
+  color: var(--allWhite);
 }
 
 .colorPreview {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--aqua);
+  border: 2px solid var(--color-secondary);
   box-shadow: 0 0 10px color-mix(in srgb, var(--fullBlack) 25%, transparent);
   transition: background-color 0.3s ease;
 }
@@ -40,7 +40,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--white);
+    background: var(--allWhite);
     border: 2px solid var(--darkGray);
     box-shadow: 0 2px 4px color-mix(in srgb, var(--fullBlack) 30%, transparent);
     transition: transform 0.15s ease;
@@ -54,7 +54,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--white);
+    background: var(--allWhite);
     border: 2px solid var(--darkGray);
   }
 }
@@ -67,14 +67,14 @@
 
 .label {
   font-size: 0.8rem;
-  color: var(--white);
+  color: var(--allWhite);
   transition:
     color 0.2s ease,
     transform 0.2s ease;
 }
 
 .activeLabel {
-  color: var(--aqua);
+  color: var(--color-secondary);
   font-weight: 600;
   transform: scale(1.1);
 }

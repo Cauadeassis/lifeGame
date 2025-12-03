@@ -1,48 +1,48 @@
 .incomeContainer {
-  text-align: center;
-  width: 100%;
-  margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
 }
 
 .incomeContainer label {
-  font-size: 1.2rem;
-  color: var(--white);
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
 
 .incomeOptions {
-  width: 100%;
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
 .incomeButton {
-  flex: 1;
-  min-width: 0;
-  padding: 12px 0;
-  background-color: var(--lightBlack);
-  border: 1.5px solid color-mix(in srgb, var(--gray) 40%, transparent);
-  border-radius: 8px;
-  color: var(--white);
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
-  text-align: center;
-  user-select: none;
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    background: var(--primary-gradient);
+    border: 1.5px solid color-mix(in srgb, var(--gray) 40%, transparent);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    user-select: none;
 
-  &:hover {
-    border-color: var(--aqua);
-  }
+    &:hover {
+        border-color: var(--color-secondary);
+    }
 }
 
 .selected {
-  background-color: var(--aqua);
-  border-color: var(--aqua);
-  color: var(--allWhite);
-  font-weight: 800;
-  box-shadow: 0 0 2px var(--aqua);
+    transition: 0.3s;
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            var(--color-secondary));
+    border-color: var(--color-secondary);
+    color: var(--text-color);
+    font-weight: 700;
+    box-shadow: 0 0 2px var(--color-secondary);
 }
