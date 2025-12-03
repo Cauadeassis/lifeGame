@@ -17,8 +17,7 @@
 
 [data-theme="light"] {
   --primary-color: var(--lightGray);
-  --color-secondary: var(--lightGray);
-  --color-tertiary: var(--aqua);
+  --secondary-color: var(--gray);
 
   --primary-gradient: linear-gradient(135deg,
       var(--lightGray) 0%,
@@ -32,9 +31,8 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: var(--darkGray);
-  --color-secondary: var(--blue);
-  --color-tertiary: var(--aqua);
+  --primary-color: var(--lightBlack) 40%;
+  --secondary-color: var(--fullBlack);
 
   --primary-gradient: linear-gradient(135deg,
       var(--black) 0%,

@@ -20,7 +20,7 @@
   background: var(--primary-color);
   border-radius: 16px;
   padding: 1.5rem 1.5rem 0;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--darkGray) 40%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--secondary-color) 40%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -36,6 +36,7 @@
     &:hover {
       background-color: color-mix(in srgb, var(--darkGray) 40%, transparent);
       box-shadow: 0 0 0 2px var(--color-secondary);
+      cursor: pointer;
     }
 
     &:focus {
@@ -59,7 +60,7 @@
   border: none;
   border-radius: 10px;
   font-size: 1rem;
-  color: var(--gray);
+  color: var(--text-color);
   background: var(--primary-gradient);
   outline: none;
   transition: all 0.2s ease;
@@ -67,10 +68,6 @@
 
   &::placeholder {
     color: var(--text-color);
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 2px var(--color-secondary);
   }
 }
 
@@ -93,9 +90,7 @@
   padding: 1rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg,
-      var(--primary-color),
-      var(--color-secondary));
+  background: var(--secondary-gradient);
   color: var(--text-color);
   font-size: 1.1rem;
   font-weight: 600;

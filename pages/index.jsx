@@ -1,15 +1,10 @@
-import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/pages/initialPage.module.css";
 import Header from "../components/header/header.jsx";
 import Head from "next/head";
 import ThemeToggle from "../components/themeToggle/themeToggle.jsx";
 export default function InitialPage() {
-  const [playerName, updatePlayerName] = useState("");
   const router = useRouter();
-  const handlePlayerNameChange = (event) => {
-    updatePlayerName(event.target.value);
-  };
   const handleNavigateTo = (path) => {
     router.push(path);
   };

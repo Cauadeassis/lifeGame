@@ -14,7 +14,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 400px;
@@ -41,14 +40,12 @@
     font-weight: 600;
     font-size: 1rem;
     padding: 0.9rem 1.2rem;
-    width: 100%;
     cursor: pointer;
-    transition: 0.5s;
+    transition: transform 0.5s, text-shadow 0.5s;
 
     &:hover {
       transform: scale(1.05);
       text-shadow: 0 0 2px var(--text-color);
-      transition: 0.5s;
     }
 
     &:active {
@@ -63,7 +60,6 @@
 }
 
 .footer {
-  color: var(--text-color);
   font-size: 0.8rem;
 }
 
@@ -71,10 +67,4 @@
   background-color: var(--primary-color);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
-}
-
-.playerNameInput {
-  @media (min-width: 600px) {
-    max-width: 320px;
-  }
 }

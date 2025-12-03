@@ -6,21 +6,21 @@
   align-items: center;
   gap: 0.8rem;
   font-family: "Poppins", sans-serif;
-  color: var(--allWhite);
+  color: var(--text-color);
   text-align: center;
 }
 
 .skinSelector label {
   font-size: 1.2rem;
-  color: var(--allWhite);
+  color: var(--text-color);
 }
 
 .colorPreview {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--color-secondary);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--fullBlack) 25%, transparent);
+  border: 2px solid var(--aqua);
+  box-shadow: 0 0 10px var(--aqua);
   transition: background-color 0.3s ease;
 }
 
@@ -40,22 +40,32 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--allWhite);
-    border: 2px solid var(--darkGray);
-    box-shadow: 0 2px 4px color-mix(in srgb, var(--fullBlack) 30%, transparent);
-    transition: transform 0.15s ease;
-  }
-
-  &::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
+    background: var(--aqua);
+    border: 2px solid var(--allWhite);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--allWhite) 30%, transparent);
+    transition: 0.2s;
   }
 
   &::-moz-range-thumb {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--allWhite);
-    border: 2px solid var(--darkGray);
+    background: var(--aqua);
+    border: 2px solid var(--allWhite);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--allWhite) 30%, transparent);
+    transition: 0.2s;
+  }
+
+  &::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px var(--allWhite);
+    transition: 0.1s;
+  }
+
+  &::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px var(--allWhite);
+    transition: 0.1s;
   }
 }
 
@@ -67,14 +77,13 @@
 
 .label {
   font-size: 0.8rem;
-  color: var(--allWhite);
+  color: var(--text-color);
   transition:
     color 0.2s ease,
     transform 0.2s ease;
 }
 
 .activeLabel {
-  color: var(--color-secondary);
   font-weight: 600;
   transform: scale(1.1);
 }
