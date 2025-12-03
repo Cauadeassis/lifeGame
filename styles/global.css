@@ -1,39 +1,34 @@
 :root {
   --allWhite: #ffffff;
   --white: #f1f5f9;
-  --darkGray: #4755694d;
   --gray: #94a3b8;
   --fullBlack: #000000;
   --black: #0f172a;
   --lightBlack: #1e293b;
-  --blue: #3b82f6;
+  --blue: #667eea;
   --aqua: #06b6d4;
   --red: #ff0004;
-  --purple: #8b5cf6;
-  --violet: #6366f1;
+  --purple: #764ba2;
   --pink: #ec4899;
   --lightGray: #e2e8f0;
   --mediumGray: #64748b;
   --darkGray: #334155;
   --lightText: #475569;
-  --darkCard: #1e293b;
-  --darkerGray: #334155;
 }
 
 [data-theme="light"] {
-  --color-primary: var(--purple);
-  --color-secondary: var(--violet);
+  --color-primary: var(--mediumGray);
+  --color-secondary: var(--lightGray);
   --color-accent: var(--pink);
 
-  --bg-main: var(--white);
-  --bg-card: var(--lightGray);
+  --bg-main: var(--blue);
+  --bg-card: var(--purple);
   --bg-hover: var(--gray);
-  --bg-gradient-start: #e0e7ff;
-  --bg-gradient-end: #fce7f3;
+  --bg-gradient-start: var(--lightGray);
+  --bg-gradient-end: var(--white);
 
   --text-primary: var(--darkGray);
   --text-secondary: var(--mediumGray);
-  --text-light: var(--lightText);
 
   --border-color: var(--gray);
   --shadow-color: rgba(0, 0, 0, 0.1);
@@ -41,19 +36,18 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: #8b5cf6;
-  --color-secondary: #6366f1;
+  --color-primary: var(--blue);
+  --color-secondary: var(--aqua);
   --color-accent: #ec4899;
 
   --bg-main: var(--black);
-  --bg-card: var(--darkCard);
+  --bg-card: var(--lightBlack);
   --bg-hover: #3a3a3a;
   --bg-gradient-start: var(--black);
   --bg-gradient-end: var(--lightBlack);
 
   --text-primary: var(--white);
   --text-secondary: #cccccc;
-  --text-light: #888888;
 
   --border-color: var(--darkerGray);
   --shadow-color: rgba(0, 0, 0, 0.5);

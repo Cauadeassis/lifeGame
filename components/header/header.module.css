@@ -1,5 +1,6 @@
 .header h1 {
   text-align: center;
+  color: --text-primary;
   font-size: 50px;
   margin: 25px;
   user-select: none;
@@ -7,11 +8,11 @@
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
-    text-shadow: 0 0 1px var(--allWhite);
+    text-shadow: 0 0 2px var(--text-primary);
   }
 
   &:active {
     transform: scale(0.95);
-    text-shadow: 0 0 10px var(--allWhite);
+    text-shadow: 0 0 10px var(--text-primary);
   }
 }

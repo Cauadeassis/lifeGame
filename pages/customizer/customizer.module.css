@@ -1,12 +1,16 @@
 .body {
-  background: linear-gradient(180deg, var(--black) 0%, var(--lightBlack) 100%);
-  min-height: 100vh;
-  color: var(--white);
-  font-family: "Poppins", sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1.2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg,
+      var(--bg-gradient-start) 0%,
+      var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 1.5rem;
 }
 
 .siteContent {
@@ -92,8 +96,10 @@
   padding: 1rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(90deg, var(--aqua), var(--aqua));
-  color: var(--white);
+  background: linear-gradient(135deg,
+      var(--color-primary),
+      var(--color-secondary));
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -103,7 +109,7 @@
   box-sizing: border-box;
 
   &:hover {
-    text-shadow: 0 0 2px var(--white);
+    text-shadow: 0 0 2px var(--text-primary);
     transform: scale(1.05);
   }
 }

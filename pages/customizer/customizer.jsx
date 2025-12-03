@@ -6,6 +6,7 @@ import SkinSelector from "../../components/skinSelector/skinSelector.jsx";
 import IncomeSelector from "../../components/incomeSelector/incomeSelector.jsx";
 import GameDifficulty from "../../components/gameDifficulty/gameDifficulty.jsx";
 import { useRouter } from "next/router";
+import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 export default function Customizer() {
   const router = useRouter();
   const [playerName, updatePlayerName] = useState("");
@@ -47,6 +48,7 @@ export default function Customizer() {
     <>
       <Head>
         <title>Customização</title>
+        <ThemeToggle />
       </Head>
       <div className={styles.body}>
         <div className={styles.siteContent}>
@@ -118,9 +120,8 @@ export default function Customizer() {
           />
           {errorMessage && (
             <p
-              className={`${styles.errorMessage} ${
-                !showError ? styles.fadeOut : ""
-              }`}
+              className={`${styles.errorMessage} ${!showError ? styles.fadeOut : ""
+                }`}
             >
               {errorMessage}
             </p>
