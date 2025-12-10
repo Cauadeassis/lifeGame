@@ -3,6 +3,7 @@ import styles from "./game.module.css";
 import Header from "../../components/header/header.jsx";
 import { generateRandomStatus } from "../../models/randomizer";
 import namesByCountry from "../../data/namesByCountry";
+import StatBar from "../../components/statBar/statBar.jsx";
 import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 const STORAGE_KEY = "character";
 export default function Game() {
@@ -19,10 +20,10 @@ export default function Game() {
         const [health, intellect, beauty, mentalHealth] =
           generateRandomStatus();
         setStats({
-          Saúde: health,
-          Beleza: beauty,
-          Intelecto: intellect,
-          "Saúde Mental": mentalHealth,
+          health,
+          beauty,
+          intellect,
+          mentalHealth,
         });
       } catch (error) {
         console.error("Failed to load character:", error);
@@ -66,12 +67,10 @@ export default function Game() {
         <button onClick={handleStartGame}>Começar jogo</button>
       </div>
       <section className={styles.statsContainer}>
-        {Object.entries(stats).map(([statName, statValue]) => (
-          <div className={styles.singleStat} key={statName}>
-            {statName}:{" "}
-            <span className={styles.singleStatSpan}>{statValue}</span>
-          </div>
-        ))}
+        <StatBar label="Saúde" value={stats.health} icon="heart" />
+        <StatBar label="Beleza" value={stats.beauty} icon="sparkles" />
+        <StatBar label="Intelecto" value={stats.intellect} icon="brain" />
+        <StatBar label="Felicidade" value={stats.mentalHealth} icon="smile" />
       </section>
     </div>
   );
