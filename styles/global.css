@@ -6,13 +6,10 @@
   --blue: #667eea;
   --aqua: #06b6d4;
   --red: #ff0004;
-  --purple: #764ba2;
-  --pink: #ec4899;
   --lightGray: #e2e8f0;
   --gray: #94a3b8;
   --mediumGray: #64748b;
   --darkGray: #334155;
-  --lightText: #475569;
 }
 
 [data-theme="light"] {

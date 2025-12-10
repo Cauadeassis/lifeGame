@@ -3,6 +3,7 @@ import styles from "./game.module.css";
 import Header from "../../components/header/header.jsx";
 import { generateRandomStatus } from "../../models/randomizer";
 import namesByCountry from "../../data/namesByCountry";
+import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 const STORAGE_KEY = "character";
 export default function Game() {
   const [character, setCharacter] = useState(null);
@@ -51,6 +52,7 @@ export default function Game() {
   return (
     <div className={styles.body}>
       <Header />
+      <ThemeToggle />
       <div className={styles.characterDisplay}>
         <h1>
           {character.firstName} {character.lastName}
