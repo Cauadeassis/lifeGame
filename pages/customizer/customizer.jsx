@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import styles from "./customizer.module.css";
 import Header from "../../components/header/header.jsx";
-import Head from "next/head";
-import SkinSelector from "../../components/skinSelector/skinSelector.jsx";
-import IncomeSelector from "../../components/incomeSelector/incomeSelector.jsx";
+import SkinSelector from "./components/skinSelector.jsx";
+import IncomeSelector from "./components/incomeSelector.jsx";
 import GameDifficulty from "../../components/gameDifficulty/gameDifficulty.jsx";
-import { useRouter } from "next/router";
 import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 export default function Customizer() {
   const router = useRouter();

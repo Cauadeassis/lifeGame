@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./incomeSelector.module.css";
-import { incomes } from "../../data/incomes";
+import { incomes } from "../../../data/incomes";
 export default function IncomeSelector({ gender, income, setIncome }) {
   const options = incomes[gender] || [];
   return (
@@ -10,9 +10,8 @@ export default function IncomeSelector({ gender, income, setIncome }) {
         {options.map((option) => (
           <button
             key={option.id}
-            className={`${styles.incomeButton} ${
-              income.id === option.id ? styles.selected : ""
-            }`}
+            className={`${styles.incomeButton} ${income.id === option.id ? styles.selected : ""
+              }`}
             onClick={() => setIncome({ id: option.id, label: option.label })}
           >
             {option.label}
