@@ -17,7 +17,7 @@ const StatBar = ({ value, icon, label }) => {
     heart: Heart,
     smile: Smile,
     sparkles: Sparkles,
-    brain: Brain
+    brain: Brain,
   };
 
   const IconComponent = icons[icon];
@@ -37,7 +37,7 @@ const StatBar = ({ value, icon, label }) => {
           className={styles.barFill}
           style={{
             width: `${percentage}%`,
-            backgroundColor: getColor()
+            backgroundColor: getColor(),
           }}
         >
           <div className={styles.barShine} />

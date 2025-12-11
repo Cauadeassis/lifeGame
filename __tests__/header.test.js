@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Header from "./header.jsx";
+import Header from "../components/header/header.jsx";
 const pushMock = jest.fn();
 jest.mock("next/router", () => ({
   useRouter: () => ({

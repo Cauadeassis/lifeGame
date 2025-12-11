@@ -13,7 +13,9 @@ export default function SkinSelector({ gender, skinTone, setSkinTone }) {
   };
   return (
     <div className={styles.skinSelector}>
-      <label htmlFor="skinTone" className={styles.label}>Cor da Pele</label>
+      <label htmlFor="skinTone" className={styles.label}>
+        Cor da Pele
+      </label>
       <div
         className={styles.colorPreview}
         style={{
@@ -36,8 +38,9 @@ export default function SkinSelector({ gender, skinTone, setSkinTone }) {
         {tones.map((tone, index) => (
           <span
             key={tone.id}
-            className={`${styles.label} ${index === currentIndex ? styles.activeLabel : ""
-              }`}
+            className={`${styles.label} ${
+              index === currentIndex ? styles.activeLabel : ""
+            }`}
           >
             {tone.label}
           </span>

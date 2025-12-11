@@ -27,7 +27,8 @@
   background: var(--primary-color);
   border-radius: 16px;
   padding: 1.5rem 1.5rem 0;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--secondary-color) 40%, transparent);
+  box-shadow: 0 4px 16px
+    color-mix(in srgb, var(--secondary-color) 40%, transparent);
   backdrop-filter: blur(8px);
 
   & p {
@@ -50,7 +51,8 @@
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: var(--text-color);
-  text-shadow: 0 1px 4px color-mix(in srgb, var(--secondary-color) 40%, transparent);
+  text-shadow: 0 1px 4px
+    color-mix(in srgb, var(--secondary-color) 40%, transparent);
 
   @media (max-width: 480px) {
     font-size: 1.1rem;

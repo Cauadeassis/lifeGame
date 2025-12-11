@@ -47,7 +47,7 @@
   }
 }
 
-.body section+section {
+.body section + section {
   background: rgba(30, 41, 59, 0.6);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(71, 85, 105, 0.5);
@@ -63,9 +63,7 @@
   }
 }
 
-
 .characterDescription {
-
   & p {
     font-size: 1rem;
     color: var(--text-color);
@@ -98,7 +96,7 @@
     transition: all 0.2s ease;
 
     &::before {
-      content: '•';
+      content: "•";
       color: #818cf8;
       font-size: 3rem;
       line-height: 1;
@@ -116,7 +114,6 @@
       line-height: 1.5;
     }
   }
-
 
   @media (max-width: 768px) {
     padding: 1.25rem;

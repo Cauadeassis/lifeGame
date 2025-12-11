@@ -79,8 +79,12 @@ export default function Game() {
       <section className={styles.eventsContainer}>
         <h2>Acontecimentos do Ano</h2>
         <ul>
-          <li><p>Primeira Aventura</p></li>
-          <li><p>Primeiro dia de escola</p></li>
+          <li>
+            <p>Primeira Aventura</p>
+          </li>
+          <li>
+            <p>Primeiro dia de escola</p>
+          </li>
         </ul>
       </section>
       <section className={styles.actions}>
