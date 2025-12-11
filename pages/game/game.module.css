@@ -1,134 +1,164 @@
 .body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background: var(--primary-gradient);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 1400px;
+  max-width: 900px;
   margin: 0 auto;
+  font-family: sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    gap: 1rem;
+  }
 }
 
-.characterDisplay {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+.characterHeader {
+  background: var(--secondary-gradient);
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.5s ease-out;
+
+  & h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  & p {
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    & h1 {
+      font-size: 1.5rem;
+    }
+
+    & p {
+      font-size: 0.9rem;
+    }
+  }
 }
 
-.characterDisplay h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 0.5rem 0;
-  letter-spacing: -0.025em;
+.body section+section {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  animation: fadeIn 0.6s ease-out;
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 0.75rem;
+  }
 }
 
-.characterDisplay p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin: 0;
+
+.characterDescription {
+
+  & p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+  }
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eventsContainer {
+  & ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+
+    &::before {
+      content: '•';
+      color: #818cf8;
+      font-size: 3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.6);
+      transform: translateX(4px);
+    }
+
+    & p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      line-height: 1.5;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+  }
 }
 
 .actions {
   display: flex;
   justify-content: center;
-  animation: fadeIn 0.7s ease-out;
+  animation: fadeIn 0.9s ease-out;
+
+  & button {
+    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.5);
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+    }
+
+    &:active {
+      transform: translateY(0) scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
+  }
 }
 
-.actions button {
-  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
-  color: #ffffff;
-  font-size: 1.125rem;
-  font-weight: 700;
-  padding: 1rem 3rem;
-  border: none;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.4);
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.actions button:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.5);
-  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
-}
-
-.actions button:active {
-  transform: translateY(0) scale(1.02);
-}
-
-.statsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.singleStat {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-}
-
-.singleStat:hover {
-  transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.6);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-  background: rgba(30, 41, 59, 0.95);
-}
-
-.singleStat::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
-  border-radius: 1rem 1rem 0 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.singleStat:hover::before {
-  opacity: 1;
-}
-
-.singleStat {
-  position: relative;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.singleStatSpan {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  margin-top: 0.25rem;
-}
-
-/* Animations */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -148,50 +178,5 @@
 
   to {
     opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .body {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .characterDisplay {
-    padding: 1.5rem;
-  }
-
-  .characterDisplay h1 {
-    font-size: 1.5rem;
-  }
-
-  .characterDisplay p {
-    font-size: 0.9rem;
-  }
-
-  .actions button {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
-  }
-
-  .statsContainer {
-    grid-template-columns: 1fr;
-  }
-
-  .singleStatSpan {
-    font-size: 2rem;
   }
 }

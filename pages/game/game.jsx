@@ -3,7 +3,7 @@ import styles from "./game.module.css";
 import Header from "../../components/header/header.jsx";
 import { generateRandomStatus } from "../../models/randomizer";
 import namesByCountry from "../../data/namesByCountry";
-import StatBar from "../../components/statBar/statBar.jsx";
+import StatBar from "./statBar/statBar.jsx";
 import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 const STORAGE_KEY = "character";
 export default function Game() {
@@ -54,23 +54,37 @@ export default function Game() {
     <div className={styles.body}>
       <Header />
       <ThemeToggle />
-      <div className={styles.characterDisplay}>
-        <h1>
-          {character.firstName} {character.lastName}
-        </h1>
+      <section className={styles.characterHeader}>
+        <div>
+          <h1>
+            {character.firstName} {character.lastName}
+          </h1>
+          <p>1 ano</p>
+        </div>
+      </section>
+      <section className={styles.characterDescription}>
+        <h2>Sobre</h2>
         <p>
           Olá! Sou {lower(character.skinTone.label)}, {getDemonym()} e venho de
           uma família {lower(character.income.label)}.
         </p>
-      </div>
-      <div className={styles.actions}>
-        <button onClick={handleStartGame}>Começar jogo</button>
-      </div>
+      </section>
       <section className={styles.statsContainer}>
+        <h2>Atributos</h2>
         <StatBar label="Saúde" value={stats.health} icon="heart" />
         <StatBar label="Beleza" value={stats.beauty} icon="sparkles" />
         <StatBar label="Intelecto" value={stats.intellect} icon="brain" />
         <StatBar label="Felicidade" value={stats.mentalHealth} icon="smile" />
+      </section>
+      <section className={styles.eventsContainer}>
+        <h2>Acontecimentos do Ano</h2>
+        <ul>
+          <li><p>Primeira Aventura</p></li>
+          <li><p>Primeiro dia de escola</p></li>
+        </ul>
+      </section>
+      <section className={styles.actions}>
+        <button onClick={handleStartGame}>Avançar ano</button>
       </section>
     </div>
   );
