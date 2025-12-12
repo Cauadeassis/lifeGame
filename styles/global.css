@@ -17,16 +17,12 @@
   --primary-color: var(--lightGray);
   --secondary-color: var(--gray);
 
-  --primary-gradient: linear-gradient(
-    135deg,
-    var(--lightGray) 0%,
-    var(--allWhite) 100%
-  );
-  --secondary-gradient: linear-gradient(
-    135deg,
-    var(--mediumGray) 0%,
-    var(--lightGray) 100%
-  );
+  --primary-gradient: linear-gradient(135deg,
+      var(--lightGray) 0%,
+      var(--allWhite) 100%);
+  --secondary-gradient: linear-gradient(135deg,
+      var(--mediumGray) 0%,
+      var(--lightGray) 100%);
 
   --text-color: var(--black);
 }
@@ -35,21 +31,18 @@
   --primary-color: var(--lightBlack) 40%;
   --secondary-color: var(--fullBlack);
 
-  --primary-gradient: linear-gradient(
-    135deg,
-    var(--black) 0%,
-    var(--lightBlack) 100%
-  );
-  --secondary-gradient: linear-gradient(
-    135deg,
-    var(--blue) 0%,
-    var(--aqua) 100%
-  );
+  --primary-gradient: linear-gradient(135deg,
+      var(--black) 0%,
+      var(--lightBlack) 100%);
+  --secondary-gradient: linear-gradient(135deg,
+      var(--blue) 0%,
+      var(--aqua) 100%);
 
   --text-color: var(--allWhite);
 }
 
 * {
+  border: none;
   margin: 0;
   padding: 0;
   transition: 0.3s ease;

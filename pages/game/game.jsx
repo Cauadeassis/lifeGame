@@ -3,8 +3,9 @@ import styles from "./game.module.css";
 import Header from "../../components/header/header.jsx";
 import { generateRandomStatus } from "../../models/randomizer";
 import namesByCountry from "../../data/namesByCountry";
-import StatBar from "./statBar/statBar.jsx";
+import StatBar from "./components/statBar.jsx";
 import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
+import ActionsContainer from "./components/actionsContainer.jsx";
 const STORAGE_KEY = "character";
 export default function Game() {
   const [character, setCharacter] = useState(null);
@@ -87,9 +88,7 @@ export default function Game() {
           </li>
         </ul>
       </section>
-      <section className={styles.actions}>
-        <button onClick={handleStartGame}>Avançar ano</button>
-      </section>
+      <ActionsContainer />
     </div>
   );
 }
