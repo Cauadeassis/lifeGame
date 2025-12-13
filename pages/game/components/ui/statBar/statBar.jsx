@@ -1,8 +1,8 @@
 import React from "react";
-import Heart from "./icons/Heart";
-import Smile from "./icons/Smile";
-import Sparkles from "./icons/Sparkles";
-import Brain from "./icons/Brain";
+import Heart from "../../icons/Heart";
+import Smile from "../../icons/Smile";
+import Sparkles from "../../icons/Sparkles";
+import Brain from "../../icons/Brain";
 import styles from "./statBar.module.css";
 
 const StatBar = ({ value, icon, label }) => {
