@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { genders } from "../data/genders";
-import { skinTones } from "../data/skinTones";
-import { incomes } from "../data/incomes";
-import namesByCountry from "../data/namesByCountry";
+import genders from "../data/genders.json";
+import skinTones from "../data/skinTones.json";
+import incomes from "../data/incomes.json";
+import namesByCountry from "../data/namesByCountry.json";
 
 export function generateRandomStatus() {
   let allStatus = new Array(4).fill(0);

@@ -1,5 +1,5 @@
 import { getRandomItem } from "../models/randomizer";
-import { genders } from "../data/genders";
+import genders from "../data/genders.json";
 import { resolveAttack } from "../models/fights";
 export const elementarSchoolCards = [
   {
