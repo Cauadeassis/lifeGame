@@ -15,8 +15,8 @@ export default function Randomizer() {
       const response = await fetch("/api/character/generate", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       });
       if (!response.ok) {
         throw new Error("Erro ao gerar personagem");
@@ -28,7 +28,7 @@ export default function Randomizer() {
       alert("Não foi possível gerar o personagem. Tente novamente.");
     } finally {
       setLoading(false);
-      console.log("Personagem gerado com sucesso!")
+      console.log("Personagem gerado com sucesso!");
     }
   };
   useEffect(() => {
@@ -74,16 +74,10 @@ export default function Randomizer() {
           )}
           <h1 className={styles.h1}>Gerar novo personagem?</h1>
           <div className={styles.buttonsContainer}>
-            <button
-              onClick={handleRandomize}
-              disabled={loading}
-            >
+            <button onClick={handleRandomize} disabled={loading}>
               {loading ? "Gerando..." : "Sim"}
             </button>
-            <button
-              onClick={handleStartGame}
-              disabled={loading || !character}
-            >
+            <button onClick={handleStartGame} disabled={loading || !character}>
               Não, vamos jogar
             </button>
           </div>

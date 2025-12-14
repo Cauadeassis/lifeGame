@@ -7,7 +7,7 @@ export default function GameDifficulty({ difficulty }) {
       2: "Fácil",
       3: "Médio",
       4: "Difícil",
-      5: "Hardcore"
+      5: "Hardcore",
     };
     return difficultyMap[level] || "Médio";
   };
@@ -22,9 +22,7 @@ export default function GameDifficulty({ difficulty }) {
         disabled
         className={styles.rangeInput}
       />
-      <div className={styles.gamemodeText}>
-        {getDifficultyText(difficulty)}
-      </div>
+      <div className={styles.gamemodeText}>{getDifficultyText(difficulty)}</div>
     </section>
   );
 }

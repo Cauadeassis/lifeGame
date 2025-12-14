@@ -37,12 +37,17 @@ export default function Game() {
           setCurrentYearEvents(gameState.currentYearEvents || []);
         } else {
           // Primeiro jogo - gerar stats iniciais
-          const [health, intellect, beauty, mentalHealth] = generateRandomStatus();
+          const [health, intellect, beauty, mentalHealth] =
+            generateRandomStatus();
           const initialStats = { health, beauty, intellect, mentalHealth };
           setStats(initialStats);
 
           // Gerar eventos do primeiro ano
-          const firstYearEvents = generateYearEvents(1, initialStats, JSON.parse(savedCharacter));
+          const firstYearEvents = generateYearEvents(
+            1,
+            initialStats,
+            JSON.parse(savedCharacter),
+          );
           setCurrentYearEvents(firstYearEvents);
         }
       } catch (error) {
@@ -62,7 +67,7 @@ export default function Game() {
         stats: newStats,
         age: newAge,
         timeline: newTimeline,
-        currentYearEvents: newEvents
+        currentYearEvents: newEvents,
       };
       localStorage.setItem(GAME_STATE_KEY, JSON.stringify(gameState));
     } catch (error) {
@@ -80,10 +85,14 @@ export default function Game() {
       if (event) events.push(event);
     }
 
-    return events.length > 0 ? events : [{
-      description: "Foi um ano tranquilo.",
-      statsChange: {}
-    }];
+    return events.length > 0
+      ? events
+      : [
+          {
+            description: "Foi um ano tranquilo.",
+            statsChange: {},
+          },
+        ];
   };
 
   // Gerar evento baseado no contexto
@@ -93,63 +102,138 @@ export default function Game() {
     // Eventos de infância (0-12)
     if (currentAge <= 12) {
       eventPool.push(
-        { description: "Aprendeu a andar de bicicleta!", statsChange: { health: 2, mentalHealth: 5 } },
-        { description: "Fez um novo melhor amigo na escola.", statsChange: { mentalHealth: 8 } },
-        { description: "Ganhou um prêmio na feira de ciências.", statsChange: { intellect: 5, mentalHealth: 3 } },
-        { description: "Ficou doente e perdeu algumas aulas.", statsChange: { health: -5, intellect: -2 } },
-        { description: "Começou a praticar um esporte.", statsChange: { health: 5, beauty: 2 } }
+        {
+          description: "Aprendeu a andar de bicicleta!",
+          statsChange: { health: 2, mentalHealth: 5 },
+        },
+        {
+          description: "Fez um novo melhor amigo na escola.",
+          statsChange: { mentalHealth: 8 },
+        },
+        {
+          description: "Ganhou um prêmio na feira de ciências.",
+          statsChange: { intellect: 5, mentalHealth: 3 },
+        },
+        {
+          description: "Ficou doente e perdeu algumas aulas.",
+          statsChange: { health: -5, intellect: -2 },
+        },
+        {
+          description: "Começou a praticar um esporte.",
+          statsChange: { health: 5, beauty: 2 },
+        },
       );
     }
 
     // Eventos de adolescência (13-17)
     if (currentAge >= 13 && currentAge <= 17) {
       eventPool.push(
-        { description: "Passou em todas as matérias com boas notas.", statsChange: { intellect: 8, mentalHealth: 5 } },
-        { description: "Começou a se interessar por um hobby novo.", statsChange: { mentalHealth: 6 } },
-        { description: "Teve conflitos com os pais.", statsChange: { mentalHealth: -8 } },
-        { description: "Entrou para um clube na escola.", statsChange: { mentalHealth: 7, intellect: 3 } },
-        { description: "Sofreu bullying na escola.", statsChange: { mentalHealth: -12, beauty: -3 } }
+        {
+          description: "Passou em todas as matérias com boas notas.",
+          statsChange: { intellect: 8, mentalHealth: 5 },
+        },
+        {
+          description: "Começou a se interessar por um hobby novo.",
+          statsChange: { mentalHealth: 6 },
+        },
+        {
+          description: "Teve conflitos com os pais.",
+          statsChange: { mentalHealth: -8 },
+        },
+        {
+          description: "Entrou para um clube na escola.",
+          statsChange: { mentalHealth: 7, intellect: 3 },
+        },
+        {
+          description: "Sofreu bullying na escola.",
+          statsChange: { mentalHealth: -12, beauty: -3 },
+        },
       );
     }
 
     // Eventos de juventude (18-25)
     if (currentAge >= 18 && currentAge <= 25) {
       eventPool.push(
-        { description: "Entrou na universidade!", statsChange: { intellect: 10, mentalHealth: 8 } },
-        { description: "Conseguiu o primeiro emprego.", statsChange: { mentalHealth: 7, intellect: 5 } },
-        { description: "Fez uma viagem incrível.", statsChange: { mentalHealth: 15, beauty: 3 } },
-        { description: "Estresse com estudos e trabalho.", statsChange: { mentalHealth: -10, health: -5 } },
-        { description: "Conheceu pessoas inspiradoras.", statsChange: { mentalHealth: 10, intellect: 5 } }
+        {
+          description: "Entrou na universidade!",
+          statsChange: { intellect: 10, mentalHealth: 8 },
+        },
+        {
+          description: "Conseguiu o primeiro emprego.",
+          statsChange: { mentalHealth: 7, intellect: 5 },
+        },
+        {
+          description: "Fez uma viagem incrível.",
+          statsChange: { mentalHealth: 15, beauty: 3 },
+        },
+        {
+          description: "Estresse com estudos e trabalho.",
+          statsChange: { mentalHealth: -10, health: -5 },
+        },
+        {
+          description: "Conheceu pessoas inspiradoras.",
+          statsChange: { mentalHealth: 10, intellect: 5 },
+        },
       );
     }
 
     // Eventos de vida adulta (26+)
     if (currentAge >= 26) {
       eventPool.push(
-        { description: "Recebeu uma promoção no trabalho.", statsChange: { mentalHealth: 12, intellect: 5 } },
-        { description: "Começou a cuidar melhor da saúde.", statsChange: { health: 10, beauty: 5 } },
-        { description: "Passou por uma fase difícil.", statsChange: { mentalHealth: -15, health: -8 } },
-        { description: "Alcançou um objetivo importante.", statsChange: { mentalHealth: 20, intellect: 8 } },
-        { description: "Formou laços familiares mais fortes.", statsChange: { mentalHealth: 10 } }
+        {
+          description: "Recebeu uma promoção no trabalho.",
+          statsChange: { mentalHealth: 12, intellect: 5 },
+        },
+        {
+          description: "Começou a cuidar melhor da saúde.",
+          statsChange: { health: 10, beauty: 5 },
+        },
+        {
+          description: "Passou por uma fase difícil.",
+          statsChange: { mentalHealth: -15, health: -8 },
+        },
+        {
+          description: "Alcançou um objetivo importante.",
+          statsChange: { mentalHealth: 20, intellect: 8 },
+        },
+        {
+          description: "Formou laços familiares mais fortes.",
+          statsChange: { mentalHealth: 10 },
+        },
       );
     }
 
     // Eventos baseados em stats baixos
     if (currentStats.health < 30) {
-      eventPool.push({ description: "Precisou ir ao médico.", statsChange: { health: 5, mentalHealth: -3 } });
+      eventPool.push({
+        description: "Precisou ir ao médico.",
+        statsChange: { health: 5, mentalHealth: -3 },
+      });
     }
     if (currentStats.mentalHealth < 30) {
-      eventPool.push({ description: "Buscou ajuda para melhorar o bem-estar.", statsChange: { mentalHealth: 15 } });
+      eventPool.push({
+        description: "Buscou ajuda para melhorar o bem-estar.",
+        statsChange: { mentalHealth: 15 },
+      });
     }
     if (currentStats.intellect < 30) {
-      eventPool.push({ description: "Fez cursos para se atualizar.", statsChange: { intellect: 10 } });
+      eventPool.push({
+        description: "Fez cursos para se atualizar.",
+        statsChange: { intellect: 10 },
+      });
     }
 
     // Eventos baseados em classe social
     if (char?.income?.id === "low") {
-      eventPool.push({ description: "Enfrentou dificuldades financeiras.", statsChange: { mentalHealth: -8 } });
+      eventPool.push({
+        description: "Enfrentou dificuldades financeiras.",
+        statsChange: { mentalHealth: -8 },
+      });
     } else if (char?.income?.id === "high") {
-      eventPool.push({ description: "Aproveitou oportunidades únicas.", statsChange: { mentalHealth: 8, intellect: 5 } });
+      eventPool.push({
+        description: "Aproveitou oportunidades únicas.",
+        statsChange: { mentalHealth: 8, intellect: 5 },
+      });
     }
 
     return eventPool[Math.floor(Math.random() * eventPool.length)];
@@ -163,7 +247,9 @@ export default function Game() {
       health: clamp(currentStats.health + (changes.health || 0)),
       beauty: clamp(currentStats.beauty + (changes.beauty || 0)),
       intellect: clamp(currentStats.intellect + (changes.intellect || 0)),
-      mentalHealth: clamp(currentStats.mentalHealth + (changes.mentalHealth || 0))
+      mentalHealth: clamp(
+        currentStats.mentalHealth + (changes.mentalHealth || 0),
+      ),
     };
   };
 
@@ -173,7 +259,7 @@ export default function Game() {
 
     // Aplicar mudanças dos eventos do ano atual
     let updatedStats = { ...stats };
-    currentYearEvents.forEach(event => {
+    currentYearEvents.forEach((event) => {
       updatedStats = applyStatsChange(updatedStats, event.statsChange);
     });
 
@@ -181,7 +267,7 @@ export default function Game() {
     if (newAge >= 30) {
       updatedStats = applyStatsChange(updatedStats, {
         health: -1,
-        beauty: -0.5
+        beauty: -0.5,
       });
     }
 
@@ -204,8 +290,8 @@ export default function Game() {
       {
         age,
         events: currentYearEvents,
-        finalStats: updatedStats
-      }
+        finalStats: updatedStats,
+      },
     ];
 
     // Gerar eventos do próximo ano
@@ -256,7 +342,9 @@ export default function Game() {
           <h1>
             {character.firstName} {character.lastName}
           </h1>
-          <p>{age} {age === 1 ? "ano" : "anos"}</p>
+          <p>
+            {age} {age === 1 ? "ano" : "anos"}
+          </p>
         </div>
       </section>
 
@@ -283,14 +371,22 @@ export default function Game() {
             <li key={index}>
               <p>{event.description}</p>
               {Object.keys(event.statsChange).length > 0 && (
-                <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '4px' }}>
-                  {Object.entries(event.statsChange).map(([stat, value]) => (
-                    value !== 0 && (
-                      <span key={stat} style={{ marginRight: '8px' }}>
-                        {stat}: {value > 0 ? '+' : ''}{value}
-                      </span>
-                    )
-                  ))}
+                <div
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "#666",
+                    marginTop: "4px",
+                  }}
+                >
+                  {Object.entries(event.statsChange).map(
+                    ([stat, value]) =>
+                      value !== 0 && (
+                        <span key={stat} style={{ marginRight: "8px" }}>
+                          {stat}: {value > 0 ? "+" : ""}
+                          {value}
+                        </span>
+                      ),
+                  )}
                 </div>
               )}
             </li>

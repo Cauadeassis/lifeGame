@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./incomeSelector.module.css";
-import { incomes } from "../../../data/incomes";
+import incomes from "../../../backend/data/incomes";
 export default function IncomeSelector({ gender, income, setIncome }) {
   const options = incomes[gender] || [];
   return (
