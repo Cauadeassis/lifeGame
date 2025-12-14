@@ -1,0 +1,130 @@
+[
+  {
+    "title": "Harry Potter",
+    "description": "Um órfão criado pelos tios descobre que é um bruxo.",
+    "difficulty": 20,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Percy Jackson",
+    "description": "Um adolescente descobre que é filho de um deus grego e enfrenta monstros da mitologia.",
+    "difficulty": 20,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Alice no País das Maravilhas",
+    "description": "Uma garota cai em um mundo fantástico onde a lógica não segue as regras normais.",
+    "difficulty": 20,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "O Alquimista",
+    "description": "Um jovem pastor parte em uma jornada para descobrir seu propósito e seguir seus sonhos.",
+    "difficulty": 20,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Viagem ao Centro da Terra",
+    "description": "Um grupo de exploradores embarca em uma aventura rumo ao interior do planeta.",
+    "difficulty": 30,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Sherlock Holmes",
+    "description": "Um detetive brilhante usa lógica e observação para resolver crimes misteriosos em Londres.",
+    "difficulty": 20,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "A Biblioteca da Meia-Noite",
+    "description": "Uma mulher descobre uma biblioteca entre a vida e a morte que mostra todas as vidas que ela poderia ter vivido.",
+    "difficulty": 30,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "It: A Coisa",
+    "description": "Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus maiores medos.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Frankenstein",
+    "description": "Um cientista cria uma criatura a partir de partes humanas e enfrenta as consequências de sua ambição.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "1984",
+    "description": "Um homem vive em uma sociedade totalitária onde o governo controla pensamentos e memórias.",
+    "difficulty": 50,
+    "effects": {
+      "intellect": 10
+    }
+  },
+  {
+    "title": "Senhor dos Anéis",
+    "description": "Um hobbit é encarregado de destruir um artefato de poder.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "A Arte da Guerra",
+    "description": "Um tratado sobre estratégia, liderança e conflito aplicado além do campo de batalha.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 10
+    }
+  },
+  {
+    "title": "Dom Quixote",
+    "description": "Um homem enlouquece de tanto ler romances de cavalaria e decide se tornar um cavaleiro andante.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Bíblia",
+    "description": "Uma coleção de textos religiosos que narram a relação entre Deus e a humanidade ao longo da história.",
+    "difficulty": 0,
+    "effects": {
+      "intellect": 5
+    }
+  },
+  {
+    "title": "Cem Anos de Solidão",
+    "description": "A saga de várias gerações de uma família marcada por realismo mágico e destinos repetidos.",
+    "difficulty": 40,
+    "effects": {
+      "intellect": 10
+    }
+  },
+  {
+    "title": "A Divina Comédia",
+    "description": "Um poeta percorre o Inferno, o Purgatório e o Paraíso em uma jornada espiritual e moral.",
+    "difficulty": 60,
+    "effects": {
+      "intellect": 10
+    }
+  }
+]
