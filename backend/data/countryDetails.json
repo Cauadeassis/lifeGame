@@ -1,42 +1,18 @@
 {
   "Brasil": {
-    "cities": [
-      "Rio de Janeiro",
-      "São Paulo",
-      "Brasília"
-    ],
-    "landmarks": [
-      "Cristo Redentor"
-    ],
-    "demonym": "brasileiro"
+    "cities": ["Rio de Janeiro", "São Paulo", "Brasília"],
+    "landmarks": ["Cristo Redentor"]
   },
   "França": {
-    "cities": [
-      "Paris",
-      "Lyon"
-    ],
-    "landmarks": [
-      "Torre Eiffel",
-      "Arco do Triunfo"
-    ],
-    "demonym": "francês"
+    "cities": ["Paris", "Lyon"],
+    "landmarks": ["Torre Eiffel", "Arco do Triunfo"]
   },
   "Alemanha": {
-    "cities": [
-      "Berlim"
-    ],
-    "landmarks": [
-      ""
-    ],
-    "demonym": "alemão"
+    "cities": ["Berlim"],
+    "landmarks": [""]
   },
   "Japão": {
-    "cities": [
-      "Tóquio"
-    ],
-    "landmarks": [
-      "Monte Fuji"
-    ],
-    "demonym": "japonês"
+    "cities": ["Tóquio"],
+    "landmarks": ["Monte Fuji"]
   }
 }

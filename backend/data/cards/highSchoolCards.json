@@ -1,0 +1,66 @@
+[
+  {
+    "type": "twoOptions",
+    "text": "Seu professor te pegou usando o celular na sala!",
+    "options": {
+      "firstOption": {
+        "text": "Nunca mais usar em sala",
+        "effect": {
+          "intellect": 5
+        }
+      },
+      "secondOption": {
+        "text": "Continuar usando escondido",
+        "risk": {
+          "chance": 0.2,
+          "onFail": {
+            "text": "Você foi pego de novo. Suspenso por um dia.",
+            "effect": {
+              "mentalHealth": -5
+            }
+          },
+          "onSuccess": {
+            "text": "Ele não percebeu.",
+            "effect": {
+              "mentalHealth": 5
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "twoOptions",
+    "text": "Ei, quer dar um trago?",
+    "options": {
+      "firstOption": {
+        "text": "Não, obrigado",
+        "effect": {
+          "intellect": 5
+        }
+      },
+      "secondOption": {
+        "text": "Só uma experimentada",
+        "risk": {
+          "chance": 0.25,
+          "onFail": {
+            "text": "Você fica viciado",
+            "effect": {
+              "health": -5,
+              "mentalHealth": -5,
+              "intellect": -5,
+              "beauty": -5
+            }
+          },
+          "onSuccess": {
+            "text": "🤩🤩",
+            "effect": {
+              "mentalHealth": 10,
+              "health": -5
+            }
+          }
+        }
+      }
+    }
+  }
+]

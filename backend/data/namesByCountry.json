@@ -100,29 +100,9 @@
       "male": "japonês",
       "female": "japonesa"
     },
-    "male": [
-      "Naruto",
-      "Sasuke",
-      "Sanjiro",
-      "Itachi",
-      "Tekomonamata"
-    ],
-    "female": [
-      "Hinata",
-      "Hino",
-      "Sakura",
-      "Momoka",
-      "Yui",
-      "Kaguya"
-    ],
-    "last": [
-      "Uzumaki",
-      "Uchiha",
-      "Ryuga",
-      "Sarutobi",
-      "Komecu",
-      "Senju"
-    ]
+    "male": ["Naruto", "Sasuke", "Sanjiro", "Itachi", "Tekomonamata"],
+    "female": ["Hinata", "Hino", "Sakura", "Momoka", "Yui", "Kaguya"],
+    "last": ["Uzumaki", "Uchiha", "Ryuga", "Sarutobi", "Komecu", "Senju"]
   },
   "Alemanha": {
     "preposition": "da",
@@ -130,24 +110,8 @@
       "male": "alemão",
       "female": "alemã"
     },
-    "male": [
-      "Adolf",
-      "Karl",
-      "Fritz",
-      "Hans",
-      "Max",
-      "Maximilian",
-      "Theo"
-    ],
-    "female": [
-      "Marie",
-      "Greta",
-      "Lena",
-      "Emma",
-      "Helena",
-      "Sofia",
-      "Evelyn"
-    ],
+    "male": ["Adolf", "Karl", "Fritz", "Hans", "Max", "Maximilian", "Theo"],
+    "female": ["Marie", "Greta", "Lena", "Emma", "Helena", "Sofia", "Evelyn"],
     "last": [
       "Hamlet",
       "Marx",
@@ -165,29 +129,8 @@
       "male": "francês",
       "female": "francesa"
     },
-    "male": [
-      "Pierre",
-      "Júlio",
-      "Jean",
-      "Ludwig",
-      "Ludwig",
-      "Max",
-      "Theo"
-    ],
-    "female": [
-      "Marie",
-      "Camille",
-      "Emma",
-      "Helena",
-      "Sofia",
-      "Evelyn"
-    ],
-    "last": [
-      "Mbappe",
-      "Verne",
-      "Dubois",
-      "Vitón",
-      "Ellen"
-    ]
+    "male": ["Pierre", "Júlio", "Jean", "Ludwig", "Ludwig", "Max", "Theo"],
+    "female": ["Marie", "Camille", "Emma", "Helena", "Sofia", "Evelyn"],
+    "last": ["Mbappe", "Verne", "Dubois", "Vitón", "Ellen"]
   }
 }

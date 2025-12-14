@@ -1,0 +1,100 @@
+[
+  {
+    "type": "twoOptions",
+    "text": "A escola organiza uma feira de ciências.",
+    "options": {
+      "firstOption": {
+        "text": "Participar ativamente do projeto.",
+        "effect": {
+          "intellect": 5,
+          "mentalHealth": 5
+        }
+      },
+      "secondOption": {
+        "text": "Apenas assistir as apresentações.",
+        "effect": {
+          "mentalHealth": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "twoOptions",
+    "text": "Um famoso escritor infantil visita a escola para autografar livros. Você não sabia que ele viria hoje!",
+    "options": {
+      "firstOption": {
+        "text": "Entrar na fila do autógrafo.",
+        "effect": {
+          "intellect": 5,
+          "mentalHealth": 5
+        }
+      },
+      "secondOption": {
+        "text": "Assistir de longe.",
+        "effect": {
+          "mentalHealth": -5
+        }
+      }
+    }
+  },
+  {
+    "type": "twoOptions",
+    "text": "Você é escolhido para apresentar um trabalho na frente da turma.",
+    "options": {
+      "firstOption": {
+        "text": "Apresentar com confiança.",
+        "effect": {
+          "intellect": 5,
+          "mentalHealth": 5
+        }
+      },
+      "secondOption": {
+        "text": "Ler tudo rapidamente e sentar.",
+        "effect": {
+          "mentalHealth": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "multipleOptions",
+    "text": "A professora de artes pede um trabalho sobre música. O que você escolhe?",
+    "options": [
+      {
+        "text": "Pop",
+        "effect": {
+          "beauty": 5
+        }
+      },
+      {
+        "text": "Rap",
+        "effect": {
+          "intellect": 5
+        }
+      },
+      {
+        "text": "Rock",
+        "effect": {
+          "mentalHealth": 5
+        }
+      },
+      {
+        "text": "Outro",
+        "requiresInput": true,
+        "input": {
+          "type": "text",
+          "placeholder": "Qual estilo?"
+        },
+        "effect": {
+          "health": 5
+        }
+      },
+      {
+        "text": "Não fazer nada",
+        "effect": {
+          "mentalHealth": -5
+        }
+      }
+    ]
+  }
+]

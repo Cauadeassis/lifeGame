@@ -1,0 +1,30 @@
+[
+  {
+    "id": "happinessBullying",
+    "text": {
+      "male": "Um garoto disse que você é triste e sem graça.",
+      "female": "Uma garota disse que você é triste e sem graça."
+    }
+  },
+  {
+    "id": "appearanceBullying",
+    "text": {
+      "male": "Um garoto zoou sua aparência na frente da turma.",
+      "female": "Uma garota zoou sua aparência na frente da turma."
+    }
+  },
+  {
+    "id": "intelligenceBullying",
+    "text": {
+      "male": "Um garoto disse que você é burro.",
+      "female": "Uma garota disse que você é burro."
+    }
+  },
+  {
+    "id": "healthBullying",
+    "text": {
+      "male": "Um garoto disse que você é fraco.",
+      "female": "Uma garota disse que você é fraco."
+    }
+  }
+]
