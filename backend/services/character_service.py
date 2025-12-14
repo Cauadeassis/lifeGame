@@ -55,8 +55,8 @@ class CharacterService:
             "difficulty": difficulty,
             "status": {
                 "health": status[0],
-                "happiness": status[1],
-                "intelligence": status[2],
-                "looks": status[3]
+                "mentalHealth": status[1],
+                "intellect": status[2],
+                "beauty": status[3]
             },
         }
