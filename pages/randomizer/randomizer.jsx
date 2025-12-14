@@ -3,27 +3,42 @@ import { useRouter } from "next/router";
 import styles from "./randomizer.module.css";
 import Header from "../../components/header/header.jsx";
 import Head from "next/head";
-import { generateRandomCharacter } from "../../models/randomizer.js";
 import GameDifficulty from "../../components/gameDifficulty/gameDifficulty.jsx";
-import calculateDifficulty from "../../models/difficulty.js";
 import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 export default function Randomizer() {
   const router = useRouter();
   const [character, setCharacter] = useState(null);
-  const [difficulty, setDifficulty] = useState(2);
-  const handleRandomize = () => {
-    const newCharacter = generateRandomCharacter();
-    const newDifficulty = calculateDifficulty(
-      newCharacter.income,
-      newCharacter.skinTone,
-    );
-    setCharacter(newCharacter);
-    setDifficulty(newDifficulty);
+  const [loading, setLoading] = useState(false);
+  const handleRandomize = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/character/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) {
+        throw new Error("Erro ao gerar personagem");
+      }
+      const newCharacter = await response.json();
+      setCharacter(newCharacter);
+    } catch (error) {
+      console.error("Erro ao gerar personagem:", error);
+      alert("Não foi possível gerar o personagem. Tente novamente.");
+    } finally {
+      setLoading(false);
+      console.log("Personagem gerado com sucesso!")
+    }
   };
   useEffect(() => {
     handleRandomize();
   }, []);
   const handleStartGame = () => {
+    if (!character) {
+      alert("Por favor, gere um personagem primeiro!");
+      return;
+    }
     localStorage.setItem("character", JSON.stringify(character));
     router.push("../game/game");
   };
@@ -36,7 +51,12 @@ export default function Randomizer() {
         <ThemeToggle />
         <div className={styles.siteContent}>
           <Header />
-          {character && (
+          {loading && (
+            <div className={styles.loadingContainer}>
+              <p>Gerando personagem...</p>
+            </div>
+          )}
+          {character && !loading && (
             <>
               <div className={styles.characterInfo}>
                 <h1>
@@ -49,18 +69,23 @@ export default function Randomizer() {
                   <p>Renda: {character.income.label}</p>
                 </div>
               </div>
-              <GameDifficulty
-                income={character.income}
-                skinTone={character.skinTone}
-                difficulty={difficulty}
-                setDifficulty={setDifficulty}
-              />
+              <GameDifficulty difficulty={character.difficulty} />
             </>
           )}
           <h1 className={styles.h1}>Gerar novo personagem?</h1>
           <div className={styles.buttonsContainer}>
-            <button onClick={handleRandomize}>Sim</button>
-            <button onClick={handleStartGame}>Não, vamos jogar</button>
+            <button
+              onClick={handleRandomize}
+              disabled={loading}
+            >
+              {loading ? "Gerando..." : "Sim"}
+            </button>
+            <button
+              onClick={handleStartGame}
+              disabled={loading || !character}
+            >
+              Não, vamos jogar
+            </button>
           </div>
         </div>
       </div>

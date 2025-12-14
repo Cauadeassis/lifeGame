@@ -1,38 +1,30 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./gameDifficulty.module.css";
-import calculateDifficulty from "../../models/difficulty.js";
-export default function GameDifficulty({
-  income,
-  skinTone,
-  difficulty,
-  setDifficulty,
-}) {
-  useEffect(() => {
-    if (!income) income = "middle";
-    const newDifficulty = calculateDifficulty(income, skinTone);
-    setDifficulty(newDifficulty);
-  }, [income, skinTone]);
+export default function GameDifficulty({ difficulty }) {
+  const getDifficultyText = (level) => {
+    const difficultyMap = {
+      1: "Modo Tutorial",
+      2: "Fácil",
+      3: "Médio",
+      4: "Difícil",
+      5: "Hardcore"
+    };
+    return difficultyMap[level] || "Médio";
+  };
   return (
-    console.log(`Current difficulty is ${difficulty}`),
-    (
-      <section className={styles.difficultyContainer}>
-        <label className={styles.label}>Dificuldade do Jogo</label>
-        <input
-          type="range"
-          min="1"
-          max="5"
-          value={difficulty}
-          disabled
-          className={styles.rangeInput}
-        />
-        <div className={styles.gamemodeText}>
-          {difficulty === 1 && "Modo Tutorial"}
-          {difficulty === 2 && "Fácil"}
-          {difficulty === 3 && "Médio"}
-          {difficulty === 4 && "Difícil"}
-          {difficulty === 5 && "Hardcore"}
-        </div>
-      </section>
-    )
+    <section className={styles.difficultyContainer}>
+      <label className={styles.label}>Dificuldade do Jogo</label>
+      <input
+        type="range"
+        min="1"
+        max="5"
+        value={difficulty || 3}
+        disabled
+        className={styles.rangeInput}
+      />
+      <div className={styles.gamemodeText}>
+        {getDifficultyText(difficulty)}
+      </div>
+    </section>
   );
 }
