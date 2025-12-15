@@ -5,9 +5,10 @@
     "options": {
       "firstOption": {
         "text": "Nunca mais usar em sala",
-        "effect": {
+        "effects": {
           "intellect": 5
-        }
+        },
+        "message": "Eu parei de usar o celular na sala depois de ser repreendido pelo meu professor."
       },
       "secondOption": {
         "text": "Continuar usando escondido",
@@ -15,15 +16,17 @@
           "chance": 0.2,
           "onFail": {
             "text": "Você foi pego de novo. Suspenso por um dia.",
-            "effect": {
+            "effects": {
               "mentalHealth": -5
-            }
+            },
+            "message": "Eu fui suspenso na escola porque usei celular na aula."
           },
           "onSuccess": {
             "text": "Ele não percebeu.",
-            "effect": {
+            "effects": {
               "mentalHealth": 5
-            }
+            },
+            "message": "Meu professor me pegou usando celular, mas continuei usando escondido depois."
           }
         }
       }
@@ -35,9 +38,10 @@
     "options": {
       "firstOption": {
         "text": "Não, obrigado",
-        "effect": {
+        "effects": {
           "intellect": 5
-        }
+        },
+        "message": "Eu recusei um cigarro de maconha na escola."
       },
       "secondOption": {
         "text": "Só uma experimentada",
@@ -45,19 +49,21 @@
           "chance": 0.25,
           "onFail": {
             "text": "Você fica viciado",
-            "effect": {
+            "effects": {
               "health": -5,
               "mentalHealth": -5,
               "intellect": -5,
               "beauty": -5
-            }
+            },
+            "message": "Eu experimentei maconha na escola e fiquei viciado."
           },
           "onSuccess": {
             "text": "🤩🤩",
-            "effect": {
+            "effects": {
               "mentalHealth": 10,
               "health": -5
-            }
+            },
+            "message": "Eu experimentei maconha na escola"
           }
         }
       }

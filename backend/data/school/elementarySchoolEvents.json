@@ -5,16 +5,18 @@
     "options": {
       "firstOption": {
         "text": "Participar ativamente do projeto.",
-        "effect": {
+        "effects": {
           "intellect": 5,
           "mentalHealth": 5
-        }
+        },
+        "message": "Eu participei da feira de ciências da escola."
       },
       "secondOption": {
         "text": "Apenas assistir as apresentações.",
-        "effect": {
+        "effects": {
           "mentalHealth": 0
-        }
+        },
+        "message": "Eu assisti as apresentações da feira de ciências da escola."
       }
     }
   },
@@ -24,16 +26,18 @@
     "options": {
       "firstOption": {
         "text": "Entrar na fila do autógrafo.",
-        "effect": {
+        "effects": {
           "intellect": 5,
           "mentalHealth": 5
-        }
+        },
+        "message": "Eu consegui um autógrafo de um escritor famoso."
       },
       "secondOption": {
         "text": "Assistir de longe.",
-        "effect": {
+        "effects": {
           "mentalHealth": -5
-        }
+        },
+        "message": "Um escritor famoso visitou minha escola."
       }
     }
   },
@@ -43,16 +47,18 @@
     "options": {
       "firstOption": {
         "text": "Apresentar com confiança.",
-        "effect": {
+        "effects": {
           "intellect": 5,
           "mentalHealth": 5
-        }
+        },
+        "message": "Eu apresentei um trabalho na frente da turma."
       },
       "secondOption": {
         "text": "Ler tudo rapidamente e sentar.",
-        "effect": {
+        "effects": {
           "mentalHealth": 0
-        }
+        },
+        "message": "Eu gaguejei quando fui apresentar meu trabalho."
       }
     }
   },
@@ -62,21 +68,24 @@
     "options": [
       {
         "text": "Pop",
-        "effect": {
+        "effects": {
           "beauty": 5
-        }
+        },
+        "message": "Eu fiz um trabalho sobre pop."
       },
       {
         "text": "Rap",
-        "effect": {
+        "effects": {
           "intellect": 5
-        }
+        },
+        "message": "Eu fiz um trabalho sobre rap."
       },
       {
         "text": "Rock",
-        "effect": {
+        "effects": {
           "mentalHealth": 5
-        }
+        },
+        "message": "Eu fiz um trabalho sobre rock."
       },
       {
         "text": "Outro",
@@ -85,15 +94,17 @@
           "type": "text",
           "placeholder": "Qual estilo?"
         },
-        "effect": {
+        "effects": {
           "health": 5
-        }
+        },
+        "message": "Eu surpreendi a professora com um estilo de música inusitado!"
       },
       {
         "text": "Não fazer nada",
-        "effect": {
+        "effects": {
           "mentalHealth": -5
-        }
+        },
+        "message": "Eu fiquei de recuperação em artes 💀"
       }
     ]
   }
