@@ -1,0 +1,155 @@
+[
+  {
+    "title": "Paciente em estado crítico",
+    "description": "Um paciente chega em estado crítico e precisa de uma decisão rápida.",
+    "options": [
+      {
+        "text": "Realizar cirurgia de emergência",
+        "risk": {
+          "chance": 0.3,
+          "onFail": {
+            "text": "A cirurgia não dá certo. O paciente morre em seus braços.",
+            "effects": {
+              "mentalHealth": -40,
+              "stress": 10
+            },
+            "message": "Perdi um paciente durante uma cirurgia de emergência."
+          },
+          "onSuccess": {
+            "text": "A cirurgia é um sucesso!",
+            "effects": {
+              "promotionBonus": 20,
+              "mentalHealth": 20
+            },
+            "message": "Salvei a vida de um paciente em estado crítico."
+          }
+        }
+      },
+      {
+        "text": "Estabilizar e aguardar exames",
+        "risk": {
+          "chance": 0.3,
+          "onFail": {
+            "text": "A falta de uma escolha rápida resultou na morte do paciente.",
+            "effects": {
+              "mentalHealth": -20,
+              "stress": 5
+            },
+            "message": "Um paciente morreu enquanto eu aguardava exames."
+          },
+          "onSuccess": {
+            "text": "Outros médicos chegam e realizam a cirurgia.",
+            "effects": {
+              "promotionBonus": 10,
+              "mentalHealth": 10
+            },
+            "message": "Minha equipe salvou um paciente em estado crítico."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Erro médico",
+    "description": "Você percebe que pode ter cometido um pequeno erro em um prontuário.",
+    "options": [
+      {
+        "text": "Assumir o erro e corrigir",
+        "effects": {
+          "mentalHealth": 10,
+          "promotionBonus": 10,
+          "stress": -5
+        },
+        "message": "Assumi um erro médico e o corrigi antes que causasse danos."
+      },
+      {
+        "text": "Ignorar e seguir o plantão",
+        "risk": {
+          "chance": 0.5,
+          "onFail": {
+            "text": "O erro é descoberto mais tarde.",
+            "effects": {
+              "stress": 10,
+              "promotionBonus": -10
+            },
+            "message": "Um erro médico meu foi descoberto."
+          },
+          "onSuccess": {
+            "text": "Nada acontece.",
+            "effects": {
+              "stress": -5
+            },
+            "message": "Um erro médico meu passou despercebido no hospital."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Plantão exaustivo",
+    "description": "Você assume um plantão longo após uma sequência de dias cansativos.",
+    "options": [
+      {
+        "text": "Aceitar o plantão",
+        "effects": {
+          "stress": 15,
+          "mentalHealth": -10,
+          "promotionBonus": 20
+        },
+        "message": "Aceitei um plantão exaustivo no hospital."
+      },
+      {
+        "text": "Passar para outro médico",
+        "effects": {
+          "mentalHealth": 10,
+          "stress": -10,
+          "promotionBonus": -10
+        },
+        "message": "Passei um plantão exaustivo para outro médico."
+      }
+    ]
+  },
+  {
+    "title": "Proposta de clínica particular",
+    "description": "Uma clínica particular te convida para atender alguns pacientes fora do hospital.",
+    "options": [
+      {
+        "text": "Aceitar a proposta",
+        "effects": {
+          "money": 1500,
+          "promotionBonus": 20,
+          "stress": -20
+        },
+        "message": "Trabalhei em uma clínica particular."
+      },
+      {
+        "text": "Recusar",
+        "effects": {
+          "stress": -15
+        },
+        "message": "Recusei uma proposta de trabalho em clínica particular."
+      }
+    ]
+  },
+  {
+    "title": "Paciente agradecido",
+    "description": "Um antigo paciente retorna apenas para agradecer pelo tratamento.",
+    "options": [
+      {
+        "text": "Conversar e ouvir sua história",
+        "effects": {
+          "mentalHealth": 20,
+          "stress": -20
+        },
+        "message": "Conversei com um paciente agradecido e ouvi sua história."
+      },
+      {
+        "text": "Agradecer rapidamente e voltar ao trabalho",
+        "effects": {
+          "promotionBonus": 10
+        },
+        "message": "Agradeci rapidamente um paciente e voltei ao trabalho."
+      }
+    ]
+  }
+]

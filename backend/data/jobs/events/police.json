@@ -1,0 +1,170 @@
+[
+  {
+    "title": "Patrulha de Rotina",
+    "description": "Durante uma patrulha tranquila, você percebe uma atitude suspeita em uma esquina pouco movimentada.",
+    "options": [
+      {
+        "text": "Abordar o suspeito",
+        "risk": {
+          "chance": 0.2,
+          "onFail": {
+            "text": "Ele saca uma arma e atira!",
+            "risk": {
+              "chance": 0.2,
+              "onFail": {
+                "text": "Um dos tiros é fatal.",
+                "effects": {
+                  "health": -100
+                },
+                "message": "Eu morri durante uma abordagem policial!"
+              },
+              "onSuccess": {
+                "text": "Você toma tiros, mas nenhum órgão vital é atingido.",
+                "effects": {
+                  "health": -20
+                },
+                "message": "Fui baleado durante uma abordagem, mas sobrevivi."
+              }
+            }
+          },
+          "onSuccess": {
+            "text": "De fato, um traficante. Você o prende!",
+            "effects": {
+              "promotionBonus": 20,
+              "mentalHealth": 10
+            },
+            "message": "Prendi um traficante durante uma patrulha."
+          }
+        }
+      },
+      {
+        "text": "Ignorar e seguir patrulhando",
+        "effects": {
+          "stress": -5
+        },
+        "message": "Ignorei uma atitude suspeita e continuei a patrulha."
+      }
+    ]
+  },
+  {
+    "title": "Chamado de Violência Doméstica",
+    "description": "Você atende uma ocorrência de possível violência doméstica em uma residência.",
+    "options": [
+      {
+        "text": "Agir com cautela e diálogo",
+        "effects": {
+          "promotionBonus": 10,
+          "stress": 5
+        },
+        "message": "Atendi uma ocorrência de violência doméstica com cautela e diálogo."
+      },
+      {
+        "text": "Intervir de forma rígida",
+        "effects": {
+          "promotionBonus": 5,
+          "stress": 10
+        },
+        "message": "Intervim de forma rígida em uma ocorrência de violência doméstica."
+      }
+    ]
+  },
+  {
+    "title": "Oferta de Suborno",
+    "description": "Um comerciante flagrado em irregularidades oferece dinheiro para que você ignore o ocorrido.",
+    "options": [
+      {
+        "text": "Recusar e aplicar a lei",
+        "effects": {
+          "promotionBonus": 15,
+          "mentalHealth": 5
+        },
+        "message": "Recusei um suborno e apliquei a lei corretamente."
+      },
+      {
+        "text": "Aceitar o suborno",
+        "effects": {
+          "money": 1000
+        },
+        "risk": {
+          "chance": 0.5,
+          "onFail": {
+            "text": "Alguns dias depois, ele foi preso e te dedurou.",
+            "effects": {
+              "mentalHealth": -10,
+              "promotionBonus": -10
+            },
+            "message": "Fui denunciado após aceitar um suborno."
+          },
+          "onSuccess": {
+            "text": "Ninguém percebeu.",
+            "effects": {
+              "mentalHealth": 10,
+              "stress": -10
+            },
+            "message": "Aceitei um suborno e não fui descoberto."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Perseguição em alta velocidade",
+    "description": "Um veículo suspeito foge ao receber ordem de parada.",
+    "options": [
+      {
+        "text": "Iniciar perseguição",
+        "risk": {
+          "chance": 0.2,
+          "onFail": {
+            "text": "Você perde o controle e o carro capota.",
+            "effects": {
+              "health": -10,
+              "mentalHealth": -10,
+              "promotionBonus": -10
+            },
+            "message": "Sofri um acidente durante uma perseguição policial."
+          },
+          "onSuccess": {
+            "text": "Você captura o veículo!",
+            "effects": {
+              "mentalHealth": 10,
+              "promotionBonus": 20
+            },
+            "message": "Capturei um suspeito em uma perseguição em alta velocidade."
+          }
+        }
+      },
+      {
+        "text": "Solicitar apoio e recuar",
+        "effects": {
+          "mentalHealth": 5,
+          "stress": -5
+        },
+        "message": "solicitei apoio depois de um veículo suspeito fugir."
+      }
+    ]
+  },
+  {
+    "title": "Evento Comunitário",
+    "description": "Você é convidado a participar de um evento comunitário para fortalecer a relação com os moradores.",
+    "options": [
+      {
+        "text": "Participar ativamente",
+        "effects": {
+          "mentalHealth": 5,
+          "promotionBonus": 10,
+          "stress": 5
+        },
+        "message": "Participei ativamente de um evento comunitário."
+      },
+      {
+        "text": "Não comparecer.",
+        "effects": {
+          "mentalHealth": 5,
+          "stress": -5
+        },
+        "message": "Optei por não comparecer a um evento comunitário."
+      }
+    ]
+  }
+]
