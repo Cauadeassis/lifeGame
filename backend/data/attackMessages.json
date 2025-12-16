@@ -2,97 +2,97 @@
   "groinKick": {
     "text": "Chute na virilha",
     "messages": {
-      "0": "Você errou completamente!",
-      "1": "Seu pé acertou a perna dele",
-      "2": "Você acertou de leve, mas não fez muita diferença",
-      "3": "Um chute fraco, ele só deu um passo para trás",
-      "4": "Você acertou, mas não foi muito forte",
-      "5": "O chute pegou em cheio, ele se contorceu um pouco",
-      "6": "Um bom chute! Ele curvou o corpo instintivamente",
-      "7": "O chute doeu visivelmente! Ele cambaleou",
-      "8": "Um chute poderoso! Ele caiu de joelhos",
-      "9": "Quase desmaiou com o impacto!",
-      "10": "CRÍTICO! Ele foi castrado com o chute"
+      "0": "Tentei chutar meu oponente na virilha, mas errei completamente",
+      "1": "Tentei chutar meu oponente na virilha, mas errei.",
+      "2": "Tentei chutar meu oponente na virilha, mas acertei a coxa.",
+      "3": "Chutei meu oponente entre as pernas",
+      "4": "Dei um chute fraco na virilha do meu oponente",
+      "5": "Acertei em cheio entre as pernas do meu oponente com um chute",
+      "6": "Chutei o saco meu oponente e ele se curvou de dor",
+      "7": "Deixei meu oponente mancando depois de um chute poderoso",
+      "8": "Derrubei meu oponente com um chute no saco dele",
+      "9": "Fiz meu oponente vomitar de dor depois de um golpe baixo",
+      "10": "Esmaguei as bolas do meu oponente com um chute!"
     }
   },
   "chinPunch": {
     "text": "Soco no queixo",
     "messages": {
-      "0": "Você errou completamente!",
-      "1": "Você só roçou o queixo dele.",
-      "2": "Um soco fraco, quase não moveu a cabeça dele.",
-      "3": "Você acertou um soco leve no queixo.",
-      "4": "Um soco mediano, fez a cabeça dele balançar.",
-      "5": "Bom soco! Ele deu um passo para trás.",
-      "6": "Acertou bem! Ele levou a mão ao rosto.",
-      "7": "O soco foi forte! Ele ficou tonto.",
-      "8": "Um soco excelente! Ele caiu no chão",
-      "9": "O golpe abriu o queixo dele!",
-      "10": "CRÍTICO! Seu soco o mandou pro hospital"
+      "0": "Tentei acertar um soco no queixo do meu oponente, mas errei completamente.",
+      "1": "Tentei socar o queixo do meu oponente, mas só roçei de leve.",
+      "2": "Acertei um soco fraco no queixo do meu oponente.",
+      "3": "Dei um soco leve no queixo do meu oponente.",
+      "4": "Acertei um soco mediano no queixo do meu oponente e a cabeça dele balançou.",
+      "5": "Acertei um bom soco no queixo do meu oponente e ele recuou.",
+      "6": "Acertei bem o queixo do meu oponente e ele levou a mão ao rosto.",
+      "7": "Acertei um soco forte no queixo do meu oponente e ele ficou tonto.",
+      "8": "Derrubei meu oponente com um soco certeiro no queixo.",
+      "9": "Abri o queixo do meu oponente com um golpe violento.",
+      "10": "Mandei meu oponente para o hospital com um soco no queixo."
     }
   },
   "hairPull": {
     "text": "Puxar o cabelo",
     "messages": {
-      "0": "Você errou até de puxar o cabelo… como isso aconteceu?",
-      "1": "Seu puxão mal pegou em alguns fios.",
-      "2": "Você puxou um pouco, ela reclamou, mas nada demais.",
-      "3": "Um puxão fraco, ela só ficou irritada.",
-      "4": "Um puxão moderado, ela gritou baixinho.",
-      "5": "Você puxou forte o suficiente pra ela se afastar.",
-      "6": "O puxão doeu! Ela se desequilibrou.",
-      "7": "Você puxou com força! Ela reclamou alto.",
-      "8": "Um puxão fortíssimo! Ela quase caiu pra frente.",
-      "9": "O puxão arrancou alguns fios, ela está desesperada!",
-      "10": "CRÍTICO! Você deixou ela careca!"
+      "0": "Tentei puxar o cabelo da minha oponente, mas não consegui sequer segurar.",
+      "1": "Consegui puxar apenas alguns fios de cabelo da minha oponente.",
+      "2": "Puxei levemente o cabelo da minha oponente e ela reclamou.",
+      "3": "Dei um puxão fraco no cabelo da minha oponente, deixando-a irritada.",
+      "4": "Puxei o cabelo da minha oponente com força moderada e ela gritou.",
+      "5": "Puxei o cabelo da minha oponente com força suficiente para afastá-la.",
+      "6": "O puxão no cabelo da minha oponente causou dor e desequilíbrio.",
+      "7": "Puxei o cabelo da minha oponente com força e ela reagiu gritando.",
+      "8": "Dei um puxão muito forte no cabelo da minha oponente, quase a derrubando.",
+      "9": "Arranquei vários fios de cabelo da minha oponente, deixando-a desesperada.",
+      "10": "Arranquei grande parte do cabelo da minha oponente com um puxão brutal."
     }
   },
   "push": {
     "text": "Empurrar para longe",
     "messages": {
-      "0": "Você tentou empurrar, mas escorregou e falhou miseravelmente.",
-      "1": "Seu empurrão mal saiu do lugar.",
-      "2": "Você encostou, mas mal moveu ela",
-      "3": "Empurrão fraco, ela te olhou feio.",
-      "4": "Empurrão moderado, ela deu um passo para trás.",
-      "5": "Bom empurrão! Ela perdeu um pouco do equilíbrio.",
-      "6": "Empurrão forte! Ela balançou bastante.",
-      "7": "Um empurrão poderoso! Ela teve que se segurar.",
-      "8": "Você empurrou com tudo! Ela caiu sentada.",
-      "9": "Empurrão brutal! Ela deslizou pelo chão.",
-      "10": "CRÍTICO! Você a lançou longe como se fosse uma boneca."
+      "0": "Tentei empurrar minha oponente, mas escorreguei e falhei.",
+      "1": "Empurrei minha oponente, mas ela quase não saiu do lugar.",
+      "2": "Encostei nela ao tentar empurrar, mas sem efeito real.",
+      "3": "Dei um empurrão fraco e minha oponente apenas me encarou.",
+      "4": "Empurrei minha oponente com força moderada e ela recuou um passo.",
+      "5": "Dei um bom empurrão e ela quase perdeu o equilíbrio.",
+      "6": "Empurrei com força e minha oponente balançou bastante.",
+      "7": "Apliquei um empurrão poderoso e ela teve que se segurar.",
+      "8": "Empurrei com tudo e minha oponente caiu sentada.",
+      "9": "Dei um empurrão brutal e minha oponente deslizou pelo chão.",
+      "10": "Lancei minha oponente longe com um empurrão extremamente forte."
     }
   },
   "boxing": {
     "text": "Cruzado de boxe",
     "messages": {
-      "0": "Você socou o ar com estilo… pena que ninguém estava lá.",
-      "1": "O golpe passou longe do rosto dele.",
-      "2": "O soco acertou o braço",
-      "3": "O soco acertou o ombro",
-      "4": "O soco acertou, mas sem muita força.",
-      "5": "Bom cruzado! Ele sentiu o impacto.",
-      "6": "Um cruzado firme! A cabeça dele virou de lado.",
-      "7": "O golpe foi forte! Ele ficou desnorteado.",
-      "8": "Cruzado poderoso! Ele caiu de joelhos.",
-      "9": "O soco foi brutal! Ele foi nocauteado.",
-      "10": "CRÍTICO! Você o matou."
+      "0": "Tentei aplicar um cruzado, mas acertei apenas o ar.",
+      "1": "O cruzado passou longe do rosto do meu oponente.",
+      "2": "Acertei o braço do meu oponente com o cruzado.",
+      "3": "O cruzado atingiu o ombro do meu oponente.",
+      "4": "Acertei o cruzado, mas sem força suficiente.",
+      "5": "Acertei um bom cruzado e meu oponente sentiu o impacto.",
+      "6": "Acertei um cruzado firme e a cabeça do meu oponente virou.",
+      "7": "O cruzado foi forte e deixou meu oponente desnorteado.",
+      "8": "Derrubei meu oponente de joelhos com um cruzado poderoso.",
+      "9": "Nocauteei meu oponente com um cruzado brutal.",
+      "10": "Matei meu oponente com um cruzado extremamente violento."
     }
   },
   "jiu-jitsu": {
     "text": "Mata-leão",
     "messages": {
-      "0": "Você tentou agarrar, mas ele escapou facilmente.",
-      "1": "Seu braço nem conseguiu fechar o pescoço.",
-      "2": "Você tentou aplicar o golpe, mas sem pressão.",
-      "3": "O mata-leão começou, mas ele resistiu.",
-      "4": "Você conseguiu segurar por alguns segundos.",
-      "5": "Boa pressão! Ele começou a se debater.",
-      "6": "O golpe encaixou bem! A força dele diminuiu.",
-      "7": "Ele ficou tonto tentando escapar.",
-      "8": "O mata-leão funcionou! Ele caiu no chão sem forças.",
-      "9": "Ele apagou por alguns segundos!",
-      "10": "CRÍTICO! Ele morreu nos seus braços."
+      "0": "Tentei aplicar um mata-leão, mas meu oponente escapou facilmente.",
+      "1": "Tentei fechar o mata-leão, mas não consegui alcançar o pescoço.",
+      "2": "Apliquei o golpe sem pressão suficiente.",
+      "3": "Comecei o mata-leão, mas meu oponente resistiu.",
+      "4": "Consegui manter o mata-leão por alguns segundos.",
+      "5": "Apliquei boa pressão e meu oponente começou a se debater.",
+      "6": "O mata-leão encaixou bem e a força do meu oponente diminuiu.",
+      "7": "Meu oponente ficou tonto tentando escapar do golpe.",
+      "8": "Derrubei meu oponente no chão após ele perder as forças.",
+      "9": "Meu oponente apagou por alguns segundos com o mata-leão.",
+      "10": "Matei meu oponente ao manter o mata-leão por tempo excessivo."
     }
   }
 }

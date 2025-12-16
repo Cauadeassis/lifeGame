@@ -3,7 +3,7 @@
     "id": "programmer",
     "name": "Programador",
     "description": "Trabalha desenvolvendo sistemas, aplicativos e soluções digitais.",
-    "requisiton": {
+    "requisition": {
       "intellect": 60
     },
     "levels": [
@@ -31,22 +31,24 @@
     "id": "criminal",
     "name": "Bandido",
     "description": "Envolve-se em atividades ilegais e busca ganhar dinheiro de formas ilícitas.",
-    "requisiton": false,
+    "requisition": {
+      "intellect": 30
+    },
     "levels": [
       {
-        "id": "smalltime",
+        "id": "junior",
         "name": "Traficante",
         "minYears": 0,
         "salary": 1500
       },
       {
-        "id": "experienced",
+        "id": "pleno",
         "name": "Assaltante",
         "minYears": 2,
         "salary": 4000
       },
       {
-        "id": "boss",
+        "id": "senior",
         "name": "Chefe",
         "minYears": 5,
         "salary": 9000
@@ -63,19 +65,19 @@
     },
     "levels": [
       {
-        "id": "rookie",
+        "id": "junior",
         "name": "Recruta",
         "minYears": 0,
         "salary": 3000
       },
       {
-        "id": "officer",
+        "id": "pleno",
         "name": "Oficial",
         "minYears": 3,
         "salary": 5000
       },
       {
-        "id": "captain",
+        "id": "senior",
         "name": "Capitão",
         "minYears": 7,
         "salary": 8000
@@ -92,22 +94,51 @@
     },
     "levels": [
       {
-        "id": "resident",
+        "id": "junior",
         "name": "Residente",
         "minYears": 0,
         "salary": 4500
       },
       {
-        "id": "specialist",
+        "id": "pleno",
         "name": "Especialista",
         "minYears": 5,
         "salary": 12000
       },
       {
-        "id": "chief",
+        "id": "senior",
         "name": "Chefe de Departamento",
         "minYears": 10,
         "salary": 20000
+      }
+    ]
+  },
+  {
+    "id": "lawyer",
+    "name": "Advogado",
+    "description": "Atua na área do Direito, representando clientes, elaborando defesas e atuando em processos judiciais.",
+    "requisition": {
+      "lawCollege": true,
+      "intellect": 55
+    },
+    "levels": [
+      {
+        "id": "junior",
+        "name": "Advogado Particular",
+        "minYears": 0,
+        "salary": 4000
+      },
+      {
+        "id": "pleno",
+        "name": "Defensor Público",
+        "minYears": 4,
+        "salary": 9000
+      },
+      {
+        "id": "senior",
+        "name": "Juiz",
+        "minYears": 12,
+        "salary": 30000
       }
     ]
   }
