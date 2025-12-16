@@ -6,13 +6,13 @@ class CharacterService:
         self.data_path = Path(__file__).parent.parent / "data"
         self.load_data()
     def load_data(self):
-        with open(self.data_path / "genders.json", encoding="utf-8") as f:
+        with open(self.data_path / "character" / "genders.json", encoding="utf-8") as f:
             self.genders = json.load(f)
-        with open(self.data_path / "skinTones.json", encoding="utf-8") as f:
+        with open(self.data_path / "character" / "skinTones.json", encoding="utf-8") as f:
             self.skin_tones = json.load(f)
-        with open(self.data_path / "incomes.json", encoding="utf-8") as f:
+        with open(self.data_path / "character" / "incomes.json", encoding="utf-8") as f:
             self.incomes = json.load(f)
-        with open(self.data_path / "namesByCountry.json", encoding="utf-8") as f:
+        with open(self.data_path / "character" / "namesByCountry.json", encoding="utf-8") as f:
             self.names_by_country = json.load(f)
     def generate_random_status(self):
         all_status = [0] * 4
