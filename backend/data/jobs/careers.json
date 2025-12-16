@@ -4,7 +4,7 @@
     "name": "Programador",
     "description": "Trabalha desenvolvendo sistemas, aplicativos e soluções digitais.",
     "requisiton": {
-      "intellect": 40
+      "intellect": 60
     },
     "levels": [
       {
@@ -59,7 +59,7 @@
     "description": "Responsável pela segurança e aplicação da lei.",
     "requisition": {
       "health": 60,
-      "intellect": 40
+      "intellect": 60
     },
     "levels": [
       {

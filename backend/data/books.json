@@ -5,7 +5,8 @@
     "difficulty": 20,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Harry Potter"
   },
   {
     "title": "Percy Jackson",
@@ -13,7 +14,8 @@
     "difficulty": 20,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Percy Jackson"
   },
   {
     "title": "Alice no País das Maravilhas",
@@ -21,7 +23,8 @@
     "difficulty": 20,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Alice no País das Maravilhas"
   },
   {
     "title": "O Alquimista",
@@ -29,7 +32,8 @@
     "difficulty": 20,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li O Alquimista"
   },
   {
     "title": "Viagem ao Centro da Terra",
@@ -37,7 +41,8 @@
     "difficulty": 30,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Viagem ao centro da terra"
   },
   {
     "title": "Sherlock Holmes",
@@ -45,7 +50,8 @@
     "difficulty": 20,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Sherlock Holmes"
   },
   {
     "title": "A Biblioteca da Meia-Noite",
@@ -53,7 +59,8 @@
     "difficulty": 30,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li A Biblioteca da Meia-noite"
   },
   {
     "title": "It: A Coisa",
@@ -61,7 +68,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li It: A coisa"
   },
   {
     "title": "Frankenstein",
@@ -69,7 +77,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Frankeistein"
   },
   {
     "title": "1984",
@@ -77,7 +86,8 @@
     "difficulty": 50,
     "effects": {
       "intellect": 10
-    }
+    },
+    "message": "Eu li 1984"
   },
   {
     "title": "Senhor dos Anéis",
@@ -85,7 +95,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Senhor dos Anéis"
   },
   {
     "title": "A Arte da Guerra",
@@ -93,7 +104,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 10
-    }
+    },
+    "message": "Eu li A Arte da Guerra"
   },
   {
     "title": "Dom Quixote",
@@ -101,7 +113,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li Dom Quixote"
   },
   {
     "title": "Bíblia",
@@ -109,7 +122,8 @@
     "difficulty": 0,
     "effects": {
       "intellect": 5
-    }
+    },
+    "message": "Eu li a Bíblia"
   },
   {
     "title": "Cem Anos de Solidão",
@@ -117,7 +131,8 @@
     "difficulty": 40,
     "effects": {
       "intellect": 10
-    }
+    },
+    "message": "Eu li Cem Anos de Solidão"
   },
   {
     "title": "A Divina Comédia",
@@ -125,6 +140,7 @@
     "difficulty": 60,
     "effects": {
       "intellect": 10
-    }
+    },
+    "message": "Eu li a Divina Comédia"
   }
 ]

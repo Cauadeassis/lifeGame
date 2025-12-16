@@ -1,6 +1,4 @@
-import json
-import random
-from pathlib import Path
+from common import json, random, Path
 from services.difficulty import calculate_difficulty
 
 class CharacterService:
@@ -60,3 +58,4 @@ class CharacterService:
                 "beauty": status[3]
             },
         }
+

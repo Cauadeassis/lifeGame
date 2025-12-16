@@ -1,6 +1,4 @@
-import json
-import random
-from pathlib import Path
+from common import json, random, Path
 class CardService:
     def __init__(self):
         self.data_path = Path(__file__).parent.parent / "data"
@@ -38,7 +36,7 @@ class CardService:
                         "male": "Bater nele",
                         "female": "Bater nela"
                     },
-                    "choices": {
+                    "options": {
                         "male": [
                             {"label": "Chute na virilha", "value": "groinKick"},
                             {"label": "Soco no queixo", "value": "chinPunch"}

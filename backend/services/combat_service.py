@@ -1,6 +1,4 @@
-import json
-import random
-from pathlib import Path
+from common import json, random, Path
 class CombatService:
     def __init__(self):
         self.data_path = Path(__file__).parent.parent / "data"
@@ -32,7 +30,4 @@ class CombatService:
             "message": attack["messages"].get(str(damage), "Mensagem não encontrada"),
             "attackName": attack["text"]
         }
-    def get_all_attack_types(self):
-        return list(self.attack_messages.keys())
-    def get_attack_info(self, attack_type):
-        return self.attack_messages.get(attack_type)
+

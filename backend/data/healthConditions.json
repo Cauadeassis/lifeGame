@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cancer",
+    "name": "câncer",
+    "description": "Um tumor maligno no corpo humano.",
+    "difficulty": 8,
+    "effects": {
+      "health": -10
+    }
+  },
+  {
+    "id": "alzheimer",
+    "name": "Alzheimer",
+    "description": "Doença neurodegenerativa progressiva que afeta a memória, o raciocínio e a autonomia.",
+    "difficulty": 9,
+    "effects": {
+      "health": -8
+    }
+  },
+  {
+    "id": "flu",
+    "name": "Gripe",
+    "description": "Infecção viral comum que afeta o sistema respiratório.",
+    "difficulty": 2,
+    "effects": {
+      "health": -2
+    }
+  },
+  {
+    "id": "pneumonia",
+    "name": "Pneumonia",
+    "description": "Infecção grave que inflama os pulmões e dificulta a respiração.",
+    "difficulty": 6,
+    "effects": {
+      "health": -6
+    }
+  },
+  {
+    "id": "tuberculosis",
+    "name": "Tuberculose",
+    "description": "Doença infecciosa bacteriana que atinge principalmente os pulmões.",
+    "difficulty": 7,
+    "effects": {
+      "health": -7
+    }
+  },
+  {
+    "id": "aids",
+    "name": "AIDS",
+    "description": "Estágio avançado da infecção pelo HIV, que compromete gravemente o sistema imunológico.",
+    "difficulty": 8,
+    "effects": {
+      "health": -9
+    }
+  }
+]
