@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./statBar.module.css";
 
-import heart from "../../icons/heart.svg";
-import smile from "../../icons/smile.svg";
-import sparkles from "../../icons/sparkles.svg";
-import brain from "../../icons/brain.svg";
+import heart from "../../icons/Heart.svg";
+import smile from "../../icons/Smile.svg";
+import sparkles from "../../icons/Sparkles.svg";
+import brain from "../../icons/Brain.svg";
 
 const icons = {
   heart,

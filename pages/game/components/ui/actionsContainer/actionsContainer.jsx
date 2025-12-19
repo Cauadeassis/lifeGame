@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./actionsContainer.module.css";
 
-import users from "../../icons/users.svg";
-import graduationCap from "../../icons/graduationCap.svg";
+import users from "../../icons/Users.svg";
+import graduationCap from "../../icons/GraduationCap.svg";
 
 import ActionButton from "../actionButton/actionButton.jsx";
 import AdvanceYearButton from "../advanceYearButton/advanceYearButton";
