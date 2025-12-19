@@ -1,9 +1,17 @@
 import React from "react";
-import Heart from "../../icons/Heart";
-import Smile from "../../icons/Smile";
-import Sparkles from "../../icons/Sparkles";
-import Brain from "../../icons/Brain";
 import styles from "./statBar.module.css";
+
+import heart from "../../icons/heart.svg";
+import smile from "../../icons/smile.svg";
+import sparkles from "../../icons/sparkles.svg";
+import brain from "../../icons/brain.svg";
+
+const icons = {
+  heart,
+  smile,
+  sparkles,
+  brain,
+};
 
 const StatBar = ({ value, icon, label }) => {
   const percentage = Math.min(value, 100);
@@ -13,20 +21,22 @@ const StatBar = ({ value, icon, label }) => {
     if (value >= 40) return "#f59e0b";
     if (value < 40) return "var(--red)";
   };
-  const icons = {
-    heart: Heart,
-    smile: Smile,
-    sparkles: Sparkles,
-    brain: Brain,
-  };
-
-  const IconComponent = icons[icon];
+  const iconSrc = icons[icon];
 
   return (
     <div className={styles.StatBar}>
       <div className={styles.header}>
         <div className={styles.labelContainer}>
-          {IconComponent && <IconComponent size={16} className={styles.icon} />}
+          {iconSrc && (
+            <img
+              src={iconSrc}
+              alt=""
+              className={styles.icon}
+              width={24}
+              height={24}
+              aria-hidden="true"
+            />
+          )}
           <span className={styles.label}>{label}</span>
         </div>
         <span className={styles.value}>{value}</span>

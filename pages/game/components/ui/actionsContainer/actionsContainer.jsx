@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import ActionButton from "../actionButton/actionButton.jsx";
-import Users from "../../icons/Users";
-import GraduationCap from "../../icons/GraduationCap";
 import styles from "./actionsContainer.module.css";
+
+import users from "../../icons/users.svg";
+import graduationCap from "../../icons/graduationCap.svg";
+
+import ActionButton from "../actionButton/actionButton.jsx";
 import AdvanceYearButton from "../advanceYearButton/advanceYearButton";
 
 const ActionMenu = ({ onNavigate, onAdvanceYear, currentPage = "home" }) => {
   const menuItems = [
-    { id: "school", icon: GraduationCap, label: "Escola" },
-    { id: "relationship", icon: Users, label: "Relacionamentos" },
+    { id: "school", icon: graduationCap, label: "Escola" },
+    { id: "relationship", icon: users, label: "Relacionamentos" },
   ];
 
   return (
