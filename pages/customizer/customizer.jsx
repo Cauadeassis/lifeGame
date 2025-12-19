@@ -47,7 +47,12 @@ export default function Customizer() {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/icons/favicon.png"
+        />
         <title>Customização</title>
       </Head>
       <div className={styles.body}>
@@ -121,8 +126,9 @@ export default function Customizer() {
           />
           {errorMessage && (
             <p
-              className={`${styles.errorMessage} ${!showError ? styles.fadeOut : ""
-                }`}
+              className={`${styles.errorMessage} ${
+                !showError ? styles.fadeOut : ""
+              }`}
             >
               {errorMessage}
             </p>

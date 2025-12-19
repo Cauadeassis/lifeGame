@@ -11,7 +11,12 @@ export default function InitialPage() {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/icons/favicon.png"
+        />
         <title>Página Inicial</title>
       </Head>
       <div className={styles.body}>

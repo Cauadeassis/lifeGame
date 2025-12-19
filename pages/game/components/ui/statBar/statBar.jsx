@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./statBar.module.css";
 
 import heart from "../../icons/Heart.svg";
@@ -21,6 +22,7 @@ const StatBar = ({ value, icon, label }) => {
     if (value >= 40) return "#f59e0b";
     if (value < 40) return "var(--red)";
   };
+
   const iconSrc = icons[icon];
 
   return (
@@ -28,13 +30,12 @@ const StatBar = ({ value, icon, label }) => {
       <div className={styles.header}>
         <div className={styles.labelContainer}>
           {iconSrc && (
-            <img
+            <Image
               src={iconSrc}
-              alt=""
+              alt={label}
               className={styles.icon}
               width={24}
               height={24}
-              aria-hidden="true"
             />
           )}
           <span className={styles.label}>{label}</span>

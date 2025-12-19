@@ -9,7 +9,7 @@ export function applyStatsChange(currentStats, changes) {
     beauty: clamp(currentStats.beauty + (changes.beauty ?? 0)),
     intellect: clamp(currentStats.intellect + (changes.intellect ?? 0)),
     mentalHealth: clamp(
-      currentStats.mentalHealth + (changes.mentalHealth ?? 0)
+      currentStats.mentalHealth + (changes.mentalHealth ?? 0),
     ),
   };
 }
@@ -17,30 +17,21 @@ export function generateYearEvents(
   currentAge,
   currentStats,
   character,
-  generateContextualEvent
+  generateContextualEvent,
 ) {
   const events = [];
   const numEvents = Math.floor(Math.random() * 3) + 1;
 
-  for (let i = 0; i < numEvents; i++) {
-    const event = generateContextualEvent(
-      currentAge,
-      currentStats,
-      character
-    );
+  /*for (let i = 0; i < numEvents; i++) {
+    const event = generateContextualEvent(currentAge, currentStats, character);
     if (event) events.push(event);
-  }
+  }*/
 
   return events.length > 0
     ? events
     : [{ description: "Foi um ano tranquilo.", statsChange: {} }];
 }
-export function advanceYear({
-  age,
-  stats,
-  timeline,
-  currentYearEvents,
-}) {
+export function advanceYear({ age, stats, timeline, currentYearEvents }) {
   let updatedStats = { ...stats };
 
   currentYearEvents.forEach((event) => {

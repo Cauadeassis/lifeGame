@@ -5,9 +5,6 @@ import ThemeToggle from "../../components/themeToggle/themeToggle.jsx";
 import ActionsContainer from "./components/ui/actionsContainer/actionsContainer.jsx";
 import StatBar from "./components/ui/statBar/statBar.jsx";
 
-import { generateRandomStatus } from "../../models/randomizer";
-import namesByCountry from "../../data/namesByCountry.json";
-
 import { generateYearEvents, advanceYear } from "./gameLogic";
 
 const STORAGE_KEY = "character";
@@ -24,34 +21,34 @@ export default function Game() {
   function lower(text) {
     return text.toLowerCase();
   }
-  function getDemonym(country, gender) {
-    return namesByCountry[country].demonym[gender];
-  }
 
   useEffect(() => {
     try {
       const savedCharacter = localStorage.getItem(STORAGE_KEY);
       const savedGameState = localStorage.getItem(GAME_STATE_KEY);
 
-      if (savedCharacter) {
-        setCharacter(JSON.parse(savedCharacter));
+      if (!savedCharacter) {
+        console.error("Nenhum personagem encontrado!");
+        setIsLoading(false);
+        return;
       }
 
+      const parsedCharacter = JSON.parse(savedCharacter);
+      setCharacter(parsedCharacter);
+
       if (savedGameState) {
+
         const gameState = JSON.parse(savedGameState);
         setStats(gameState.stats);
         setAge(gameState.age);
         setTimeline(gameState.timeline || []);
         setCurrentYearEvents(gameState.currentYearEvents || []);
       } else {
-        const [health, intellect, beauty, mentalHealth] =
-          generateRandomStatus();
-
         const initialStats = {
-          health,
-          beauty,
-          intellect,
-          mentalHealth,
+          health: parsedCharacter.status.health,
+          beauty: parsedCharacter.status.beauty,
+          intellect: parsedCharacter.status.intellect,
+          mentalHealth: parsedCharacter.status.mentalHealth,
         };
 
         setStats(initialStats);
@@ -59,12 +56,14 @@ export default function Game() {
         const firstYearEvents = generateYearEvents(
           1,
           initialStats,
-          JSON.parse(savedCharacter),
-          generateContextualEvent
+          parsedCharacter,
+          /*generateContextualEvent,*/
         );
 
         setCurrentYearEvents(firstYearEvents);
       }
+    } catch (error) {
+      console.error("Erro ao carregar personagem:", error);
     } finally {
       setIsLoading(false);
     }
@@ -73,7 +72,7 @@ export default function Game() {
   const saveGame = (stats, age, timeline, events) => {
     localStorage.setItem(
       GAME_STATE_KEY,
-      JSON.stringify({ stats, age, timeline, currentYearEvents: events })
+      JSON.stringify({ stats, age, timeline, currentYearEvents: events }),
     );
   };
 
@@ -89,7 +88,7 @@ export default function Game() {
       newAge,
       newStats,
       character,
-      generateContextualEvent
+      /*generateContextualEvent*/
     );
 
     setAge(newAge);
@@ -100,8 +99,23 @@ export default function Game() {
     saveGame(newStats, newAge, newTimeline, nextEvents);
   };
 
-  if (isLoading || !character || !stats) {
-    return <p>Carregando personagem...</p>;
+  if (isLoading) {
+    return (
+      <div className={styles.body}>
+        <p>Carregando personagem...</p>
+      </div>
+    );
+  }
+
+  if (!character || !stats) {
+    return (
+      <div className={styles.body}>
+        <p>Nenhum personagem encontrado. Por favor, crie um personagem primeiro.</p>
+        <button onClick={() => window.location.href = "/randomizer"}>
+          Criar Personagem
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -117,9 +131,9 @@ export default function Game() {
       </section>
 
       <section>
+        <h2>Sobre</h2>
         <p>
-          Olá! Sou {lower(character.skinTone.label)},{" "}
-          {getDemonym()}.
+          Olá! Sou {lower(character.skinTone.label)}, {character.demonym}.
         </p>
       </section>
 
