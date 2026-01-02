@@ -1,0 +1,117 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Primeiros Passos",
+    "description": "Você começa a tentar dar seus primeiros passos pela casa.",
+    "options": [
+      {
+        "text": "Explorar sozinho",
+        "effects": {
+          "health": -2,
+          "intellect": 3
+        },
+        "message": "Comecei a andar sozinho, caí algumas vezes, mas aprendi bastante."
+      },
+      {
+        "text": "Aceitar ajuda dos pais",
+        "effects": {
+          "health": 2,
+          "mentalHealth": 2
+        },
+        "message": "Aprendi a andar com a ajuda dos meus pais, me sentindo seguro."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Choro Noturno",
+    "description": "Você acorda chorando durante a noite, sem um motivo aparente.",
+    "options": [
+      {
+        "text": "Chorar até alguém aparecer",
+        "effects": {
+          "mentalHealth": 2
+        },
+        "message": "Chorei bastante até alguém vir me acalmar."
+      },
+      {
+        "text": "Tentar se acalmar sozinho",
+        "effects": {
+          "mentalHealth": -1,
+          "intellect": 2
+        },
+        "message": "Tentei me acalmar sozinho e acabei pegando no sono."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Primeiras Palavras",
+    "description": "Você começa a tentar falar suas primeiras palavras.",
+    "options": [
+      {
+        "text": "Imitar os adultos",
+        "effects": {
+          "intellect": 4
+        },
+        "message": "Tentei imitar os adultos e aprendi novas palavras."
+      },
+      {
+        "text": "Inventar sons e palavras",
+        "effects": {
+          "intellect": 2,
+          "beauty": 1
+        },
+        "message": "Inventei sons estranhos, mas todos acharam engraçado."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Hora da Comida",
+    "description": "Chegou a hora de experimentar novos alimentos.",
+    "options": [
+      {
+        "text": "Aceitar experimentar tudo",
+        "effects": {
+          "health": 3
+        },
+        "message": "Experimentei vários alimentos novos e gostei de alguns."
+      },
+      {
+        "text": "Recusar a comida",
+        "effects": {
+          "health": -2,
+          "mentalHealth": -1
+        },
+        "message": "Recusei a comida e fiz birra."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Brincando Sozinho",
+    "description": "Você passa um tempo brincando sozinho com seus brinquedos.",
+    "options": [
+      {
+        "text": "Usar a imaginação",
+        "effects": {
+          "intellect": 3,
+          "mentalHealth": 1
+        },
+        "message": "Usei a imaginação e criei histórias enquanto brincava."
+      },
+      {
+        "text": "Brincar de forma repetitiva",
+        "effects": {
+          "mentalHealth": 2
+        },
+        "message": "Brinquei calmamente, repetindo as mesmas brincadeiras."
+      }
+    ]
+  }
+]

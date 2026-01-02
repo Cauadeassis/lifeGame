@@ -1,0 +1,218 @@
+{
+  "male": [
+    {
+      "type": "twoOptions",
+      "title": "Mudança na Voz",
+      "description": "Sua voz começa a falhar em momentos inesperados, inclusive ao falar com outras pessoas.",
+      "options": [
+        {
+          "text": "Levar na brincadeira",
+          "effects": {
+            "mentalHealth": 3
+          },
+          "message": "Levei as mudanças na minha voz com bom humor."
+        },
+        {
+          "text": "Ficar envergonhado",
+          "effects": {
+            "mentalHealth": -3
+          },
+          "message": "Fiquei envergonhado com as falhas da minha voz."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Crescimento Repentino",
+      "description": "Você cresce vários centímetros em pouco tempo e começa a se sentir desajeitado.",
+      "options": [
+        {
+          "text": "Praticar esportes",
+          "effects": {
+            "health": 3,
+            "beauty": 1
+          },
+          "message": "Usei meu crescimento para praticar esportes."
+        },
+        {
+          "text": "Evitar atividades físicas",
+          "effects": {
+            "mentalHealth": -2
+          },
+          "message": "Evitei atividades físicas por me sentir estranho."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Pressão para Ser Forte",
+      "description": "Algumas pessoas esperam que você seja mais forte e menos emotivo.",
+      "options": [
+        {
+          "text": "Ignorar a pressão",
+          "effects": {
+            "mentalHealth": 2
+          },
+          "message": "Ignorei a pressão e fui eu mesmo."
+        },
+        {
+          "text": "Tentar agradar os outros",
+          "effects": {
+            "mentalHealth": -2
+          },
+          "message": "Tentei corresponder às expectativas dos outros."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Primeiros Pelos",
+      "description": "Você começa a notar pelos surgindo em partes do corpo.",
+      "options": [
+        {
+          "text": "Aceitar como algo natural",
+          "effects": {
+            "mentalHealth": 2
+          },
+          "message": "Aceitei as mudanças do meu corpo com naturalidade."
+        },
+        {
+          "text": "Sentir desconforto",
+          "effects": {
+            "mentalHealth": -2
+          },
+          "message": "Fiquei desconfortável com as mudanças no meu corpo."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Mudanças de Humor",
+      "description": "Você percebe que seu humor oscila mais do que antes.",
+      "options": [
+        {
+          "text": "Conversar com alguém",
+          "effects": {
+            "mentalHealth": 3
+          },
+          "message": "Conversei com alguém e me senti melhor."
+        },
+        {
+          "text": "Guardar para si",
+          "effects": {
+            "mentalHealth": -3
+          },
+          "message": "Guardei meus sentimentos e me senti sobrecarregado."
+        }
+      ]
+    }
+  ],
+  "female": [
+    {
+      "type": "twoOptions",
+      "title": "Mudanças no Corpo",
+      "description": "Seu corpo começa a mudar de forma perceptível, o que chama sua atenção.",
+      "options": [
+        {
+          "text": "Buscar informação",
+          "effects": {
+            "mentalHealth": 3
+          },
+          "message": "Busquei informações e me senti mais tranquila."
+        },
+        {
+          "text": "Ficar confusa",
+          "effects": {
+            "mentalHealth": -2
+          },
+          "message": "Fiquei confusa com as mudanças no meu corpo."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Primeira Menstruação",
+      "description": "Você passa por uma experiência nova e marcante em sua vida.",
+      "options": [
+        {
+          "text": "Conversar com alguém de confiança",
+          "effects": {
+            "mentalHealth": 4
+          },
+          "message": "Conversei com alguém de confiança e me senti acolhida."
+        },
+        {
+          "text": "Lidar sozinha",
+          "effects": {
+            "mentalHealth": -3
+          },
+          "message": "Lidei sozinha com essa experiência difícil."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Pressões sobre Aparência",
+      "description": "Você percebe comentários e expectativas sobre sua aparência.",
+      "options": [
+        {
+          "text": "Ignorar os comentários",
+          "effects": {
+            "mentalHealth": 2
+          },
+          "message": "Ignorei os comentários sobre minha aparência."
+        },
+        {
+          "text": "Se comparar com os outros",
+          "effects": {
+            "mentalHealth": -3
+          },
+          "message": "Comecei a me comparar com outras pessoas."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Mudanças de Humor",
+      "description": "Seu humor oscila mais do que o normal, às vezes sem motivo claro.",
+      "options": [
+        {
+          "text": "Aceitar e se cuidar",
+          "effects": {
+            "mentalHealth": 3
+          },
+          "message": "Cuidei de mim e respeitei meus sentimentos."
+        },
+        {
+          "text": "Se culpar",
+          "effects": {
+            "mentalHealth": -3
+          },
+          "message": "Me culpei por não entender meus sentimentos."
+        }
+      ]
+    },
+    {
+      "type": "twoOptions",
+      "title": "Busca por Identidade",
+      "description": "Você começa a refletir mais sobre quem você é e quem quer se tornar.",
+      "options": [
+        {
+          "text": "Explorar seus interesses",
+          "effects": {
+            "intellect": 2,
+            "mentalHealth": 2
+          },
+          "message": "Explorei meus interesses e aprendi mais sobre mim."
+        },
+        {
+          "text": "Reprimir seus desejos",
+          "effects": {
+            "mentalHealth": -2
+          },
+          "message": "Reprimi meus desejos e me senti perdida."
+        }
+      ]
+    }
+  ]
+}

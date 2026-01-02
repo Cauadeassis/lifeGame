@@ -1,0 +1,60 @@
+.skinSelector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.colorPreview {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--aqua);
+  box-shadow: 0 0 10px var(--aqua);
+  transition: background-color 0.3s ease;
+}
+
+.slider {
+  width: 60%;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #f1d6b8 0%, #c68642 50%, #5c4033 100%);
+  margin-top: 0.4rem;
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.activeLabel {
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+@mixin slider-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--aqua);
+  border: 2px solid var(--allWhite);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--allWhite) 30%, transparent);
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px var(--allWhite);
+    transition: 0.1s;
+  }
+}

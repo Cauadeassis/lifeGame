@@ -1,0 +1,39 @@
+[
+  {
+    "type": "twoOptions",
+    "text": "Ei, quer dar um trago?",
+    "options": {
+      "firstOption": {
+        "text": "Não, obrigado",
+        "effects": {
+          "intellect": 5
+        },
+        "message": "Eu recusei um cigarro de maconha na escola."
+      },
+      "secondOption": {
+        "text": "Só uma experimentada",
+        "risk": {
+          "chance": 0.25,
+          "onFail": {
+            "text": "Você fica viciado",
+            "effects": {
+              "health": -5,
+              "mentalHealth": -5,
+              "intellect": -5,
+              "beauty": -5
+            },
+            "message": "Eu experimentei maconha na escola e fiquei viciado."
+          },
+          "onSuccess": {
+            "text": "🤩🤩",
+            "effects": {
+              "mentalHealth": 10,
+              "health": -5
+            },
+            "message": "Eu experimentei maconha na escola"
+          }
+        }
+      }
+    }
+  }
+]

@@ -12,80 +12,57 @@
   @media (max-width: 480px) {
     padding: 1rem;
   }
-}
 
-.headerContainer {
-  text-align: center;
-}
-
-.siteContent {
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--primary-color);
-  border-radius: 16px;
-  padding: 1.5rem 1.5rem 0;
-  box-shadow: 0 4px 16px
-    color-mix(in srgb, var(--secondary-color) 40%, transparent);
-  backdrop-filter: blur(8px);
-
-  & p {
-    margin: 0.3rem 0;
-    text-align: left;
-    font-size: 0.95rem;
-    color: var(--text-color);
-  }
-
-  @media (max-width: 480px) {
-    padding: 1rem;
-  }
-}
-
-.paragraphContainer {
-  justify-content: center;
-}
-
-.h1 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-  text-shadow: 0 1px 4px
-    color-mix(in srgb, var(--secondary-color) 40%, transparent);
-
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-  }
-}
-
-.buttonsContainer {
-  & button {
+  & main {
     width: 100%;
-    max-width: 280px;
-    margin: 0.5rem 0;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 12px;
-    background: var(--secondary-gradient);
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.5s ease;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--primary-color);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 0;
+    box-shadow: 0 4px 16px
+      color-mix(in srgb, var(--secondary-color) 40%, transparent);
+    backdrop-filter: blur(8px);
 
-    &:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 1px var(--text-color);
+    & > section:nth-of-type(1) {
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & p {
+          margin: 0.3rem 0;
+          text-align: left;
+          font-size: 0.95rem;
+          color: var(--text-color);
+        }
+      }
     }
+    & > section:nth-of-type(2) {
+      & button {
+        width: 100%;
+        max-width: 280px;
+        margin: 0.5rem 0;
+        padding: 0.9rem 1.2rem;
+        border-radius: 0.75rem;
+        background: var(--secondary-gradient);
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.5s ease;
 
-    &:active {
-      transform: scale(0.97);
-      text-shadow: 0 0 10px var(--text-color);
-    }
+        &:hover {
+          transform: scale(1.05);
+          text-shadow: 0 0 1px var(--text-color);
+        }
 
-    @media (max-width: 480px) {
-      font-size: 0.9rem;
+        &:active {
+          transform: scale(0.95);
+          text-shadow: 0 0 10px var(--text-color);
+        }
+      }
     }
   }
 }

@@ -1,0 +1,160 @@
+{
+  "pistolShot": {
+    "name": "tiro de pistola",
+    "damageType": "perfuration",
+    "messages": {
+      "active": {
+        "light": [
+          "Você puxou o gatilho mirando {article} {bodyPart} d{pronoun}, mas errou."
+        ],
+        "medium": ["O disparo acerta {article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Você atirou n{article} {bodyPart} d{pronoun} à queima-roupa!",
+          "O projétil atravessou {article} {bodyPart} d{pronoun}!"
+        ]
+      },
+      "passive": {
+        "light": [
+          "Você ouve um disparo e sente a bala passar de raspão n{article} {possessive} {bodyPart}."
+        ],
+        "medium": [
+          "Um tiro atinge {possessive} {bodyPart} e a dor explode pelo seu corpo!"
+        ],
+        "high": [
+          "Uma bala atravessa {possessive} {bodyPart} e você sente suas forças abandonarem o corpo!",
+          "Alguma coisa rasga {possessive} {bodyPart} e o mundo começa a escurecer!"
+        ]
+      }
+    },
+    "modifiers": {
+      "head": 4,
+      "neck": 4,
+      "chest": 4,
+      "stomach": 4,
+      "left_eye": 2,
+      "right_eye": 2,
+      "left_arm": 2,
+      "right_arm": 2,
+      "left_leg": 2,
+      "right_leg": 2,
+      "left_hand": 1.5,
+      "right_hand": 1.5,
+      "left_foot": 1.5,
+      "right_foot": 1.5,
+      "groin": 2
+    }
+  },
+  "knife": {
+    "name": "faca",
+    "damageType": "perfuration",
+    "messages": {
+      "active": {
+        "light": [
+          "Você tenta golpear {article} {bodyPart} d{pronoun} com a faca."
+        ],
+        "medium": ["Você enfia a lâmina n{article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Você crava a faca profundamente n{article} {bodyPart} d{pronoun}!",
+          "A lâmina rasga {article} {bodyPart} d{pronoun}!"
+        ]
+      },
+      "passive": {
+        "light": [
+          "A faca d{pronoun} roça {article} {possessive} {bodyPart}, ardendo na pele."
+        ],
+        "medium": [
+          "A faca d{pronoun} entra n{article} {possessive} {bodyPart}! A dor é imediata!"
+        ],
+        "high": [
+          "A faca d{pronoun} se enterra n{article} {possessive} {bodyPart}! Você grita de dor!",
+          "Você sente {possessive} {bodyPart} rasgando!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 4,
+      "head": 4,
+      "stomach": 4,
+      "groin": 2,
+      "left_eye": 2,
+      "right_eye": 2,
+      "left_hand": 1.5,
+      "right_hand": 1.5,
+      "chest": 1.5
+    }
+  },
+
+  "explosive": {
+    "name": "explosivo",
+    "damageType": "perfuration",
+    "messages": {
+      "active": {
+        "light": [
+          "A explosão atinge {article} {bodyPart} d{pronoun} de raspão."
+        ],
+        "medium": [
+          "A explosão arremessa estilhaços contra {article} {bodyPart} d{pronoun}!"
+        ],
+        "high": [
+          "A explosão dilacera {article} {bodyPart} d{pronoun}!",
+          "Você explode completamente {article} {bodyPart} d{pronoun}!"
+        ]
+      },
+      "passive": {
+        "light": ["O impacto da explosão sacode {possessive} {bodyPart}!"],
+        "medium": [
+          "Estilhaços atravessam {possessive} {bodyPart}! A dor é lancinante!"
+        ],
+        "high": [
+          "{possessive} {bodyPart} é dilacerado pela explosão!",
+          "A explosão destrói {possessive} {bodyPart}! Você mal consegue reagir!"
+        ]
+      }
+    },
+    "modifiers": {
+      "left_arm": 4,
+      "right_arm": 4,
+      "left_leg": 4,
+      "right_leg": 4,
+      "chest": 4,
+      "stomach": 4,
+      "head": 4,
+      "groin": 4
+    }
+  },
+
+  "rifle": {
+    "name": "fuzil",
+    "damageType": "perfuration",
+    "messages": {
+      "active": {
+        "light": ["O disparo atinge {article} {bodyPart} d{pronoun}."],
+        "medium": ["O tiro atravessa {article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "O disparo destrói {article} {bodyPart} d{pronoun}!",
+          "A bala atravessa {article} {bodyPart} d{pronoun} com violência!"
+        ]
+      },
+      "passive": {
+        "light": ["O tiro acerta {article} {possessive} {bodyPart}!"],
+        "medium": [
+          "A bala atravessa {article} {possessive} {bodyPart}! A dor é absurda!"
+        ],
+        "high": [
+          "{possessive} {bodyPart} é destruído pelo disparo!",
+          "Você sente {possessive} {bodyPart} sendo atravessado pela bala!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 3,
+      "head": 3,
+      "chest": 2,
+      "stomach": 2,
+      "left_arm": 2,
+      "right_arm": 2,
+      "left_leg": 2,
+      "right_leg": 2
+    }
+  }
+}

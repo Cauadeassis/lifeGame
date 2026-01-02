@@ -1,0 +1,10 @@
+{
+  "defined": {
+    "male": { "singular": "do", "plural": "dos" },
+    "female": { "singular": "da", "plural": "das" }
+  },
+  "undefined": {
+    "male": { "singular": "de", "plural": "de" },
+    "female": { "singular": "de", "plural": "de" }
+  }
+}

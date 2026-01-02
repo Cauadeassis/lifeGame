@@ -1,0 +1,119 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Brincadeira na Rua",
+    "description": "Algumas crianças estão brincando na sua rua.",
+    "options": [
+      {
+        "text": "Me juntar a elas",
+        "effects": {
+          "mentalHealth": 5,
+          "health": 5
+        },
+        "message": "Brinquei na rua até escurecer e me diverti muito."
+      },
+      {
+        "text": "Continuar em casa",
+        "effects": {
+          "mentalHealth": -5,
+          "intellect": 5
+        },
+        "message": "Preferi ficar em casa do que brincar na rua."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Discussão com um Amigo",
+    "description": "Você discute com um amigo por causa de uma brincadeira.",
+    "options": [
+      {
+        "text": "Tentar fazer as pazes",
+        "effects": {
+          "mentalHealth": 2,
+          "intellect": 1
+        },
+        "message": "Conversei e fiz as pazes com meu amigo."
+      },
+      {
+        "text": "Guardar rancor",
+        "effects": {
+          "mentalHealth": -2
+        },
+        "message": "Fiquei chateado e me afastei do meu amigo."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Mentira Inofensiva",
+    "description": "Você pensa em contar uma pequena mentira para evitar problemas.",
+    "options": [
+      {
+        "text": "Dizer a verdade",
+        "effects": {
+          "mentalHealth": 1,
+          "intellect": 1
+        },
+        "message": "Contei a verdade, mesmo com medo das consequências."
+      },
+      {
+        "text": "Mentir para se safar",
+        "effects": {
+          "mentalHealth": -1,
+          "beauty": 1
+        },
+        "message": "Contei uma mentira e consegui evitar problemas."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Descobrindo um Hobby",
+    "description": "Você descobre interesse por uma nova atividade ou hobby.",
+    "options": [
+      {
+        "text": "Se dedicar bastante",
+        "effects": {
+          "intellect": 3,
+          "mentalHealth": 1
+        },
+        "message": "Me dediquei bastante ao meu novo hobby."
+      },
+      {
+        "text": "Fazer só por diversão",
+        "effects": {
+          "mentalHealth": 2
+        },
+        "message": "Pratiquei meu hobby apenas por diversão."
+      }
+    ]
+  },
+
+  {
+    "type": "twoOptions",
+    "title": "Responsabilidade em Casa",
+    "description": "Seus pais pedem ajuda com pequenas tarefas domésticas.",
+    "options": [
+      {
+        "text": "Ajudar com boa vontade",
+        "effects": {
+          "mentalHealth": 1,
+          "intellect": 2
+        },
+        "message": "Ajudei em casa e me senti mais responsável."
+      },
+      {
+        "text": "Reclamar, mas fazer",
+        "effects": {
+          "mentalHealth": -1,
+          "health": 1
+        },
+        "message": "Reclamei um pouco, mas fiz o que precisava ser feito."
+      }
+    ]
+  }
+]

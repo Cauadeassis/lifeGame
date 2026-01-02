@@ -1,0 +1,137 @@
+[
+  {
+    "id": "left_arm",
+    "name": "braço esquerdo",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "right_arm",
+    "name": "braço direito",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "left_leg",
+    "name": "perna esquerda",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "right_leg",
+    "name": "perna direita",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "left_eye",
+    "name": "olho esquerdo",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 20
+  },
+  {
+    "id": "right_eye",
+    "name": "olho direito",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 20
+  },
+  {
+    "id": "left_hand",
+    "name": "mão esquerda",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "right_hand",
+    "name": "mão direita",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "left_foot",
+    "name": "pé esquerdo",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "right_foot",
+    "name": "pé direito",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": true,
+    "beauty": 10
+  },
+  {
+    "id": "groin",
+    "name": "virilha",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "medium",
+    "canBeLost": false,
+    "beauty": 20
+  },
+  {
+    "id": "chest",
+    "name": "peito",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": false,
+    "beauty": 10
+  },
+  {
+    "id": "stomach",
+    "name": "estômago",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "high",
+    "canBeLost": false,
+    "beauty": 10
+  },
+  {
+    "id": "head",
+    "name": "cabeça",
+    "grammaticalGender": "female",
+    "quantity": "singular",
+    "relevance": "critical",
+    "canBeLost": true,
+    "beauty": 50
+  },
+  {
+    "id": "neck",
+    "name": "pescoço",
+    "grammaticalGender": "male",
+    "quantity": "singular",
+    "relevance": "critical",
+    "canBeLost": false,
+    "beauty": 20
+  }
+]

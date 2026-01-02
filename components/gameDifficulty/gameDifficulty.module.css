@@ -1,35 +1,34 @@
-.difficultyContainer {
+.gameDifficulty {
   text-align: center;
   margin-top: 15px;
-}
 
-.difficultyContainer label {
-  font-size: 1.2rem;
-  color: var(--text-color);
-}
-
-.rangeInput {
-  appearance: none;
-  margin: 15px 0;
-  width: 100%;
-  height: 8px;
-  border-radius: 5px;
-  background: linear-gradient(to right, var(--allWhite), var(--fullBlack));
-  outline: none;
-  cursor: not-allowed;
-
-  &::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: var(--aqua);
-    border-radius: 50%;
-    border: 2px solid var(--allWhite);
+  & label {
+    font-size: 1.2rem;
+    color: var(--text-color);
   }
-}
 
-.gamemodeText {
-  font-weight: 500;
-  color: var(--text-color);
-  text-shadow: 0 0 2px color-mix(in srgb, var(--text-color) 60%, transparent);
+  & input {
+    appearance: none;
+    margin: 15px 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--allWhite), var(--fullBlack));
+    outline: none;
+    cursor: not-allowed;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: var(--aqua);
+      border-radius: 50%;
+      border: 2px solid var(--allWhite);
+    }
+  }
+  & > div {
+    font-weight: 500;
+    color: var(--text-color);
+    text-shadow: 0 0 2px color-mix(in srgb, var(--text-color) 60%, transparent);
+  }
 }

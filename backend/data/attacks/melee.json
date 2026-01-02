@@ -1,0 +1,194 @@
+{
+  "kick": {
+    "name": "chute",
+    "damageType": "impact",
+    "messages": {
+      "active": {
+        "light": ["Você tentou chutar {article} {bodyPart} d{pronoun}."],
+        "medium": ["Você enterra seu pé n{article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Você esmagou {article} {bodyPart} d{pronoun} com um chute!",
+          "Você afundou {article} {bodyPart} d{pronoun} para dentro!"
+        ]
+      },
+      "passive": {
+        "light": ["{pronoun} tentou chutar {article} {possessive} {bodyPart}."],
+        "medium": [
+          "{pronoun} acertou um chute n{article} {possessive} {bodyPart}!"
+        ],
+        "high": [
+          "O pé d{pronoun} esmagou {possessive} {bodyPart}!",
+          "O chute afundou {possessive} {bodyPart} para dentro!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 2,
+      "groin": 2,
+      "left_eye": 0.5,
+      "right_eye": 0.5,
+      "left_hand": 0.5,
+      "right_hand": 0.5,
+      "left_foot": 0.5,
+      "right_foot": 0.5,
+      "stomach": 1.5,
+      "head": 1.5
+    }
+  },
+
+  "punch": {
+    "name": "soco",
+    "damageType": "impact",
+    "messages": {
+      "active": {
+        "light": ["Você tentou socar {article} {bodyPart} d{pronoun}."],
+        "medium": ["Você acertou um soco n{article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Seu punho afundou n{article} {bodyPart} d{pronoun}!",
+          "Você sentiu a carne d{article} {bodyPart} d{pronoun} cedendo!"
+        ]
+      },
+      "passive": {
+        "light": ["{pronoun} tentou socar {article} {possessive} {bodyPart}."],
+        "medium": [
+          "{pronoun} acertou um soco n{article} {possessive} {bodyPart}!"
+        ],
+        "high": [
+          "O punho d{pronoun} afundou {possessive} {bodyPart} para dentro!",
+          "A carne d{article} {possessive} {bodyPart} cedeu no punho d{pronoun}!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 1.5,
+      "groin": 2,
+      "left_eye": 1.5,
+      "right_eye": 1.5,
+      "chest": 0.5,
+      "stomach": 1.5,
+      "head": 2
+    }
+  },
+
+  "squeeze": {
+    "name": "aperto",
+    "damageType": "impact",
+    "messages": {
+      "active": {
+        "light": ["Você tentou agarrar {article} {bodyPart} d{pronoun}."],
+        "medium": ["Seus dedos se enrolaram n{article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Você apertou e esmagou {article} {bodyPart} d{pronoun} com toda sua força!"
+        ]
+      },
+      "passive": {
+        "light": [
+          "{pronoun} tentou agarrar {article} {possessive} {bodyPart}, mas você se esquivou."
+        ],
+        "medium": [
+          "Os dedos d{pronoun} se enrolaram n{article} {possessive} {bodyPart}!"
+        ],
+        "high": [
+          "Que dor! {pronoun} apertou e esmagou {possessive} {bodyPart} com toda a força!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 2,
+      "groin": 2,
+      "left_eye": 4,
+      "right_eye": 4,
+      "left_hand": 0.5,
+      "right_hand": 0.5,
+      "left_foot": 0.5,
+      "right_foot": 0.5,
+      "left_arm": 0.5,
+      "right_arm": 0.5,
+      "left_leg": 0.5,
+      "right_leg": 0.5,
+      "chest": 0.1,
+      "stomach": 0.1,
+      "head": 0.1
+    }
+  },
+
+  "headbutt": {
+    "name": "cabeçada",
+    "damageType": "impact",
+    "messages": {
+      "active": {
+        "light": [
+          "Você tentou dar uma cabeçada {article} {bodyPart} d{pronoun}."
+        ],
+        "medium": [
+          "Você acertou uma cabeçada n{article} {bodyPart} d{pronoun}!"
+        ],
+        "high": ["Foi uma cabeçada brutal n{article} {bodyPart} d{pronoun}!"]
+      },
+      "passive": {
+        "light": [
+          "{pronoun} tentou te acertar com uma cabeçada {article} {possessive} {bodyPart}."
+        ],
+        "medium": [
+          "{pronoun} acerta {possessive} {bodyPart} com uma cabeçada!"
+        ],
+        "high": [
+          "{pronoun} esmagou {possessive} {bodyPart} com uma cabeçada!",
+          "Que dor! A cabeça d{pronoun} se enterra n{article} {possessive} {bodyPart}!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 0.5,
+      "groin": 0.5,
+      "left_eye": 0.5,
+      "right_eye": 0.5,
+      "left_hand": 0.5,
+      "right_hand": 0.5,
+      "left_foot": 0.5,
+      "right_foot": 0.5,
+      "left_arm": 0.5,
+      "right_arm": 0.5,
+      "left_leg": 0.5,
+      "right_leg": 0.5,
+      "chest": 0.5,
+      "stomach": 0.5,
+      "head": 1.5
+    }
+  },
+
+  "bite": {
+    "name": "mordida",
+    "damageType": "perfuration",
+    "messages": {
+      "active": {
+        "light": [
+          "Seus dentes mal se cravaram n{article} {bodyPart} d{pronoun}."
+        ],
+        "medium": ["Você mordeu {article} {bodyPart} d{pronoun}!"],
+        "high": [
+          "Você arrancou um pedaço d{article} {bodyPart} d{pronoun}!",
+          "Você sentiu o gosto de sangue!"
+        ]
+      },
+      "passive": {
+        "light": ["{pronoun} tentou abocanhar {possessive} {bodyPart}."],
+        "medium": [
+          "{pronoun} mordeu {article} {possessive} {bodyPart}! Você rosna de dor."
+        ],
+        "high": [
+          "{pronoun} arrancou um pedaço d{article} {possessive} {bodyPart}!",
+          "{pronoun} rasgou {possessive} {bodyPart}! Sangue jorra para todos os lados!"
+        ]
+      }
+    },
+    "modifiers": {
+      "neck": 1.5,
+      "groin": 2,
+      "chest": 0.5,
+      "stomach": 0.5,
+      "left_eye": 0.5,
+      "right_eye": 0.5
+    }
+  }
+}

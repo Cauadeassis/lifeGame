@@ -1,0 +1,158 @@
+{
+  "pt": {
+    "male": [
+      "Zeca",
+      "Jeremias",
+      "Jorge",
+      "Jaime",
+      "Jurandinho",
+      "Carlos",
+      "João",
+      "Neymar",
+      "Paulo",
+      "Pedro",
+      "Ricardo",
+      "Ronaldo",
+      "Rodrigo"
+    ],
+    "female": [
+      "Carla",
+      "Sofia",
+      "Ana",
+      "Beatriz",
+      "Mariana",
+      "Kiara",
+      "Joana",
+      "Joice",
+      "Giovanna",
+      "Alice",
+      "Gabriela",
+      "Vanessa",
+      "Daiane",
+      "Jéssica"
+    ],
+    "last": [
+      "da Silva",
+      "Costa",
+      "Cruz",
+      "Rocha",
+      "Matias",
+      "Ferreira",
+      "Pinto",
+      "César",
+      "Silva",
+      "Carvalho",
+      "Pereira",
+      "Lima",
+      "Santos",
+      "Santana"
+    ]
+  },
+  "es": {
+    "male": [
+      "Juan",
+      "Carlos",
+      "José",
+      "Miguel",
+      "Luis",
+      "Pedro",
+      "Jorge",
+      "Diego",
+      "Fernando",
+      "Ricardo",
+      "Andrés",
+      "Manuel",
+      "Alejandro"
+    ],
+    "female": [
+      "María",
+      "Ana",
+      "Sofía",
+      "Lucía",
+      "Carmen",
+      "Isabella",
+      "Valentina",
+      "Camila",
+      "Gabriela",
+      "Daniela",
+      "Paula",
+      "Laura",
+      "Natalia"
+    ],
+    "last": [
+      "García",
+      "Martínez",
+      "Rodríguez",
+      "López",
+      "Hernández",
+      "González",
+      "Pérez",
+      "Sánchez",
+      "Ramírez",
+      "Torres",
+      "Flores",
+      "Vargas",
+      "Castillo"
+    ]
+  },
+  "en": {
+    "male": [
+      "Alex",
+      "Ethan",
+      "Michael",
+      "James",
+      "Harry",
+      "Jackson",
+      "Benjamin",
+      "Logan",
+      "Jason",
+      "Jacob"
+    ],
+    "female": [
+      "Emma",
+      "Olivia",
+      "Sophia",
+      "Ava",
+      "Isabella",
+      "Mia",
+      "Charlotte",
+      "Abigail",
+      "Emily",
+      "Elizabeth"
+    ],
+    "last": [
+      "Issac",
+      "Johnson",
+      "Williams",
+      "Brown",
+      "Jones",
+      "Garcia",
+      "Miller",
+      "Davis"
+    ]
+  },
+  "ja": {
+    "male": ["Naruto", "Sasuke", "Sanjiro", "Itachi", "Tekomonamata"],
+    "female": ["Hinata", "Hino", "Sakura", "Momoka", "Yui", "Kaguya"],
+    "last": ["Uzumaki", "Uchiha", "Ryuga", "Sarutobi", "Komecu", "Senju"]
+  },
+  "de": {
+    "male": ["Adolf", "Karl", "Fritz", "Hans", "Max", "Maximilian", "Theo"],
+    "female": ["Marie", "Greta", "Lena", "Emma", "Helena", "Sofia", "Evelyn"],
+    "last": [
+      "Hamlet",
+      "Marx",
+      "Bishmarch",
+      "Frank",
+      "Bittencourt",
+      "Wolksvagen",
+      "Hitler",
+      "Schmidt"
+    ]
+  },
+  "fr": {
+    "male": ["Pierre", "Júlio", "Jean", "Ludwig", "Ludwig", "Max", "Theo"],
+    "female": ["Marie", "Camille", "Emma", "Helena", "Sofia", "Evelyn"],
+    "last": ["Mbappe", "Verne", "Dubois", "Vitón", "Ellen"]
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Nascimento",
+    "description": "Você nasceu!",
+    "options": [
+      {
+        "text": "Chorar",
+        "effects": {
+          "mentalHealth": 5
+        },
+        "message": "Eu nasci chorando!"
+      },
+      {
+        "text": "Sorrir",
+        "effects": {
+          "intellect": 5
+        },
+        "message": "Eu nasci sorrindo!"
+      }
+    ]
+  }
+]

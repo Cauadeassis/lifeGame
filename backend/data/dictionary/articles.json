@@ -1,0 +1,10 @@
+{
+  "defined": {
+    "male": { "singular": "o", "plural": "os" },
+    "female": { "singular": "a", "plural": "as" }
+  },
+  "undefined": {
+    "male": { "singular": "um", "plural": "uns" },
+    "female": { "singular": "uma", "plural": "umas" }
+  }
+}

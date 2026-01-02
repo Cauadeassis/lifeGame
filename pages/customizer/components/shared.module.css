@@ -1,0 +1,31 @@
+.component {
+  width: 100%;
+  margin: 10px;
+
+  & label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+    text-align: left;
+  }
+
+  & input,
+  & select {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.625rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--primary-gradient);
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &::placeholder {
+      color: var(--text-color);
+    }
+  }
+}

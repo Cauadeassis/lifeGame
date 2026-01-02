@@ -1,12 +1,18 @@
 [
   {
     "id": "male",
-    "label": "Masculino",
-    "identity": "Homem"
+    "label": "masculino",
+    "pronoun": "ele",
+    "possessive": "meu",
+    "article": "um",
+    "identity": "homem"
   },
   {
     "id": "female",
-    "label": "Feminino",
-    "identity": "Mulher"
+    "label": "feminino",
+    "pronoun": "ela",
+    "possessive": "minha",
+    "article": "uma",
+    "identity": "mulher"
   }
 ]

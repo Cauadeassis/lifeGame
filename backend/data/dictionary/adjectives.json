@@ -1,0 +1,10 @@
+{
+  "atingido": {
+    "male": { "singular": "atingido", "plural": "atingidos" },
+    "female": { "singular": "atingida", "plural": "atingidas" }
+  },
+  "explodido": {
+    "male": { "singular": "explodido", "plural": "explodidos" },
+    "female": { "singular": "explodida", "plural": "explodidas" }
+  }
+}

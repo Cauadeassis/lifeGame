@@ -1,0 +1,115 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Feira de ciências",
+    "description": "A escola organiza uma feira de ciências.",
+    "options": {
+      "firstOption": {
+        "text": "Participar ativamente do projeto.",
+        "effects": {
+          "intellect": 5,
+          "mentalHealth": 5
+        },
+        "message": "Eu participei da feira de ciências da escola."
+      },
+      "secondOption": {
+        "text": "Apenas assistir as apresentações.",
+        "effects": {
+          "mentalHealth": 0
+        },
+        "message": "Eu assisti as apresentações da feira de ciências da escola."
+      }
+    }
+  },
+  {
+    "type": "twoOptions",
+    "title": "Visita inesperada",
+    "description": "Um famoso escritor infantil visita a escola para autografar livros. Você não sabia que ele viria hoje!",
+    "options": {
+      "firstOption": {
+        "text": "Entrar na fila do autógrafo.",
+        "effects": {
+          "intellect": 5,
+          "mentalHealth": 5
+        },
+        "message": "Eu consegui um autógrafo de um escritor famoso."
+      },
+      "secondOption": {
+        "text": "Assistir de longe.",
+        "effects": {
+          "mentalHealth": -5
+        },
+        "message": "Um escritor famoso visitou minha escola."
+      }
+    }
+  },
+  {
+    "type": "twoOptions",
+    "title": "Apresentação",
+    "description": "Você é escolhido para apresentar um trabalho na frente da turma.",
+    "options": {
+      "firstOption": {
+        "text": "Apresentar com confiança.",
+        "effects": {
+          "intellect": 5,
+          "mentalHealth": 5
+        },
+        "message": "Eu apresentei um trabalho na frente da turma."
+      },
+      "secondOption": {
+        "text": "Ler tudo rapidamente e sentar.",
+        "effects": {
+          "mentalHealth": 0
+        },
+        "message": "Eu gaguejei quando fui apresentar meu trabalho."
+      }
+    }
+  },
+  {
+    "type": "multipleOptions",
+    "title": "Trabalho de artes",
+    "description": "A professora de artes pede um trabalho sobre música. O que você escolhe?",
+    "options": [
+      {
+        "text": "Pop",
+        "effects": {
+          "beauty": 5
+        },
+        "message": "Eu fiz um trabalho sobre pop."
+      },
+      {
+        "text": "Rap",
+        "effects": {
+          "intellect": 5
+        },
+        "message": "Eu fiz um trabalho sobre rap."
+      },
+      {
+        "text": "Rock",
+        "effects": {
+          "mentalHealth": 5
+        },
+        "message": "Eu fiz um trabalho sobre rock."
+      },
+      {
+        "text": "Outro",
+        "requiresInput": true,
+        "input": {
+          "type": "text",
+          "placeholder": "Qual estilo?"
+        },
+        "effects": {
+          "health": 5
+        },
+        "message": "Eu surpreendi a professora com um estilo de música inusitado!"
+      },
+      {
+        "text": "Não fazer nada",
+        "effects": {
+          "mentalHealth": -5
+        },
+        "message": "Eu fiquei de recuperação em artes 💀"
+      }
+    ]
+  }
+]

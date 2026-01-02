@@ -1,0 +1,102 @@
+{
+  "Hollow Knight": {
+    "description": "Um cavaleiro explora um reino em ruínas habitado por insetos.",
+    "requisitions": {
+      "PClevel": 1
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei Hollow Knight"
+  },
+  "GTA 5": {
+    "description": "Três criminosos se envolvem em assaltos e conflitos no vasto mundo aberto de Los Santos.",
+    "requisitions": {
+      "PClevel": 3
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei GTA 5"
+  },
+  "Minecraft": {
+    "description": "Um jogo de construção e sobrevivência em um mundo aberto gerado proceduralmente.",
+    "requisitions": {
+      "PClevel": 1
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei Minecraft"
+  },
+  "Stardew Valley": {
+    "description": "Um simulador de fazenda onde o jogador constrói uma nova vida no campo.",
+    "requisitions": {
+      "PClevel": 0
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei Stardew Valley"
+  },
+  "Subnautica": {
+    "description": "Um sobrevivente explora os oceanos alienígenas de um planeta desconhecido.",
+    "requisitions": {
+      "PClevel": 2
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei Subnautica"
+  },
+  "The Last of Us": {
+    "description": "Dois sobreviventes cruzam um mundo devastado por uma infecção mortal.",
+    "requisitions": {
+      "PClevel": 3
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei The Last of Us"
+  },
+  "DOOM": {
+    "description": "Um soldado enfrenta hordas de demônios em combates intensos e rápidos.",
+    "requisitions": {
+      "PClevel": 0
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu joguei DOOM"
+  },
+  "Portal 2": {
+    "description": "Um jogo de puzzles onde portais são usados para resolver desafios complexos.",
+    "requisitions": {
+      "PClevel": 1
+    },
+    "effects": {
+      "intellect": 5
+    },
+    "message": "Eu joguei Portal 2"
+  },
+  "To the Moon": {
+    "description": "Dois médicos exploram as memórias de um homem para realizar seu último desejo.",
+    "requisitions": {
+      "PClevel": 0
+    },
+    "effects": {
+      "mentalHealth": 10
+    },
+    "message": "Eu joguei To the Moon"
+  },
+  "Undertale": {
+    "description": "Uma criança cai em um mundo subterrâneo e decide o destino de seus habitantes.",
+    "requisitions": {
+      "PClevel": 0
+    },
+    "effects": {
+      "mentalHealth": 10
+    },
+    "message": "Eu joguei Undertale"
+  }
+}

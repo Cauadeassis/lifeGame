@@ -3,7 +3,7 @@
     "id": "programmer",
     "name": "Programador",
     "description": "Trabalha desenvolvendo sistemas, aplicativos e soluções digitais.",
-    "requisition": {
+    "requisitions": {
       "intellect": 60
     },
     "levels": [
@@ -31,7 +31,7 @@
     "id": "criminal",
     "name": "Bandido",
     "description": "Envolve-se em atividades ilegais e busca ganhar dinheiro de formas ilícitas.",
-    "requisition": {
+    "requisitions": {
       "intellect": 30
     },
     "levels": [
@@ -59,7 +59,7 @@
     "id": "police",
     "name": "Policial",
     "description": "Responsável pela segurança e aplicação da lei.",
-    "requisition": {
+    "requisitions": {
       "health": 60,
       "intellect": 60
     },
@@ -88,8 +88,8 @@
     "id": "doctor",
     "name": "Médico",
     "description": "Atua na área da saúde, diagnosticando e tratando pacientes.",
-    "requisition": {
-      "medicalCollege": true,
+    "requisitions": {
+      "college": "medicine",
       "intellect": 60
     },
     "levels": [
@@ -117,7 +117,7 @@
     "id": "lawyer",
     "name": "Advogado",
     "description": "Atua na área do Direito, representando clientes, elaborando defesas e atuando em processos judiciais.",
-    "requisition": {
+    "requisitions": {
       "lawCollege": true,
       "intellect": 55
     },

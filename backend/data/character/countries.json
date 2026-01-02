@@ -1,0 +1,115 @@
+{
+  "BR": {
+    "name": "Brasil",
+    "language": "pt",
+    "preposition": "do",
+    "demonym": {
+      "male": "brasileiro",
+      "female": "brasileira"
+    },
+    "cities": ["Rio de Janeiro", "São Paulo", "Brasília"],
+    "landmarks": ["Cristo Redentor"]
+  },
+  "ES": {
+    "name": "Espanha",
+    "language": "es",
+    "preposition": "da",
+    "demonym": {
+      "male": "espanhol",
+      "female": "espanhola"
+    },
+    "cities": ["Madrid", "Barcelona", "Sevilha"],
+    "landmarks": ["Sagrada Família", "Alhambra"]
+  },
+  "GB": {
+    "name": "Inglaterra",
+    "language": "en",
+    "preposition": "da",
+    "demonym": {
+      "male": "inglês",
+      "female": "inglesa"
+    },
+    "cities": ["Londres", "Manchester", "Liverpool"],
+    "landmarks": ["Big Ben", "Stonehenge"]
+  },
+
+  "PT": {
+    "name": "Portugal",
+    "language": "pt",
+    "preposition": "de",
+    "demonym": {
+      "male": "português",
+      "female": "portuguesa"
+    },
+    "cities": ["Lisboa", "Porto", "Coimbra"],
+    "landmarks": ["Torre de Belém", "Mosteiro dos Jerónimos"]
+  },
+
+  "AR": {
+    "name": "Argentina",
+    "language": "es",
+    "preposition": "da",
+    "demonym": {
+      "male": "argentino",
+      "female": "argentina"
+    },
+    "cities": ["Buenos Aires", "Córdoba", "Rosário"],
+    "landmarks": ["Obelisco de Buenos Aires", "Cataratas do Iguaçu"]
+  },
+
+  "MX": {
+    "name": "México",
+    "language": "es",
+    "preposition": "do",
+    "demonym": {
+      "male": "mexicano",
+      "female": "mexicana"
+    },
+    "cities": ["Cidade do México", "Guadalajara", "Monterrey"],
+    "landmarks": ["Chichén Itzá", "Teotihuacán"]
+  },
+  "US": {
+    "name": "Estados Unidos",
+    "language": "en",
+    "preposition": "dos",
+    "demonym": {
+      "male": "estadunidense",
+      "female": "estadunidense"
+    },
+    "cities": ["New York", "Los Angeles", "Washington D.C."],
+    "landmarks": ["Statue of Liberty", "Mount Rushmore"]
+  },
+  "FR": {
+    "name": "França",
+    "language": "fr",
+    "preposition": "da",
+    "demonym": {
+      "male": "francês",
+      "female": "francesa"
+    },
+    "cities": ["Paris", "Lyon"],
+    "landmarks": ["Torre Eiffel", "Arco do Triunfo"]
+  },
+  "DE": {
+    "name": "Alemanha",
+    "language": "de",
+    "preposition": "da",
+    "demonym": {
+      "male": "alemão",
+      "female": "alemã"
+    },
+    "cities": ["Berlim"],
+    "landmarks": ["Brandenburgo"]
+  },
+  "JP": {
+    "name": "Japão",
+    "language": "ja",
+    "preposition": "do",
+    "demonym": {
+      "male": "japonês",
+      "female": "japonesa"
+    },
+    "cities": ["Tóquio"],
+    "landmarks": ["Monte Fuji"]
+  }
+}

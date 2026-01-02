@@ -1,0 +1,112 @@
+{
+  "Harry Potter": {
+    "description": "Um órfão criado pelos tios descobre que é um bruxo.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Harry Potter"
+  },
+  "Titanic": {
+    "description": "Um romance trágico se desenvolve a bordo de um navio condenado ao desastre.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Titanic"
+  },
+  "Divertidamente": {
+    "description": "As emoções de uma garota ganham vida enquanto ela aprende a lidar com mudanças.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 10
+    },
+    "message": "Eu assisti Divertidamente"
+  },
+  "Rocky o Lutador": {
+    "description": "Um boxeador azarão recebe a chance de lutar pelo título mundial.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 10
+    },
+    "message": "Eu assisti Rocky o Lutador"
+  },
+  "Jurassic Park": {
+    "description": "Dinossauros são recriados através da ciência, mas o controle logo se perde.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Jurassic Park"
+  },
+  "Indiana Jones": {
+    "description": "Um arqueólogo aventureiro enfrenta perigos em busca de artefatos históricos.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Indiana Jones"
+  },
+  "Star Wars": {
+    "description": "Uma saga épica sobre a luta entre o bem e o mal em uma galáxia distante.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Star Wars"
+  },
+  "Homem Aranha": {
+    "description": "Um jovem ganha poderes e aprende que grandes responsabilidades acompanham grandes poderes.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Homem Aranha"
+  },
+  "Senhor dos Anéis": {
+    "description": "Um grupo improvável embarca em uma jornada para destruir um artefato de poder absoluto.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Senhor dos Anéis"
+  },
+  "REC": {
+    "description": "Um grupo fica preso em um prédio durante um surto aterrador de origem desconhecida.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti REC"
+  },
+  "Massacre da Serra Elétrica": {
+    "description": "Jovens se deparam com uma família violenta em uma estrada isolada.",
+    "requisitions": {
+      "intellect": 10
+    },
+    "effects": {
+      "mentalHealth": 5
+    },
+    "message": "Eu assisti Massacre da Serra Elétrica"
+  }
+}

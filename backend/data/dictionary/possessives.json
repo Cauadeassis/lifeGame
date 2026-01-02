@@ -1,0 +1,14 @@
+{
+  "firstPerson": {
+    "male": { "singular": "meu", "plural": "meus" },
+    "female": { "singular": "minha", "plural": "minhas" }
+  },
+  "secondPerson": {
+    "male": { "singular": "seu", "plural": "seus" },
+    "female": { "singular": "sua", "plural": "suas" }
+  },
+  "thirdPerson": {
+    "male": { "singular": "dele", "plural": "deles" },
+    "female": { "singular": "dela", "plural": "delas" }
+  }
+}

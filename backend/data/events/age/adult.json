@@ -1,0 +1,50 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Papai Noel Estranho",
+    "description": "Durante uma festa de natal em um bar lotado, um homem fantasiado de papai noel se aproxima de você e faz uma proposta suspeita.",
+    "options": [
+      {
+        "text": "Aceitar a oferta",
+        "risk": {
+          "chance": 0.5,
+          "onFail": {
+            "text": "Era um policial disfarçado!",
+            "effects": {
+              "arrested": true
+            },
+            "message": "Fui preso após tentar comprar drogas de um policial disfarçado."
+          },
+          "onSuccess": {
+            "text": "Você aceita a oferta.",
+            "effects": {
+              "health": -20,
+              "mentalHealth": 15
+            },
+            "message": "Usei drogas durante a festa de natal."
+          }
+        }
+      },
+      {
+        "text": "Reagir com agressividade",
+        "risk": {
+          "chance": 0.2,
+          "onFail": {
+            "text": "Era um policial disfarçado!",
+            "effects": {
+              "arrested": true
+            },
+            "message": "Fui preso após agredir um policial disfarçado."
+          },
+          "onSuccess": {
+            "text": "Ele se afasta xingando.",
+            "effects": {
+              "mentalHealth": 10
+            },
+            "message": "Eu acabei com uma festa depois de descer o cacete em um traficante."
+          }
+        }
+      }
+    ]
+  }
+]

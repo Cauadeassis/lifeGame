@@ -1,0 +1,14 @@
+.errorMessage {
+  & p {
+    font-size: 1rem;
+    color: var(--red);
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
