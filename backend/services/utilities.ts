@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+
 import { GenderId, Quantity } from "../data/character/types";
 import { WordsDictionary } from "../data/dictionary/types";
 
@@ -9,10 +8,6 @@ export function getRandomDamage(min = 0, max = 10): number {
 
 export function getRandomItem<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
-}
-export function loadJSON<T>(basePath: string, ...segments: string[]): T {
-  const filePath = path.join(basePath, ...segments);
-  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
 }
 
 export function generateRandomStats(): number[] {
