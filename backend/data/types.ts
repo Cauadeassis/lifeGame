@@ -12,3 +12,9 @@ export interface HealthConditions {
   difficulty: number;
   effects: Partial<Stats>;
 }
+
+export interface Effects extends Partial<Stats> {
+  stress?: number;
+  money?: number;
+  promotionBonus?: number;
+}
