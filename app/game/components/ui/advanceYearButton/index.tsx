@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import styles from "../actionButton/actionButton.module.scss";
+import styles from "../actionButton/styles.module.css";
 
 interface AdvanceYearButtonParameters {
   onClick: () => void;

@@ -24,8 +24,8 @@ import AdvanceYearButton from "./components/ui/advanceYearButton";
 import StatBar from "./components/ui/statBar";
 import EventCard from "./components/ui/eventCard";
 
-import users from "../../icons/Users.svg";
-import graduationCap from "../../icons/GraduationCap.svg";
+import users from "./components/icons/Users.svg";
+import graduationCap from "./components/icons/GraduationCap.svg";
 
 import {
   loadGame,
