@@ -1,11 +1,10 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import { getRandomItem } from "./utilities";
-import { Gender } from "../data/character/types";
+import { Gender, GenderId } from "../data/character/types";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import rawGenders from "../data/character/genders.json" ;
+import rawBullyingCards from "../data/bullyingCards.json" ;
+const genders = rawGenders as Gender[];
+const bullyingCards = rawBullyingCards as BullyingCardData[];
 
 interface BullyingCardData {
   id: string;
@@ -37,48 +36,17 @@ export interface BullyingCard {
   };
 }
 
-class CardService {
-  private dataPath: string;
-  private genders!: Gender[];
-  private bullyingCards!: BullyingCardData[];
-
-  constructor() {
-    this.dataPath = path.join(__dirname, "..", "data");
-    this.genders = this._loadGenders();
-    this.bullyingCards = this._loadBullyingCards();
-  }
-
-  private _loadGenders(): Gender[] {
-    try {
-      const filePath = path.join(this.dataPath, "character", "genders.json");
-      return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    } catch (error) {
-      console.error("Erro ao carregar gêneros:", error);
-      return [];
-    }
-  }
-
-  private _loadBullyingCards(): BullyingCardData[] {
-    try {
-      const filePath = path.join(this.dataPath, "school", "bullyingCards.json");
-      return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    } catch (error) {
-      console.error("Erro ao carregar bullying cards:", error);
-      return [];
-    }
-  }
-
-  public createBullyingCard(id: string): BullyingCard | null {
-    const cardData = this.bullyingCards.find((card) => card.id === id);
+function createBullyingCard(id: string): BullyingCard | null {
+    const cardData = bullyingCards.find((card) => card.id === id);
 
     if (!cardData) {
       console.error(`Card com ID "${id}" não encontrado`);
       return null;
     }
 
-    const aggressorGender: "male" | "female" = getRandomItem(this.genders).id;
+    const aggressorGender: GenderId = getRandomItem(genders).id;
 
-    const attackOptions: Record<"male" | "female", OptionSelectItem[]> = {
+    const attackOptions: Record<GenderId, OptionSelectItem[]> = {
       male: [
         { label: "Chute na virilha", value: "groinKick" },
         { label: "Soco no queixo", value: "chinPunch" },
@@ -106,6 +74,3 @@ class CardService {
       },
     };
   }
-}
-
-export default CardService;

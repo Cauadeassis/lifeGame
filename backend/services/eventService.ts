@@ -1,32 +1,12 @@
 import { getRandomItem } from "./utilities";
 import { Event, Option, Result, Risk } from "../data/events/types";
 
-import birthEvents from "../data/events/age/birth.json";
-import babyEvents from "../data/events/age/baby.json";
-import childEvents from "../data/events/age/child.json";
-import pubertyEvents from "../data/events/age/puberty.json";
-import teenagerEvents from "../data/events/age/teenager.json";
-import adultEvents from "../data/events/age/adult.json";
-import elderlyEvents from "../data/events/age/elderly.json";
-
 interface GetAvailableEventsParameters {
   age: number;
   career?: string;
   freelance?: string;
   academic?: string;
 }
-
-const ageEventsMap = {
-  birth: birthEvents as Event[],
-  baby: babyEvents as Event[],
-  child: childEvents as Event[],
-  puberty: pubertyEvents as Event[],
-  teenager: teenagerEvents as Event[],
-  adult: adultEvents as Event[],
-  elderly: elderlyEvents as Event[],
-} as const;
-
-type AgeState = keyof typeof ageEventsMap;
 
 class EventService {
   private eventsCache: Map<string, Event[]>;
@@ -35,18 +15,14 @@ class EventService {
     this.eventsCache = new Map();
   }
 
-  private getAgeState(age: number): AgeState {
-    if (age === 0) return "birth";
-    if (age > 0 && age <= 5) return "baby";
-    if (age > 5 && age <= 11) return "child";
-    if (age > 11 && age <= 13) return "puberty";
-    if (age > 13 && age <= 17) return "teenager";
-    if (age > 17 && age < 60) return "adult";
-    return "elderly";
-  }
-
-  private getAgeEvents(ageState: AgeState): Event[] {
-    return ageEventsMap[ageState];
+  private getAgeState(age: number): string {
+  if (age === 0) return "birth";
+  if (age <= 5) return "baby";
+  if (age <= 11) return "child";
+  if (age <= 13) return "puberty";
+  if (age <= 17) return "teenager";
+  if (age <= 59) return "adult";
+  return "elderly";
   }
 
   private async loadDynamicEvents(
@@ -92,7 +68,11 @@ class EventService {
     const allEvents: Event[] = [];
 
     const ageState = this.getAgeState(age);
-    const ageEvents = this.getAgeEvents(ageState);
+    const ageEventsModule = await import(
+  `../data/events/age/${ageState}.json`
+);
+
+const ageEvents = ageEventsModule.default as Event[];
     allEvents.push(...ageEvents);
 
     if (academic) {

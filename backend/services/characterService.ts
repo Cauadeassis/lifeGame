@@ -1,6 +1,4 @@
-import { fileURLToPath } from "url";
-import path from "path";
-import { loadJSON, getRandomItem, generateRandomStats } from "./utilities";
+import { getRandomItem, generateRandomStats } from "./utilities";
 import {
   Character,
   Income,
@@ -11,8 +9,11 @@ import {
   CountryData,
 } from "../data/character/types";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import rawGenders from "../data/character/genders.json" ;
+import rawSkinTones from "../data/character/skinTones.json" ;
+import rawIncomes from "../data/character/incomes.json" ;
+import rawNamesByLanguage from "../data/character/namesByLanguage.json" ;
+import rawCountries from "../data/character/countries.json" ;
 
 interface GetRandomNameParameters {
   language: string;
@@ -29,7 +30,6 @@ interface GenerateRandomCharacterParameters {
 }
 
 export class CharacterService {
-  private dataPath: string;
   private genders!: Gender[];
   private skinTones!: Record<string, SkinTone[]>;
   private incomes!: Record<string, Income[]>;
@@ -37,25 +37,11 @@ export class CharacterService {
   private countries!: Countries;
 
   constructor() {
-    this.dataPath = path.join(__dirname, "..", "data");
-    this.loadData();
-  }
-
-  private loadData(): void {
-    try {
-      this.genders = loadJSON(this.dataPath, "character", "genders.json");
-      this.skinTones = loadJSON(this.dataPath, "character", "skinTones.json");
-      this.incomes = loadJSON(this.dataPath, "character", "incomes.json");
-      this.namesByLanguage = loadJSON(
-        this.dataPath,
-        "character",
-        "namesByLanguage.json",
-      );
-      this.countries = loadJSON(this.dataPath, "character", "countries.json");
-    } catch (error) {
-      console.error("Erro ao carregar dados:", error);
-      throw new Error("Failed to load character data");
-    }
+    this.genders = rawGenders as Gender[];
+    this.skinTones = rawSkinTones as Record<string, SkinTone[]>;
+    this.incomes = rawIncomes as Record<string, Income[]>;
+    this.namesByLanguage = rawNamesByLanguage as NamesByLanguage;
+    this.countries = rawCountries as Countries;
   }
 
   private getRandomCountry(): string {
