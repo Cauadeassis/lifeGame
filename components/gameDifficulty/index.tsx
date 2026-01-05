@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 import { Income, SkinTone } from "../../backend/data/character/types";
 
 interface GameDifficultyParameters {

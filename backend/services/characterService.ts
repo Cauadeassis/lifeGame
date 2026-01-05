@@ -1,6 +1,6 @@
 import { fileURLToPath } from "url";
 import path from "path";
-import { loadJSON, getRandomItem, generateRandomStats } from "./utilities.js";
+import { loadJSON, getRandomItem, generateRandomStats } from "./utilities";
 import {
   Character,
   Income,

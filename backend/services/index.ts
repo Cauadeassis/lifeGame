@@ -1,6 +1,6 @@
-import CharacterService from "./characterService.js";
-import CardService from "./cardService.js";
-import CombatService from "./combatService.js";
-import EventService from "./eventService.js";
+import CharacterService from "./characterService";
+import CardService from "./cardService";
+import CombatService from "./combatService";
+import EventService from "./eventService";
 
 export { CharacterService, CardService, CombatService, EventService };

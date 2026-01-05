@@ -1,11 +1,13 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import { getRandomItem } from "./utilities";
 import { Event, Option, Result, Risk } from "../data/events/types";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import birthEvents from "../data/events/age/birth.json";
+import babyEvents from "../data/events/age/baby.json";
+import childEvents from "../data/events/age/child.json";
+import pubertyEvents from "../data/events/age/puberty.json";
+import teenagerEvents from "../data/events/age/teenager.json";
+import adultEvents from "../data/events/age/adult.json";
+import elderlyEvents from "../data/events/age/elderly.json";
 
 interface GetAvailableEventsParameters {
   age: number;
@@ -14,111 +16,110 @@ interface GetAvailableEventsParameters {
   academic?: string;
 }
 
-interface LoadEventsParameters {
-  folder: string;
-  category?: string;
-  file: string;
-}
+const ageEventsMap = {
+  birth: birthEvents as Event[],
+  baby: babyEvents as Event[],
+  child: childEvents as Event[],
+  puberty: pubertyEvents as Event[],
+  teenager: teenagerEvents as Event[],
+  adult: adultEvents as Event[],
+  elderly: elderlyEvents as Event[],
+} as const;
+
+type AgeState = keyof typeof ageEventsMap;
 
 class EventService {
-  private eventsPath: string;
   private eventsCache: Map<string, Event[]>;
 
   constructor() {
-    this.eventsPath = path.join(__dirname, "..", "data", "events");
     this.eventsCache = new Map();
   }
 
-  private getAgeState(age: number): string {
+  private getAgeState(age: number): AgeState {
     if (age === 0) return "birth";
-    else if (age > 0 && age <= 5) return "baby";
-    else if (age > 5 && age <= 11) return "child";
-    else if (age > 11 && age <= 13) return "puberty";
-    else if (age > 13 && age <= 17) return "teenager";
-    else if (age > 17 && age < 60) return "adult";
-    else return "elderly";
+    if (age > 0 && age <= 5) return "baby";
+    if (age > 5 && age <= 11) return "child";
+    if (age > 11 && age <= 13) return "puberty";
+    if (age > 13 && age <= 17) return "teenager";
+    if (age > 17 && age < 60) return "adult";
+    return "elderly";
   }
 
-  private loadEvents({
-    folder,
-    category,
-    file,
-  }: LoadEventsParameters): Event[] {
-    const cacheKey = category
-      ? `${folder}/${category}/${file}`
-      : `${folder}/${file}`;
+  private getAgeEvents(ageState: AgeState): Event[] {
+    return ageEventsMap[ageState];
+  }
+
+  private async loadDynamicEvents(
+    type: "academic" | "career" | "freelance",
+    name: string
+  ): Promise<Event[]> {
+    const cacheKey = `${type}:${name}`;
 
     if (this.eventsCache.has(cacheKey)) {
       return this.eventsCache.get(cacheKey)!;
     }
 
     try {
-      const filePath = category
-        ? path.join(this.eventsPath, folder, category, `${file}.json`)
-        : path.join(this.eventsPath, folder, `${file}.json`);
-
-      const eventsData = fs.readFileSync(filePath, "utf-8");
-      const events: Event[] = JSON.parse(eventsData);
+      let events: Event[];
+      switch (type) {
+        case "academic":
+          events = (await import(`../data/events/academic/${name}.json`)).default as Event[];
+          break;
+        case "career":
+          events = (await import(`../data/events/jobs/careers/${name}.json`)).default as Event[];
+          break;
+        case "freelance":
+          events = (await import(`../data/events/jobs/${name}.json`)).default as Event[];
+          break;
+        default:
+          return [];
+      }
 
       this.eventsCache.set(cacheKey, events);
-
       return events;
     } catch (error) {
-      console.error(`Failed to load events for ${cacheKey}:`, error);
+      console.error(`Failed to load ${type} events for ${name}:`, error);
       return [];
     }
   }
 
-  public getAvailableEvents({
+  public async getAvailableEvents({
     age,
     career,
     freelance,
     academic,
-  }: GetAvailableEventsParameters): Event[] {
+  }: GetAvailableEventsParameters): Promise<Event[]> {
     const allEvents: Event[] = [];
 
     const ageState = this.getAgeState(age);
-    const ageEvents = this.loadEvents({
-      folder: "age",
-      file: ageState,
-    });
+    const ageEvents = this.getAgeEvents(ageState);
     allEvents.push(...ageEvents);
 
     if (academic) {
-      const academicEvents = this.loadEvents({
-        folder: "academic",
-        file: academic,
-      });
+      const academicEvents = await this.loadDynamicEvents("academic", academic);
       allEvents.push(...academicEvents);
     }
 
     if (career) {
-      const careerEvents = this.loadEvents({
-        folder: "jobs",
-        category: "careers",
-        file: career,
-      });
+      const careerEvents = await this.loadDynamicEvents("career", career);
       allEvents.push(...careerEvents);
     }
 
     if (freelance) {
-      const freelanceEvents = this.loadEvents({
-        folder: "jobs",
-        file: freelance,
-      });
+      const freelanceEvents = await this.loadDynamicEvents("freelance", freelance);
       allEvents.push(...freelanceEvents);
     }
 
     return allEvents;
   }
 
-  public getRandomEvent({
+  public async getRandomEvent({
     age,
     career,
     freelance,
     academic,
-  }: GetAvailableEventsParameters): Event | null {
-    const availableEvents = this.getAvailableEvents({
+  }: GetAvailableEventsParameters): Promise<Event | null> {
+    const availableEvents = await this.getAvailableEvents({
       age,
       career,
       freelance,

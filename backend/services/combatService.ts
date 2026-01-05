@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getRandomDamage } from "./utilities.js";
+import { getRandomDamage } from "./utilities";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

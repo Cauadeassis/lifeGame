@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getRandomItem } from "./utilities.js";
+import { getRandomItem } from "./utilities";
 import { Gender } from "../data/character/types";
 
 const __filename = fileURLToPath(import.meta.url);

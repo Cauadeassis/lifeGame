@@ -1,16 +1,17 @@
 [
   {
     "type": "twoOptions",
-    "text": "Ei, quer dar um trago?",
-    "options": {
-      "firstOption": {
+    "title": "Ei, quer dar um trago?",
+    "description": "Um grupo de jovens chega perto de você e te oferece um cigarro de maconha.",
+    "options": [
+      {
         "text": "Não, obrigado",
         "effects": {
           "intellect": 5
         },
         "message": "Eu recusei um cigarro de maconha na escola."
       },
-      "secondOption": {
+      {
         "text": "Só uma experimentada",
         "risk": {
           "chance": 0.25,
@@ -34,6 +35,6 @@
           }
         }
       }
-    }
+    ]
   }
 ]

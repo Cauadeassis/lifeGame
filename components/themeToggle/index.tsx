@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import moon from "./moon.svg";
-import sun from "./sun.svg";
+import Moon from "./moon.svg";
+import Sun from "./sun.svg";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState("dark");
@@ -24,9 +26,9 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <Image src={moon} alt="Dark mode" width={24} height={24} />
+        <Moon />
       ) : (
-        <Image src={sun} alt="Light mode" width={24} height={24} />
+        <Sun />
       )}
     </button>
   );

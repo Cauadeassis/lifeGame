@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from "react";
 
 import styles from "./styles.module.scss";
-import sharedStyles from "./shared.module.css";
-import skinTonesData from "../../../../backend/data/character/skinTones.json" ;
+import sharedStyles from "../shared.module.css";
+import skinTonesData from "../../../../backend/data/character/skinTones.json";
 import { Gender, SkinTone } from "../../../../backend/data/character/types";
 
 interface SkinSelectorParameters {

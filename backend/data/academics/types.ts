@@ -1,4 +1,4 @@
-import { Requisitions } from "../types.js";
+import { Requisitions } from "../types";
 
 export interface Course {
   id: string;
