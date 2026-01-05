@@ -1,6 +1,5 @@
 import CharacterService from "./characterService";
-import CardService from "./cardService";
-import CombatService from "./combatService";
+import AttackService from "./attackService";
 import EventService from "./eventService";
 
-export { CharacterService, CardService, CombatService, EventService };
+export { CharacterService, AttackService, EventService };
