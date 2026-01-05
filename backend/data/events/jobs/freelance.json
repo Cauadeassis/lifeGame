@@ -1,0 +1,36 @@
+[
+  {
+    "type": "twoOptions",
+    "title": "Celular na sala",
+    "description": "Seu professor te pegou usando o celular na sala!",
+    "options": {
+      "firstOption": {
+        "text": "Nunca mais usar em sala",
+        "effects": {
+          "intellect": 5
+        },
+        "message": "Eu parei de usar o celular na sala depois de ser repreendido pelo meu professor."
+      },
+      "secondOption": {
+        "text": "Continuar usando escondido",
+        "risk": {
+          "chance": 0.2,
+          "onFail": {
+            "text": "Você foi pego de novo. Suspenso por um dia.",
+            "effects": {
+              "mentalHealth": -5
+            },
+            "message": "Eu fui suspenso na escola porque usei celular na aula."
+          },
+          "onSuccess": {
+            "text": "Ele não percebeu.",
+            "effects": {
+              "mentalHealth": 5
+            },
+            "message": "Meu professor me pegou usando celular, mas continuei usando escondido depois."
+          }
+        }
+      }
+    }
+  }
+]
