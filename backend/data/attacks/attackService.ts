@@ -2,14 +2,14 @@ import {
   getWord,
   getRandomItem,
   getRandomDamage,
-} from "../../services/utilities.ts";
-import { BodyPart, GenderId, Gender, Relevance } from "../character/types.ts";
-import { WordsDictionary } from "../dictionary/types.ts";
+} from "../../services/utilities";
+import { BodyPart, GenderId, Gender, Relevance } from "../character/types";
+import { WordsDictionary } from "../dictionary/types";
 
-import rawArticles from "../dictionary/articles.json" with { type: "json" };
-import rawPossessives from "../dictionary/possessives.json" with { type: "json" };
-import rawMeleeAttacks from "./melee.json" with { type: "json" };
-import rawWeaponAttacks from "./weapons.json" with { type: "json" };
+import rawArticles from "../dictionary/articles.json" ;
+import rawPossessives from "../dictionary/possessives.json" ;
+import rawMeleeAttacks from "./melee.json" ;
+import rawWeaponAttacks from "./weapons.json" ;
 
 const articles = rawArticles satisfies WordsDictionary;
 const possessives = rawPossessives satisfies WordsDictionary;

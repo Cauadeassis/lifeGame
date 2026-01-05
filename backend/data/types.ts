@@ -1,4 +1,4 @@
-import { Stats } from "./character/types.ts";
+import { Stats } from "./character/types";
 
 export interface Requisitions extends Partial<Stats> {
   college?: string;

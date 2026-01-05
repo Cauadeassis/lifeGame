@@ -1,0 +1,44 @@
+<svg
+  width="500"
+  height="500"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient id="smileGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <filter id="smileGlow">
+      <feGaussianBlur stdDeviation="0.8" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Círculo do rosto -->
+  <circle
+    cx="12"
+    cy="12"
+    r="10"
+    fill="url(#smileGradient)"
+    filter="url(#smileGlow)"
+  />
+
+  <!-- Sorriso -->
+  <path
+    d="M8 14s1.5 2 4 2 4-2 4-2"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+    fill="none"
+  />
+
+  <!-- Olhos -->
+  <circle cx="9" cy="9.5" r="1.5" fill="#ffffff" />
+  <circle cx="15" cy="9.5" r="1.5" fill="#ffffff" />
+</svg>

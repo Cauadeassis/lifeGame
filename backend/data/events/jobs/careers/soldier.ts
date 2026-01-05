@@ -1,14 +1,14 @@
-import { Event } from "../../types.ts";
+import { Event } from "../../types";
 import {
   getRandomItem,
   getRandomDamage,
   getWord,
-} from "../../../../services/utilities.ts";
+} from "../../../../services/utilities";
 
-import rawBodyParts from "../../../character/bodyParts.json" with { type: "json" };
-import rawAdjectives from "../../../dictionary/adjectives.json" with { type: "json" };
-import rawVerbs from "../../../dictionary/verbs.json" with { type: "json" };
-import rawPossessives from "../../../dictionary/possessives.json" with { type: "json" };
+import rawBodyParts from "../../../character/bodyParts.json" ;
+import rawAdjectives from "../../../dictionary/adjectives.json" ;
+import rawVerbs from "../../../dictionary/verbs.json" ;
+import rawPossessives from "../../../dictionary/possessives.json" ;
 
 import {
   Gender,
@@ -16,8 +16,8 @@ import {
   Quantity,
   BodyPart,
   GenderId,
-} from "../../../character/types.ts";
-import { WordsDictionary } from "../../../dictionary/types.ts";
+} from "../../../character/types";
+import { WordsDictionary } from "../../../dictionary/types";
 const bodyParts = rawBodyParts as BodyPart[];
 const adjectives = rawAdjectives as WordsDictionary;
 const verbs = rawVerbs as WordsDictionary;

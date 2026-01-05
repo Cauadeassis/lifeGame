@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
-import incomes from "../backend/data/character/incomes.json" with { type: "json" };
-import skinTones from "../backend/data/character/skinTones.json" with { type: "json" };
-import { generateRandomStats } from "../backend/services/utilities.ts";
-import { CharacterService } from "../backend/services/characterService.ts";
+import incomes from "../backend/data/character/incomes.json" ;
+import skinTones from "../backend/data/character/skinTones.json" ;
+import { generateRandomStats } from "../backend/services/utilities";
+import { CharacterService } from "../backend/services/characterService";
 
 const generator = new CharacterService();
 const ATTEMPTS = 20;

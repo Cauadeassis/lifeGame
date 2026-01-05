@@ -1,7 +1,7 @@
-import { Character, Stats } from "../backend/data/character/types.ts";
-import { Event } from "../backend/data/events/types.ts";
+import { Character, Stats } from "../backend/data/character/types";
+import { Event } from "../backend/data/events/types";
 
-import EventService from "../backend/services/eventService.ts";
+import EventService from "../backend/services/eventService";
 const eventService = new EventService();
 
 const clamp = (value: number): number => Math.max(0, Math.min(100, value));

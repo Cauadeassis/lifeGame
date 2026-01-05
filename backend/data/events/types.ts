@@ -1,4 +1,4 @@
-import { Stats } from "../character/types.ts";
+import { Stats } from "../character/types";
 
 export interface Effects extends Partial<Stats> {
   stress?: number;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { GenderId, Quantity } from "../data/character/types.ts";
-import { WordsDictionary } from "../data/dictionary/types.ts";
+import { GenderId, Quantity } from "../data/character/types";
+import { WordsDictionary } from "../data/dictionary/types";
 
 export function getRandomDamage(min = 0, max = 10): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;

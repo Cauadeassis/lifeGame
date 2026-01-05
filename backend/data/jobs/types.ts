@@ -1,4 +1,4 @@
-import { Requisitions } from "../types.ts";
+import { Requisitions } from "../types";
 
 interface Level {
   id: string;

@@ -1,4 +1,4 @@
-import { Quantity, GenderId } from "../character/types.ts";
+import { Quantity, GenderId } from "../character/types";
 
 export type WordsDictionary = {
   [word: string]: {
