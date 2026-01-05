@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import incomes from "../backend/data/character/incomes.json" ;
-import skinTones from "../backend/data/character/skinTones.json" ;
+import incomes from "../backend/data/character/incomes.json";
+import skinTones from "../backend/data/character/skinTones.json";
 import { generateRandomStats } from "../backend/services/utilities";
 import { CharacterService } from "../backend/services/characterService";
 

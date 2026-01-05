@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
         error: "Error while generating character",
         message,
       } satisfies ErrorResponse,
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

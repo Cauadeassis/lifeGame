@@ -25,11 +25,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
-      {theme === "light" ? (
-        <Moon />
-      ) : (
-        <Sun />
-      )}
+      {theme === "light" ? <Moon /> : <Sun />}
     </button>
   );
 }

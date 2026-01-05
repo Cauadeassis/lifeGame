@@ -5,10 +5,10 @@ import {
   getWord,
 } from "../../../../services/utilities";
 
-import rawBodyParts from "../../../character/bodyParts.json" ;
-import rawAdjectives from "../../../dictionary/adjectives.json" ;
-import rawVerbs from "../../../dictionary/verbs.json" ;
-import rawPossessives from "../../../dictionary/possessives.json" ;
+import rawBodyParts from "../../../character/bodyParts.json";
+import rawAdjectives from "../../../dictionary/adjectives.json";
+import rawVerbs from "../../../dictionary/verbs.json";
+import rawPossessives from "../../../dictionary/possessives.json";
 
 import {
   Gender,

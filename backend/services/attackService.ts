@@ -1,17 +1,13 @@
-import {
-  getWord,
-  getRandomItem,
-  getRandomDamage,
-} from "../../services/utilities";
+import { getWord, getRandomItem, getRandomDamage } from "./utilities";
 
-import { BodyPart, GenderId, Gender, Relevance } from "../character/types";
-import { WordsDictionary } from "../dictionary/types";
-import { Attack, DamageType, Impact } from "./types";
+import { BodyPart, GenderId, Gender, Relevance } from "../data/character/types";
+import { WordsDictionary } from "../data/dictionary/types";
+import { Attack, DamageType, Impact } from "../data/attacks/types";
 
-import rawArticles from "../dictionary/articles.json";
-import rawPossessives from "../dictionary/possessives.json";
-import rawMeleeAttacks from "./melee.json";
-import rawWeaponAttacks from "./weapons.json";
+import rawArticles from "../data/dictionary/articles.json";
+import rawPossessives from "../data/dictionary/possessives.json";
+import rawMeleeAttacks from "../data/attacks/melee.json";
+import rawWeaponAttacks from "../data/attacks/weapons.json";
 
 const articles = rawArticles satisfies WordsDictionary;
 const possessives = rawPossessives satisfies WordsDictionary;
@@ -105,13 +101,11 @@ class AttackService {
   }
 
   private getDamage({ bodyPart, attackName }: GetDamageParameters): number {
-    const [min, max] =
-      AttackService.damageByRelevance[bodyPart.relevance];
+    const [min, max] = AttackService.damageByRelevance[bodyPart.relevance];
 
     let damage = getRandomDamage(min, max);
 
-    const multiplier =
-      meleeAttacks[attackName].modifiers[bodyPart.id] ?? 1;
+    const multiplier = meleeAttacks[attackName].modifiers[bodyPart.id] ?? 1;
 
     damage = Math.floor(damage * multiplier);
 
@@ -127,9 +121,7 @@ class AttackService {
     damageType = "impact",
   }: CheckIfLostParameters): boolean {
     return (
-      bodyPart.canBeLost &&
-      impact === "high" &&
-      damageType === "perfuration"
+      bodyPart.canBeLost && impact === "high" && damageType === "perfuration"
     );
   }
 

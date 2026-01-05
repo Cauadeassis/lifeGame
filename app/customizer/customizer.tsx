@@ -46,10 +46,11 @@ const Customizer = () => {
   });
   const [gender, setGender] = useState<Gender>({
     id: "male",
-    label: "masculino", "pronoun": "ele",
-    "possessive": "meu",
-    "article": "um",
-    "identity": "homem"
+    label: "masculino",
+    pronoun: "ele",
+    possessive: "meu",
+    article: "um",
+    identity: "homem",
   });
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [showError, setShowError] = useState<boolean>(false);
@@ -88,21 +89,21 @@ const Customizer = () => {
   const handleGenderChange = (value: string): void => {
     if (value === "male") {
       setGender({
-        "id": "male",
-        "label": "masculino",
-        "pronoun": "ele",
-        "possessive": "meu",
-        "article": "um",
-        "identity": "homem"
+        id: "male",
+        label: "masculino",
+        pronoun: "ele",
+        possessive: "meu",
+        article: "um",
+        identity: "homem",
       });
     } else if (value === "female") {
       setGender({
-        "id": "female",
-        "label": "feminino",
-        "pronoun": "ela",
-        "possessive": "minha",
-        "article": "uma",
-        "identity": "mulher"
+        id: "female",
+        label: "feminino",
+        pronoun: "ela",
+        possessive: "minha",
+        article: "uma",
+        identity: "mulher",
       });
     }
   };

@@ -15,10 +15,7 @@ import {
   PlayerMessage,
   ParentMessage,
 } from "./components/ui/descriptionContainer";
-import {
-  LoadingFallback,
-  NoCharacterFallback,
-} from "./components/ui/fallback";
+import { LoadingFallback, NoCharacterFallback } from "./components/ui/fallback";
 import ActionButton from "./components/ui/actionButton";
 import AdvanceYearButton from "./components/ui/advanceYearButton";
 import StatBar from "./components/ui/statBar";
@@ -146,12 +143,10 @@ export default function Game() {
 
   if (!player || !stats) return <NoCharacterFallback />;
 
-  if (currentEvent) return (
-    <EventCard
-      event={currentEvent}
-      onOptionSelect={handleOptionSelect}
-    />
-  );
+  if (currentEvent)
+    return (
+      <EventCard event={currentEvent} onOptionSelect={handleOptionSelect} />
+    );
   return (
     <div className={styles.body}>
       <Header />

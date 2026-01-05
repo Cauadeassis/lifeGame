@@ -1,4 +1,4 @@
-import countries from "../../../backend/data/character/countries.json" ;
+import countries from "../../../backend/data/character/countries.json";
 type CountryCode = keyof typeof countries;
 import styles from "./shared.module.css";
 

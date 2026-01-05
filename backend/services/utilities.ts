@@ -1,4 +1,3 @@
-
 import { GenderId, Quantity } from "../data/character/types";
 import { WordsDictionary } from "../data/dictionary/types";
 

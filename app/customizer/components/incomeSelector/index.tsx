@@ -25,8 +25,9 @@ export default function IncomeSelector({
         {options.map((option) => (
           <button
             key={option.id}
-            className={`${styles.incomeButton} ${income.id === option.id ? styles.selected : ""
-              }`}
+            className={`${styles.incomeButton} ${
+              income.id === option.id ? styles.selected : ""
+            }`}
             onClick={() => setIncome(option)}
             type="button"
           >

@@ -16,18 +16,18 @@ class EventService {
   }
 
   private getAgeState(age: number): string {
-  if (age === 0) return "birth";
-  if (age <= 5) return "baby";
-  if (age <= 11) return "child";
-  if (age <= 13) return "puberty";
-  if (age <= 17) return "teenager";
-  if (age <= 59) return "adult";
-  return "elderly";
+    if (age === 0) return "birth";
+    if (age <= 5) return "baby";
+    if (age <= 11) return "child";
+    if (age <= 13) return "puberty";
+    if (age <= 17) return "teenager";
+    if (age <= 59) return "adult";
+    return "elderly";
   }
 
   private async loadDynamicEvents(
     type: "academic" | "career" | "freelance",
-    name: string
+    name: string,
   ): Promise<Event[]> {
     const cacheKey = `${type}:${name}`;
 
@@ -39,13 +39,16 @@ class EventService {
       let events: Event[];
       switch (type) {
         case "academic":
-          events = (await import(`../data/events/academic/${name}.json`)).default as Event[];
+          events = (await import(`../data/events/academic/${name}.json`))
+            .default as Event[];
           break;
         case "career":
-          events = (await import(`../data/events/jobs/careers/${name}.json`)).default as Event[];
+          events = (await import(`../data/events/jobs/careers/${name}.json`))
+            .default as Event[];
           break;
         case "freelance":
-          events = (await import(`../data/events/jobs/${name}.json`)).default as Event[];
+          events = (await import(`../data/events/jobs/${name}.json`))
+            .default as Event[];
           break;
         default:
           return [];
@@ -68,11 +71,9 @@ class EventService {
     const allEvents: Event[] = [];
 
     const ageState = this.getAgeState(age);
-    const ageEventsModule = await import(
-  `../data/events/age/${ageState}.json`
-);
+    const ageEventsModule = await import(`../data/events/age/${ageState}.json`);
 
-const ageEvents = ageEventsModule.default as Event[];
+    const ageEvents = ageEventsModule.default as Event[];
     allEvents.push(...ageEvents);
 
     if (academic) {
@@ -86,7 +87,10 @@ const ageEvents = ageEventsModule.default as Event[];
     }
 
     if (freelance) {
-      const freelanceEvents = await this.loadDynamicEvents("freelance", freelance);
+      const freelanceEvents = await this.loadDynamicEvents(
+        "freelance",
+        freelance,
+      );
       allEvents.push(...freelanceEvents);
     }
 

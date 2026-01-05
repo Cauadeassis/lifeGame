@@ -15,11 +15,7 @@ interface StatBarParameters {
   label: string;
 }
 
-const StatBar = ({
-   value, 
-   icon, 
-   label 
-}: StatBarParameters) => {
+const StatBar = ({ value, icon, label }: StatBarParameters) => {
   const percentage = Math.min(value, 100);
 
   const getColor = () => {

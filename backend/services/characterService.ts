@@ -9,11 +9,11 @@ import {
   CountryData,
 } from "../data/character/types";
 
-import rawGenders from "../data/character/genders.json" ;
-import rawSkinTones from "../data/character/skinTones.json" ;
-import rawIncomes from "../data/character/incomes.json" ;
-import rawNamesByLanguage from "../data/character/namesByLanguage.json" ;
-import rawCountries from "../data/character/countries.json" ;
+import rawGenders from "../data/character/genders.json";
+import rawSkinTones from "../data/character/skinTones.json";
+import rawIncomes from "../data/character/incomes.json";
+import rawNamesByLanguage from "../data/character/namesByLanguage.json";
+import rawCountries from "../data/character/countries.json";
 
 interface GetRandomNameParameters {
   language: string;
