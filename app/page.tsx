@@ -9,7 +9,6 @@ import ThemeToggle from "../components/themeToggle";
 
 export default function InitialPage() {
   const router = useRouter();
-  const goTo = (path: string) => router.push(path);
 
   return (
     <>
@@ -18,10 +17,10 @@ export default function InitialPage() {
         <main>
           <ThemeToggle />
           <section>
-            <button onClick={() => goTo("/customizer")}>
+            <button onClick={() => router.push("/customizer")}>
               Customizar personagem
             </button>
-            <button onClick={() => goTo("/randomizer")}>
+            <button onClick={() => router.push("/randomizer")}>
               Criar personagem aleatório
             </button>
           </section>

@@ -1,6 +1,6 @@
 import { Requisitions } from "../types";
 
-interface Level {
+export interface Level {
   id: string;
   name: string;
   minYears: number;
@@ -14,3 +14,13 @@ export interface Career {
   requisitions: Requisitions;
   levels: Level[];
 }
+export interface AssignedJob {
+  careerID: string;
+  careerName: string;
+  levelID: string;
+  levelName: string;
+  yearsWorked: number;
+  salary: number;
+}
+
+

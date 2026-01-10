@@ -9,13 +9,13 @@ import brain from "../../icons/Brain.svg";
 
 const icons = { heart, smile, sparkles, brain };
 
-interface StatBarParameters {
+interface StatBarProps {
   value: number;
   icon: "heart" | "smile" | "sparkles" | "brain";
   label: string;
 }
 
-const StatBar = ({ value, icon, label }: StatBarParameters) => {
+const StatBar = ({ value, icon, label }: StatBarProps) => {
   const percentage = Math.min(value, 100);
 
   const getColor = () => {

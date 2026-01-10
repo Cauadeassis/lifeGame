@@ -2,12 +2,12 @@ import React, { useMemo } from "react";
 import styles from "./styles.module.css";
 import { Income, SkinTone } from "../../backend/data/character/types";
 
-interface GameDifficultyParameters {
+interface GameDifficultyProps {
   income: Income;
   skinTone: SkinTone;
 }
 
-const GameDifficulty: React.FC<GameDifficultyParameters> = ({
+const GameDifficulty: React.FC<GameDifficultyProps> = ({
   income,
   skinTone,
 }) => {

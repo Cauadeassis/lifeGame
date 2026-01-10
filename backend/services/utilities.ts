@@ -33,7 +33,7 @@ export function generateRandomStats(): number[] {
   return allStats;
 }
 
-interface GetWordParameters {
+interface GetWordProps {
   file: WordsDictionary;
   category: string;
   grammaticalGender: GenderId;
@@ -44,6 +44,6 @@ export const getWord = ({
   category, // firstPerson, secondPerson, defined, undefined
   grammaticalGender, // male, female
   quantity, // singular, plural
-}: GetWordParameters): string => {
+}: GetWordProps): string => {
   return file[category][grammaticalGender][quantity];
 };

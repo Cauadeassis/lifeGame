@@ -20,14 +20,14 @@ export interface GameData extends GameState {
   player: Character;
 }
 
-interface LoadGameParameters {
+interface LoadGameProps {
   savedPlayer: Character;
   gameState: GameState;
 }
 
 type NPCType = "father" | "mother" | "classmate" | "child";
 
-interface GenerateNPCParameters {
+interface GenerateNPCProps {
   player: Character;
   NPC: NPCType;
 }
@@ -54,7 +54,7 @@ export const saveCharacter = (character: Character) => {
 export const loadGame = ({
   savedPlayer,
   gameState,
-}: LoadGameParameters): GameData => {
+}: LoadGameProps): GameData => {
   return {
     player: savedPlayer,
     stats: gameState.stats,
@@ -86,7 +86,7 @@ export const createGame = async (savedPlayer: Character): Promise<GameData> => {
 export const generateNPC = async ({
   player,
   NPC,
-}: GenerateNPCParameters): Promise<Character | null> => {
+}: GenerateNPCProps): Promise<Character | null> => {
   try {
     const response = await fetch("/api/NPCGenerator", {
       method: "POST",

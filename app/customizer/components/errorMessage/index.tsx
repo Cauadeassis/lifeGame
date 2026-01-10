@@ -1,22 +1,15 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-interface ErrorMessageProps {
-  message: string;
-  show: boolean;
-}
-
-const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, show }) => {
-  if (!message) return null;
-
+const ErrorMessage: React.FC = () => {
   return (
     <section className={styles.errorMessage}>
       <p
         role="alert"
         aria-live="assertive"
-        className={!show ? styles.fadeOut : ""}
+        className={styles.fadeOut}
       >
-        {message}
+        Preencha todos os campos!
       </p>
     </section>
   );

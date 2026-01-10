@@ -1,4 +1,4 @@
-import { Character, Stats } from "../backend/data/character/types";
+import { Character, Stats, CharacterActivities } from "../backend/data/character/types";
 import { Event } from "../backend/data/events/types";
 
 import EventService from "../backend/services/eventService";
@@ -6,28 +6,21 @@ const eventService = new EventService();
 
 const clamp = (value: number): number => Math.max(0, Math.min(100, value));
 
-interface applyStatsChangeParameters {
+interface applyStatsChangeProps {
   currentStats: Stats;
   changes: Partial<Stats>;
 }
 
-interface AdvanceYearParameters {
-  age: number;
-  stats: Stats;
-  career?: string;
-  freelance?: string;
-  academic?: string;
-}
 interface AdvanceYearResult {
   newAge: number;
   newStats: Stats;
-  newEvent: Event | null;
+  newEvent: Event;
 }
 
 export function applyStatsChange({
   currentStats,
   changes,
-}: applyStatsChangeParameters) {
+}: applyStatsChangeProps) {
   return {
     health: clamp(currentStats.health + (changes.health ?? 0)),
     beauty: clamp(currentStats.beauty + (changes.beauty ?? 0)),
@@ -38,21 +31,17 @@ export function applyStatsChange({
   };
 }
 
-export function advanceYear({
-  age,
-  stats,
-  career,
-  freelance,
-  academic,
-}: AdvanceYearParameters): AdvanceYearResult {
+export function advanceYear(player: Character) : AdvanceYearResult {
+  const { age, stats, income, academic, career, freelance } = player;
   let updatedStats = { ...stats };
 
-  const event = eventService.getRandomEvent({
-    age,
+  const characterActivities = {
+    academic,
     career,
     freelance,
-    academic,
-  });
+  } as CharacterActivities;
+
+  const event = eventService.getRandomEvent({ characterActivities, age });
 
   return {
     newAge: age + 1,

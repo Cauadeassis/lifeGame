@@ -12,14 +12,13 @@ import ThemeToggle from "../../components/themeToggle";
 import { Character } from "../../backend/data/character/types";
 const Randomizer = () => {
   const router = useRouter();
-  const goTo = (path: string) => router.push(path);
-  const [character, setCharacter] = useState<Character | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [player, setPlayer] = useState<Character | null>(null);
+  const [isGettingPlayer, setIsGettingPlayer] = useState<boolean>(false);
 
-  const getCharacter = async (): Promise<void> => {
-    setLoading(true);
+  const getPlayer = async (): Promise<void> => {
+    setIsGettingPlayer(true);
     try {
-      const response = await fetch("/api/characterGenerator", {
+      const response = await fetch("/api/generate-player", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,30 +26,30 @@ const Randomizer = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`Erro ao gerar personagem: ${response.status}`);
+        throw new Error(`Erro ao gerar jogador: ${response.status}`);
       }
 
-      const newCharacter: Character = await response.json();
-      setCharacter(newCharacter);
+      const newPlayer: Character = await response.json();
+      setPlayer(newPlayer);
     } catch (error) {
-      console.error("Erro ao gerar personagem:", error);
-      alert("Não foi possível gerar o personagem. Tente novamente.");
+      console.error("Erro ao gerar jogador:", error);
+      alert("Não foi possível gerar o jogador. Tente novamente.");
     } finally {
-      setLoading(false);
+      setIsGettingPlayer(false);
     }
   };
 
   useEffect(() => {
-    getCharacter();
+    getPlayer();
   }, []);
 
   const handleStartGame = (): void => {
-    if (!character) {
-      alert("Por favor, gere um personagem primeiro!");
+    if (!player) {
+      alert("Por favor, gere um jogador primeiro!");
       return;
     }
-    localStorage.setItem("character", JSON.stringify(character));
-    goTo("/game");
+    localStorage.setItem("player", JSON.stringify(player));
+    router.push("/game");
   };
 
   return (
@@ -59,27 +58,27 @@ const Randomizer = () => {
         <ThemeToggle />
         <main>
           <Header />
-          {loading && (
+          {isGettingPlayer && (
             <div className={styles.loadingContainer}>
-              <p>Gerando personagem...</p>
+              <p>Gerando jogador...</p>
             </div>
           )}
-          {character && !loading && (
+          {player && !isGettingPlayer && (
             <>
               <section>
                 <h2>
-                  {character.firstName} {character.lastName}
+                  {player.firstName} {player.lastName}
                 </h2>
                 <div>
-                  <p>País: {character.countryData.name}</p>
-                  <p>Gênero: {character.gender.label}</p>
-                  <p>Cor de pele: {character.skinTone.label}</p>
-                  <p>Renda: {character.income.label}</p>
+                  <p>País: {player.countryData.name}</p>
+                  <p>Gênero: {player.gender.label}</p>
+                  <p>Cor de pele: {player.skinTone.label}</p>
+                  <p>Renda: {player.income.label}</p>
                 </div>
               </section>
               <GameDifficulty
-                income={character.income}
-                skinTone={character.skinTone}
+                income={player.income}
+                skinTone={player.skinTone}
               />
             </>
           )}
@@ -87,18 +86,18 @@ const Randomizer = () => {
             <button
               type="button"
               onClick={handleStartGame}
-              disabled={loading || !character}
-              aria-label="Começar jogo com personagem atual"
+              disabled={isGettingPlayer || !player}
+              aria-label="Começar jogo com jogador atual"
             >
-              {loading ? "Gerando..." : "Jogar"}
+              {isGettingPlayer ? "Gerando..." : "Jogar"}
             </button>
             <button
               type="button"
-              onClick={getCharacter}
-              disabled={loading}
-              aria-label="Gerar novo personagem"
+              onClick={getPlayer}
+              disabled={isGettingPlayer}
+              aria-label="Gerar novo jogador"
             >
-              {loading ? "Gerando..." : "Gerar novo personagem"}
+              {isGettingPlayer ? "Gerando..." : "Gerar novo jogador"}
             </button>
           </section>
         </main>

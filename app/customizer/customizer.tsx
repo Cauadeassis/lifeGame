@@ -32,7 +32,6 @@ type CountryCode = keyof typeof countries;
 
 const Customizer = () => {
   const router = useRouter();
-  const goTo = (path: string) => router.push(path);
   const [playerName, setPlayerName] = useState<string>("");
   const [country, setCountry] = useState<CountryCode>("BR");
   const [skinTone, setSkinTone] = useState<SkinTone>({
@@ -52,14 +51,12 @@ const Customizer = () => {
     article: "um",
     identity: "homem",
   });
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [showError, setShowError] = useState<boolean>(false);
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const handleStartGame = (): void => {
     if (!playerName.trim() || !country || !gender || !income || !skinTone) {
-      setErrorMessage("Preencha todos os campos!");
-      setShowError(true);
-      setTimeout(() => setShowError(false), 3000);
+      setHasError(true);
+      setTimeout(() => setHasError(false), 3000);
       return;
     }
     const nameParts = playerName.trim().split(" ");
@@ -70,6 +67,7 @@ const Customizer = () => {
     const character: Character = {
       firstName,
       lastName,
+      age: 0,
       demonym: countryData.demonym[gender.id],
       countryCode: country,
       countryData,
@@ -84,7 +82,7 @@ const Customizer = () => {
       },
     };
     saveCharacter(character);
-    goTo("/game");
+    router.push("/game");
   };
   const handleGenderChange = (value: string): void => {
     if (value === "male") {
@@ -131,8 +129,8 @@ const Customizer = () => {
             setIncome={setIncome}
           />
           <GameDifficulty income={income} skinTone={skinTone} />
-          {errorMessage && (
-            <ErrorMessage message={errorMessage} show={showError} />
+          {hasError && (
+            <ErrorMessage />
           )}
           <StartGameButton onClick={handleStartGame} />
         </main>

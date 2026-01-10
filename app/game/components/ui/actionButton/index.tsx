@@ -2,14 +2,14 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import styles from "./styles.module.css";
 
-interface ActionButtonParameters {
+interface ActionButtonProps {
   icon: string | StaticImageData;
   label: string;
   onClick: () => void;
   disabled?: boolean;
 }
 
-const ActionButton: React.FC<ActionButtonParameters> = ({
+const ActionButton: React.FC<ActionButtonProps> = ({
   icon,
   onClick,
   label,

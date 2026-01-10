@@ -1,6 +1,6 @@
 import styles from "./shared.module.css";
 
-interface NameInputParameters {
+interface NameInputProps {
   playerName: string;
   setPlayerName: (name: string) => void;
 }
@@ -8,7 +8,7 @@ interface NameInputParameters {
 export default function NameInput({
   playerName,
   setPlayerName,
-}: NameInputParameters) {
+}: NameInputProps) {
   return (
     <>
       <section className={styles.component}>

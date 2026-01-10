@@ -6,12 +6,12 @@ import {
   Result,
 } from "../../../../../backend/data/events/types";
 
-interface EventCardParameters {
+interface EventCardProps {
   event: Event;
   onOptionSelect: (option: Option) => void;
 }
 
-const EventCard: React.FC<EventCardParameters> = ({
+const EventCard: React.FC<EventCardProps> = ({
   event,
   onOptionSelect,
 }) => {

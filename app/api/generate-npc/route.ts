@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import CharacterService from "../../../backend/services/characterService";
+import NPCFactory, {NPCGenerator} from "../../../backend/services/characterService";
 import { Character } from "../../../backend/data/character/types";
 
 interface ErrorResponse {
@@ -25,16 +25,16 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
-    const characterService = new CharacterService();
+    const NPCFactoryInstance = new NPCFactory(new NPCGenerator);
     const npcGenerators = {
       father: (character: Character) =>
-        characterService.generateFather(character),
+        NPCFactoryInstance.generateFather(character),
       mother: (character: Character) =>
-        characterService.generateMother(character),
+        NPCFactoryInstance.generateMother(character),
       classmate: (character: Character) =>
-        characterService.generateClassmate(character),
+        NPCFactoryInstance.generateClassmate(character),
       child: (character: Character) =>
-        characterService.generateChild(character),
+        NPCFactoryInstance.generateChild(character),
     } as const;
     const generator = npcGenerators[NPCType];
     if (!generator) {

@@ -1,3 +1,6 @@
+import Genders from "./genders.json"
+import Incomes from "./incomes"
+
 export interface Stats {
   health: number;
   mentalHealth: number;
@@ -5,26 +8,17 @@ export interface Stats {
   beauty: number;
 }
 
-export interface Income {
-  id: "poor" | "middle" | "rich";
-  label: string;
-}
+export type Income = Record<GenderId, IncomeData[]>
 
-export interface SkinTone {
+export interface SkinToneData {
   id: "black" | "middleTone" | "white";
   label: string;
   color?: string;
 }
-
-export interface Gender {
-  id: GenderId;
-  label: "masculino" | "feminino";
-  pronoun: "ele" | "ela";
-  possessive: "meu" | "minha";
-  article: "um" | "uma";
-  identity: "homem" | "mulher";
-}
-
+export type SkinTone = Record<GenderId, SkinToneData[]>
+export type IncomeData = (typeof Incomes)[number];
+export type Gender = (typeof Genders)[number];
+export type GenderId = Gender["id"];
 interface NamesData {
   male: string[];
   female: string[];
@@ -53,19 +47,29 @@ export interface Countries {
   [countryCode: string]: CountryData;
 }
 
-export interface Character {
-  firstName: string;
-  lastName: string;
-  demonym: string;
+export interface Character extends Identity, CharacterActivities {
   countryCode: string;
   countryData: CountryData;
-  gender: Gender;
   skinTone: SkinTone;
   income: Income;
   stats: Stats;
+  age: number;
 }
+
+export interface Identity {
+  firstName: string;
+  lastName: string;
+  demonym: string;
+  gender: Gender;
+}
+
+export interface CharacterActivities {
+  academic?: string;
+  career?: string;
+  freelance?: string;
+}
+
 export type Relevance = "medium" | "high" | "critical";
-export type GenderId = "male" | "female";
 export type Quantity = "singular" | "plural";
 export interface BodyPart {
   id: string;

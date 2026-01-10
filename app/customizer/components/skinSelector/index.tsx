@@ -5,7 +5,7 @@ import sharedStyles from "../shared.module.css";
 import skinTonesData from "../../../../backend/data/character/skinTones.json";
 import { Gender, SkinTone } from "../../../../backend/data/character/types";
 
-interface SkinSelectorParameters {
+interface SkinSelectorProps {
   gender: Gender["id"];
   skinTone: SkinTone;
   setSkinTone: (skinTone: SkinTone) => void;
@@ -17,7 +17,7 @@ export default function SkinSelector({
   gender,
   skinTone,
   setSkinTone,
-}: SkinSelectorParameters) {
+}: SkinSelectorProps) {
   const skinTones = skinTonesData as SkinTonesData;
   const tones: SkinTone[] = skinTones[gender] || [];
   const currentIndex = tones.findIndex((tone) => tone.id === skinTone.id);

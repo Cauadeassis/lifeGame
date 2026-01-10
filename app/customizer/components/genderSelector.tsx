@@ -1,7 +1,7 @@
 import { Gender } from "../../../backend/data/character/types";
 import styles from "./shared.module.css";
 
-interface GenderSelectorParameters {
+interface GenderSelectorProps {
   gender: Gender;
   handleGenderChange: (value: string) => void;
 }
@@ -9,7 +9,7 @@ interface GenderSelectorParameters {
 export default function GenderSelector({
   gender,
   handleGenderChange,
-}: GenderSelectorParameters) {
+}: GenderSelectorProps) {
   return (
     <>
       <section className={styles.component}>

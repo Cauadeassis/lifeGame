@@ -4,152 +4,290 @@ import {
   Income,
   SkinTone,
   Gender,
+  GenderId,
   NamesByLanguage,
   Countries,
   CountryData,
+  Stats,
 } from "../data/character/types";
 
 import rawGenders from "../data/character/genders.json";
 import rawSkinTones from "../data/character/skinTones.json";
-import rawIncomes from "../data/character/incomes.json";
+import rawIncomes from "../data/character/incomes";
 import rawNamesByLanguage from "../data/character/namesByLanguage.json";
 import rawCountries from "../data/character/countries.json";
 
-interface GetRandomNameParameters {
+import JobService from "./jobService";
+
+interface GetRandomFirstNameProps {
   language: string;
-  genderId: "male" | "female";
+  genderId: GenderId,
 }
 
-interface GenerateRandomCharacterParameters {
+export class PlayerGenerator {
+  protected genders: Gender[];
+  protected skinTonesByGenderId: Record<string, SkinTone[]>;
+  protected incomesByGenderId: Record<string, Income[]>;
+  protected namesByLanguage: NamesByLanguage;
+  protected countriesByCode: Countries;
+
+  constructor() {
+    this.genders = rawGenders as Gender[];
+    this.skinTonesByGenderId = rawSkinTones as Record<string, SkinTone[]>;
+    this.incomesByGenderId = rawIncomes as Record<string, Income[]>;
+    this.namesByLanguage = rawNamesByLanguage as NamesByLanguage;
+    this.countriesByCode = rawCountries as Countries;
+  }
+
+  protected getRandomCountryCode(): string {
+    const availableCountryCodes = Object.keys(this.countriesByCode);
+    return getRandomItem(availableCountryCodes);
+  }
+
+  protected getCountryDataByCode(countryCode: string): CountryData {
+    const countryData = this.countriesByCode[countryCode] as CountryData;
+    
+    if (!countryData) {
+      throw new Error(`"${countryCode}" is an invalid country code!`);
+    }
+    
+    return countryData;
+  }
+
+  protected getNamesByLanguage(language: string) {
+    const namesForLanguage = this.namesByLanguage[language];
+    
+    if (!namesForLanguage) {
+      throw new Error(`Names not found for language: ${language}`);
+    }
+    
+    return namesForLanguage;
+  }
+
+  protected getRandomFirstName(parameters: GetRandomFirstNameProps): string {
+    const namesForLanguage = this.getNamesByLanguage(parameters.language);
+    const firstNamesByGenderId = namesForLanguage[parameters.genderId];
+    
+    return getRandomItem(firstNamesByGenderId);
+  }
+
+  protected getRandomLastName(language: string): string {
+    const namesForLanguage = this.getNamesByLanguage(language);
+    const availableLastNames = namesForLanguage.last;
+    
+    return getRandomItem(availableLastNames);
+  }
+
+  protected getRandomGender(): Gender {
+    return getRandomItem(this.genders);
+  }
+
+  protected getGenderById(genderId: GenderId): Gender {
+    const foundGender = this.genders.find((currentGender) => {
+      return currentGender.id === genderId;
+    });
+    
+    if (!foundGender) {
+      throw new Error(`Invalid genderId: ${genderId}`);
+    }
+    
+    return foundGender;
+  }
+
+  protected getRandomSkinToneByGenderId(genderId: GenderId): SkinTone {
+    const skinTonesForGenderId = this.skinTonesByGenderId[genderId];
+    return getRandomItem(skinTonesForGenderId);
+  }
+
+  protected getRandomIncomeByGenderId(genderId: GenderId): Income {
+    const incomesForGenderId = this.incomesByGenderId[genderId];
+    return getRandomItem(incomesForGenderId);
+  }
+
+  protected generateRandomStats(): Stats {
+    const randomStatsArray = generateRandomStats();
+    
+    return {
+      health: randomStatsArray[0],
+      mentalHealth: randomStatsArray[1],
+      intellect: randomStatsArray[2],
+      beauty: randomStatsArray[3],
+    };
+  }
+
+  public generateRandomPlayer(): Character {
+    const selectedGender = this.getRandomGender();
+    const selectedGenderId = selectedGender.id;
+
+    const selectedCountryCode = this.getRandomCountryCode();
+    const selectedCountryData = this.getCountryDataByCode(selectedCountryCode);
+    const selectedCountryLanguage = selectedCountryData.language;
+
+    const selectedSkinTone = this.getRandomSkinToneByGenderId(selectedGenderId);
+    const selectedIncome = this.getRandomIncomeByGenderId(selectedGenderId);
+
+    const generatedFirstName = this.getRandomFirstName({
+      language: selectedCountryLanguage,
+      genderId: selectedGenderId,
+    });
+    
+    const generatedLastName = this.getRandomLastName(selectedCountryLanguage);
+    const generatedDemonym = selectedCountryData.demonym[selectedGenderId];
+    const generatedStats = this.generateRandomStats();
+
+    return {
+      firstName: generatedFirstName,
+      lastName: generatedLastName,
+      demonym: generatedDemonym,
+      countryCode: selectedCountryCode,
+      countryData: selectedCountryData,
+      gender: selectedGender,
+      skinTone: selectedSkinTone,
+      income: selectedIncome,
+      stats: generatedStats,
+      age: 0,
+    };
+  }
+}
+
+interface configuration {
+  genderId?: GenderId;
   lastName?: string;
-  genderId?: Gender["id"];
   skinTone?: SkinTone;
   income?: Income;
   countryCode?: string;
   demonym?: string;
+  academic?: string;
+  career?: string;
+  freelance?: string;
 }
 
-export class CharacterService {
-  private genders!: Gender[];
-  private skinTones!: Record<string, SkinTone[]>;
-  private incomes!: Record<string, Income[]>;
-  private namesByLanguage!: NamesByLanguage;
-  private countries!: Countries;
+interface ageCriteria {
+  minAge: number;
+  maxAge: number;
+}
 
+interface GenerateNPCProps {
+  configuration?: configuration;
+  ageCriteria?: ageCriteria;
+}
+
+export class NPCGenerator extends PlayerGenerator {
+    
+  private jobService: JobService;
   constructor() {
-    this.genders = rawGenders as Gender[];
-    this.skinTones = rawSkinTones as Record<string, SkinTone[]>;
-    this.incomes = rawIncomes as Record<string, Income[]>;
-    this.namesByLanguage = rawNamesByLanguage as NamesByLanguage;
-    this.countries = rawCountries as Countries;
+    super();
+    this.jobService = new JobService();
   }
 
-  private getRandomCountry(): string {
-    const countryCodes = Object.keys(this.countries);
-    return getRandomItem(countryCodes);
-  }
-
-  private getNames(language: string) {
-    const names = this.namesByLanguage[language];
-    if (!names) throw new Error(`Names not found for ${language}`);
-    return names;
-  }
-
-  private getRandomFirstName({ language, genderId }: GetRandomNameParameters) {
-    const names = this.getNames(language);
-    return getRandomItem(names[genderId]);
-  }
-
-  private getRandomLastName(language: string) {
-    const names = this.getNames(language);
-    return getRandomItem(names.last);
-  }
-
-  private getGender(genderId?: Gender["id"]): Gender {
-    if (genderId) {
-      const gender = this.genders.find((gender) => gender.id === genderId);
-      if (!gender) throw new Error(`Invalid genderId: ${genderId}`);
-      return gender;
-    }
-    return getRandomItem(this.genders);
-  }
-  public generateRandomCharacter(
-    params: GenerateRandomCharacterParameters = {},
+    public getRandomAge(minAge: number, maxAge: number): number {
+    return Math.floor(Math.random() * (maxAge - minAge + 1)) + minAge;
+}
+  public generateNPC({
+     configuration = {}, 
+     ageCriteria = { minAge: 18, maxAge: 60 }
+  }: GenerateNPCProps
   ): Character {
-    const gender = this.getGender(params.genderId);
-    const genderId = gender.id;
+    const { genderId, academic, career, freelance, lastName, skinTone, income, countryCode, demonym } = configuration;
+    const { minAge, maxAge } = ageCriteria;
+    const age = this.getRandomAge(minAge, maxAge);
+    const selectedGender = genderId 
+      ? this.getGenderById(genderId)
+      : this.getRandomGender();
+    
+    const selectedGenderId = selectedGender.id;
 
-    const skinTone = params.skinTone ?? getRandomItem(this.skinTones[genderId]);
-    const income = params.income ?? getRandomItem(this.incomes[genderId]);
+    const selectedCountryCode = countryCode ?? this.getRandomCountryCode();
+    const selectedCountryData = this.getCountryDataByCode(selectedCountryCode);
+    const selectedCountryLanguage = selectedCountryData.language;
 
-    const countryCode = params.countryCode ?? this.getRandomCountry();
-    const countryData = this.countries[countryCode] as CountryData;
-    if (!countryData)
-      throw new Error(`"${countryCode}" is an invalid country code!`);
-    const language = countryData.language;
+    const selectedSkinTone = skinTone ?? this.getRandomSkinToneByGenderId(selectedGenderId);
+    const selectedIncome = income ?? this.getRandomIncomeByGenderId(selectedGenderId);
 
-    const firstName = this.getRandomFirstName({ language, genderId });
-    const lastName = params.lastName ?? this.getRandomLastName(language);
+    const selectedCareer = career ?? this.jobService.getRandomCareerByIncome(selectedIncome).careerID;
 
-    const demonym = params.demonym ?? countryData.demonym[genderId];
-    const statsArray = generateRandomStats();
+    const generatedFirstName = this.getRandomFirstName({
+      language: selectedCountryLanguage,
+      genderId: selectedGenderId,
+    });
+    
+    const determinedLastName = lastName ?? this.getRandomLastName(selectedCountryLanguage);
+    const determinedDemonym = demonym ?? selectedCountryData.demonym[selectedGenderId];
+    const generatedStats = this.generateRandomStats();
 
     return {
-      firstName,
-      lastName,
-      demonym,
-      countryCode,
-      countryData,
-      gender,
-      skinTone,
-      income,
-      stats: {
-        health: statsArray[0],
-        mentalHealth: statsArray[1],
-        intellect: statsArray[2],
-        beauty: statsArray[3],
-      },
+      firstName: generatedFirstName,
+      lastName: determinedLastName,
+      demonym: determinedDemonym,
+      countryCode: selectedCountryCode,
+      countryData: selectedCountryData,
+      career: selectedCareer,
+      gender: selectedGender,
+      skinTone: selectedSkinTone,
+      income: selectedIncome,
+      stats: generatedStats,
+      age,
+    };
+  }
+}
+
+export default class NPCFactory {
+  constructor(private npcGenerator: NPCGenerator) {}
+  
+  public generateRandomNPC(): Character {
+    return this.npcGenerator.generateNPC({});
+  }
+
+  private familiarshipConfiguration(character: Character) {
+    return {
+      lastName: character.lastName,
+      skinTone: character.skinTone,
+      income: character.income,
+      countryCode: character.countryCode,
+      demonym: character.demonym,
     };
   }
 
-  public generateFather(character: Character): Character {
-    return this.generateRandomCharacter({
-      genderId: "male",
-      lastName: character.lastName,
-      skinTone: character.skinTone,
-      income: character.income,
-      countryCode: character.countryCode,
-      demonym: character.demonym,
+  generateFather(character: Character): Character {
+    return this.npcGenerator.generateNPC({
+      configuration: {
+        genderId: "male",
+        ...this.familiarshipConfiguration(character),
+      },
+      ageCriteria: { minAge: 18, maxAge: 40 },
     });
   }
 
-  public generateMother(character: Character): Character {
-    return this.generateRandomCharacter({
-      genderId: "female",
-      lastName: character.lastName,
-      skinTone: character.skinTone,
-      income: character.income,
-      countryCode: character.countryCode,
-      demonym: character.demonym,
+  generateMother(character: Character): Character {
+    return this.npcGenerator.generateNPC({
+      configuration: {
+        genderId: "female",
+        ...this.familiarshipConfiguration(character),
+      },
+      ageCriteria: { minAge: 18, maxAge: 40 },
     });
   }
 
-  public generateClassmate(character: Character): Character {
-    return this.generateRandomCharacter({
-      income: character.income,
-      countryCode: character.countryCode,
-      demonym: character.demonym,
+  generateChild(character: Character): Character {
+    return this.npcGenerator.generateNPC({
+      configuration: {
+        ...this.familiarshipConfiguration(character),
+      },
+      ageCriteria: { minAge: 0, maxAge: 0 },
     });
   }
-  public generateChild(character: Character): Character {
-    return this.generateRandomCharacter({
-      lastName: character.lastName,
-      skinTone: character.skinTone,
-      income: character.income,
-      countryCode: character.countryCode,
-      demonym: character.demonym,
+
+  generateClassmate(character: Character): Character {
+    return this.npcGenerator.generateNPC({
+      configuration: {
+        income: character.income,
+        countryCode: character.countryCode,
+        demonym: character.demonym,
+      },
+      ageCriteria: {
+        minAge: character.age - 2,
+        maxAge: character.age + 2,
+      },
     });
   }
 }
-
-export default CharacterService;

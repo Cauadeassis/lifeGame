@@ -1,12 +1,12 @@
 import React, { MouseEvent } from "react";
 import styles from "../actionButton/styles.module.css";
 
-interface AdvanceYearButtonParameters {
+interface AdvanceYearButtonProps {
   onClick: () => void;
   disabled?: boolean;
 }
 
-const AdvanceYearButton: React.FC<AdvanceYearButtonParameters> = ({
+const AdvanceYearButton: React.FC<AdvanceYearButtonProps> = ({
   onClick,
   disabled = false,
 }) => {

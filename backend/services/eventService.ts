@@ -1,11 +1,11 @@
 import { getRandomItem } from "./utilities";
+import { Stats, CharacterActivities } from "../data/character/types";
 import { Event, Option, Result, Risk } from "../data/events/types";
 
-interface GetAvailableEventsParameters {
+
+interface GetAvailableEventsProps  {
+  characterActivities: CharacterActivities;
   age: number;
-  career?: string;
-  freelance?: string;
-  academic?: string;
 }
 
 class EventService {
@@ -26,10 +26,10 @@ class EventService {
   }
 
   private async loadDynamicEvents(
-    type: "academic" | "career" | "freelance",
-    name: string,
+    eventType: "academic" | "career" | "freelance",
+    subCategory: string, // primarySchool, engineer, babysitter
   ): Promise<Event[]> {
-    const cacheKey = `${type}:${name}`;
+    const cacheKey = `${eventType}:${subCategory}`;
 
     if (this.eventsCache.has(cacheKey)) {
       return this.eventsCache.get(cacheKey)!;
@@ -37,17 +37,17 @@ class EventService {
 
     try {
       let events: Event[];
-      switch (type) {
+      switch (eventType) {
         case "academic":
-          events = (await import(`../data/events/academic/${name}.json`))
+          events = (await import(`../data/events/academic/${subCategory}.json`))
             .default as Event[];
           break;
         case "career":
-          events = (await import(`../data/events/jobs/careers/${name}.json`))
+          events = (await import(`../data/events/jobs/careers/${subCategory}.json`))
             .default as Event[];
           break;
         case "freelance":
-          events = (await import(`../data/events/jobs/${name}.json`))
+          events = (await import(`../data/events/jobs/freelance/${subCategory}.json`))
             .default as Event[];
           break;
         default:
@@ -57,19 +57,18 @@ class EventService {
       this.eventsCache.set(cacheKey, events);
       return events;
     } catch (error) {
-      console.error(`Failed to load ${type} events for ${name}:`, error);
+      console.error(`Failed to load ${eventType} events for ${subCategory}:`, error);
       return [];
     }
   }
 
   public async getAvailableEvents({
-    age,
-    career,
-    freelance,
-    academic,
-  }: GetAvailableEventsParameters): Promise<Event[]> {
+     characterActivities, 
+     age 
+  }: GetAvailableEventsProps
+  ): Promise<Event[]> {
     const allEvents: Event[] = [];
-
+    const { career, freelance, academic } = characterActivities;
     const ageState = this.getAgeState(age);
     const ageEventsModule = await import(`../data/events/age/${ageState}.json`);
 
@@ -98,20 +97,11 @@ class EventService {
   }
 
   public async getRandomEvent({
-    age,
-    career,
-    freelance,
-    academic,
-  }: GetAvailableEventsParameters): Promise<Event | null> {
-    const availableEvents = await this.getAvailableEvents({
-      age,
-      career,
-      freelance,
-      academic,
-    });
-
-    if (availableEvents.length === 0) return null;
-
+     characterActivities, 
+     age 
+  }: GetAvailableEventsProps
+): Promise<Event> {
+    const availableEvents = await this.getAvailableEvents({ characterActivities, age });
     return getRandomItem(availableEvents);
   }
 

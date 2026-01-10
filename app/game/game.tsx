@@ -41,7 +41,6 @@ const GAME_STATE_KEY = "gameState";
 
 export default function Game() {
   const router = useRouter();
-  const goTo = (path: string) => router.push(path);
   const lower = (text: string) => text.toLowerCase();
 
   const [player, setPlayer] = useState<Character | null>(null);
@@ -56,7 +55,7 @@ export default function Game() {
   });
   const [age, setAge] = useState<number>(0);
   const [currentEvent, setCurrentEvent] = useState<Event | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isGameIniting, setIsGameIniting] = useState<boolean>(true);
   const [result, setResult] = useState<Result | null>(null);
 
   useEffect(() => {
@@ -91,7 +90,7 @@ export default function Game() {
       } catch (error) {
         console.error("Erro ao inicializar jogo:", error);
       } finally {
-        setIsLoading(false);
+        setIsGameIniting(false);
       }
     };
 
@@ -99,7 +98,7 @@ export default function Game() {
   }, []);
 
   useEffect(() => {
-    if (player && !isLoading) {
+    if (player && !isGameIniting) {
       const gameState: GameState = {
         stats,
         age,
@@ -110,16 +109,14 @@ export default function Game() {
       };
       saveGame(gameState);
     }
-  }, [stats, age, father, mother, player, isLoading, currentEvent]);
+  }, [stats, age, father, mother, player, isGameIniting, currentEvent]);
 
   const handleAdvanceYear = (): void => {
-    const { newAge, newStats, newEvent } = advanceYear({
-      age,
-      stats,
-    });
+    if (player)
+{    const { newAge, newStats, newEvent } = advanceYear(player);
     setAge(newAge);
     setStats(newStats);
-    setCurrentEvent(newEvent);
+    setCurrentEvent(newEvent);}
   };
 
   const handleOptionSelect = (option: Option) => {
@@ -139,7 +136,7 @@ export default function Game() {
     }, 3000);
   };
 
-  if (isLoading) return <LoadingFallback />;
+  if (isGameIniting) return <LoadingFallback />;
 
   if (!player || !stats) return <NoCharacterFallback />;
 
@@ -187,13 +184,13 @@ export default function Game() {
         <ActionButton
           icon={graduationCap}
           label="Escola"
-          onClick={() => goTo("school")}
+          onClick={() => router.push("school")}
         />
         <AdvanceYearButton onClick={handleAdvanceYear} />
         <ActionButton
           icon={users}
           label="Relacionamentos"
-          onClick={() => goTo("relationship")}
+          onClick={() => router.push("relationship")}
         />
       </section>
     </div>

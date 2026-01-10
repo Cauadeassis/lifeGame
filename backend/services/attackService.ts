@@ -19,29 +19,29 @@ export type MeleeAttackName = keyof typeof meleeAttacks;
 export type WeaponAttackName = keyof typeof weaponAttacks;
 export type AttackName = MeleeAttackName | WeaponAttackName;
 
-export interface BuildAttackParameters {
+export interface BuildAttackProps {
   attackName: AttackName;
   rawBodyPart: BodyPart;
   gender: Gender;
 }
 
-interface GetImpactParameters {
+interface GetImpactProps {
   damage: number;
   relevance: Relevance;
 }
 
-interface GetDamageParameters {
+interface GetDamageProps {
   bodyPart: BodyPart;
   attackName: AttackName;
 }
 
-interface CheckIfLostParameters {
+interface CheckIfLostProps {
   impact: Impact;
   damageType?: DamageType;
   bodyPart: BodyPart;
 }
 
-interface ClampParameters {
+interface ClampProps {
   value: number;
   min?: number;
   max?: number;
@@ -64,7 +64,7 @@ class AttackService {
     attackName,
     rawBodyPart,
     gender,
-  }: BuildAttackParameters) {
+  }: BuildAttackProps) {
     const bodyPart = this.getPartByGender({
       gender: gender.id,
       rawBodyPart,
@@ -88,7 +88,7 @@ class AttackService {
     return { damage, message, lost };
   }
 
-  private getImpact({ damage, relevance }: GetImpactParameters): Impact {
+  private getImpact({ damage, relevance }: GetImpactProps): Impact {
     const ratio = damage / AttackService.limitsByRelevance[relevance];
 
     if (ratio <= 0.33) return "light";
@@ -96,11 +96,11 @@ class AttackService {
     return "high";
   }
 
-  private clamp({ value, min = 0, max = 100 }: ClampParameters): number {
+  private clamp({ value, min = 0, max = 100 }: ClampProps): number {
     return Math.max(min, Math.min(max, value));
   }
 
-  private getDamage({ bodyPart, attackName }: GetDamageParameters): number {
+  private getDamage({ bodyPart, attackName }: GetDamageProps): number {
     const [min, max] = AttackService.damageByRelevance[bodyPart.relevance];
 
     let damage = getRandomDamage(min, max);
@@ -119,7 +119,7 @@ class AttackService {
     impact,
     bodyPart,
     damageType = "impact",
-  }: CheckIfLostParameters): boolean {
+  }: CheckIfLostProps): boolean {
     return (
       bodyPart.canBeLost && impact === "high" && damageType === "perfuration"
     );

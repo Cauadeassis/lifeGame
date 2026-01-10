@@ -2,7 +2,7 @@ import countries from "../../../backend/data/character/countries.json";
 type CountryCode = keyof typeof countries;
 import styles from "./shared.module.css";
 
-interface CountrySelectorParameters {
+interface CountrySelectorProps {
   country: CountryCode;
   setCountry: (country: CountryCode) => void;
 }
@@ -10,7 +10,7 @@ interface CountrySelectorParameters {
 export default function countrySelector({
   country,
   setCountry,
-}: CountrySelectorParameters) {
+}: CountrySelectorProps) {
   const lower = (text: string) => text.toLowerCase();
   return (
     <>

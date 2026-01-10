@@ -23,12 +23,12 @@ const adjectives = rawAdjectives as WordsDictionary;
 const verbs = rawVerbs as WordsDictionary;
 const possessives = rawPossessives as WordsDictionary;
 
-interface CheckIfExplodedParameters {
+interface CheckIfExplodedProps {
   damage: number;
   injuredPart: BodyPart;
 }
 
-interface GetMessageParameters {
+interface GetMessageProps {
   lost: boolean;
   injuredPart: BodyPart;
 }
@@ -85,11 +85,11 @@ const getDamage = (relevance: Relevance) => {
 const checkIfExploded = ({
   damage,
   injuredPart,
-}: CheckIfExplodedParameters): boolean => {
+}: CheckIfExplodedProps): boolean => {
   return damage >= limitsByRelevance[injuredPart.relevance];
 };
 
-const getMessage = ({ injuredPart, lost }: GetMessageParameters): string => {
+const getMessage = ({ injuredPart, lost }: GetMessageProps): string => {
   const possessive = getWord({
     file: possessives,
     category: "secondPerson",

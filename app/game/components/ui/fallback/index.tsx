@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 const router = useRouter();
-const goTo = (path: string) => router.push(path);
 
 export const LoadingFallback = () => {
   return (
@@ -18,7 +17,7 @@ export const NoCharacterFallback = () => {
     <div>
       <section>
         <p>Nenhum personagem encontrado.</p>
-        <button type="button" onClick={() => goTo("/randomizer")}>
+        <button type="button" onClick={() => router.push("/randomizer")}>
           Criar Personagem
         </button>
       </section>
